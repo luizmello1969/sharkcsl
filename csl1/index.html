@@ -71,14 +71,45 @@
           if (currentParams.toString() === "") return url;
 
           try {
-            const urlObj = new URL(url, window.location.origin);
-            // Add ALL parameters that don't already exist in the target URL
-            currentParams.forEach((value, key) => {
-              if (!urlObj.searchParams.has(key)) {
-                urlObj.searchParams.set(key, value);
-              }
-            });
-            return urlObj.toString();
+            // Check if URL contains ClickMagick placeholders that need to be preserved
+            const hasClickMagickPlaceholders = url.includes('[cmc_vid]') || url.includes('[cmc_') || url.includes('[clkm]');
+            
+            if (hasClickMagickPlaceholders) {
+              // Manually build URL to preserve ClickMagick placeholders
+              const urlParts = url.split('?');
+              const baseUrl = urlParts[0];
+              const existingParams = urlParts[1] || '';
+              
+              // Parse existing params manually to preserve placeholders
+              const existingParamPairs = existingParams ? existingParams.split('&') : [];
+              const existingKeys = new Set();
+              existingParamPairs.forEach(pair => {
+                const key = pair.split('=')[0];
+                existingKeys.add(key);
+              });
+              
+              // Build new params string
+              const newParams = [];
+              existingParamPairs.forEach(pair => newParams.push(pair));
+              
+              // Add new params that don't exist
+              currentParams.forEach((value, key) => {
+                if (!existingKeys.has(key)) {
+                  newParams.push(key + '=' + encodeURIComponent(value));
+                }
+              });
+              
+              return baseUrl + (newParams.length > 0 ? '?' + newParams.join('&') : '');
+            } else {
+              // Use standard URL parsing for URLs without ClickMagick placeholders
+              const urlObj = new URL(url, window.location.origin);
+              currentParams.forEach((value, key) => {
+                if (!urlObj.searchParams.has(key)) {
+                  urlObj.searchParams.set(key, value);
+                }
+              });
+              return urlObj.toString();
+            }
           } catch (e) {
             // Fallback: append parameters as query string
             const separator = url.includes("?") ? "&" : "?";
@@ -1434,8 +1465,7 @@
                 "Auto-delivery every 60 days",
                 "Cancel anytime",
               ],
-              checkout:
-                "https://garaherb.mycartpanda.com/checkout/202986846:1?subscription=3362&afid=ti7bhdinId&cid=[cmc_vid]&sck=[cmc_vid]",
+              checkout: "https://garaherb.mycartpanda.com/checkout/202986846:1?subscription=3362&afid=ti7bhdinId&cid=[cmc_vid]&sck=[cmc_vid]",
             },
             "one-time": {
               price: "69",
@@ -1514,14 +1544,45 @@
           if (currentParams.toString() === "") return url;
 
           try {
-            const urlObj = new URL(url, window.location.origin);
-            // Add ALL parameters that don't already exist in the target URL
-            currentParams.forEach((value, key) => {
-              if (!urlObj.searchParams.has(key)) {
-                urlObj.searchParams.set(key, value);
-              }
-            });
-            return urlObj.toString();
+            // Check if URL contains ClickMagick placeholders that need to be preserved
+            const hasClickMagickPlaceholders = url.includes('[cmc_vid]') || url.includes('[cmc_') || url.includes('[clkm]');
+            
+            if (hasClickMagickPlaceholders) {
+              // Manually build URL to preserve ClickMagick placeholders
+              const urlParts = url.split('?');
+              const baseUrl = urlParts[0];
+              const existingParams = urlParts[1] || '';
+              
+              // Parse existing params manually to preserve placeholders
+              const existingParamPairs = existingParams ? existingParams.split('&') : [];
+              const existingKeys = new Set();
+              existingParamPairs.forEach(pair => {
+                const key = pair.split('=')[0];
+                existingKeys.add(key);
+              });
+              
+              // Build new params string
+              const newParams = [];
+              existingParamPairs.forEach(pair => newParams.push(pair));
+              
+              // Add new params that don't exist
+              currentParams.forEach((value, key) => {
+                if (!existingKeys.has(key)) {
+                  newParams.push(key + '=' + encodeURIComponent(value));
+                }
+              });
+              
+              return baseUrl + (newParams.length > 0 ? '?' + newParams.join('&') : '');
+            } else {
+              // Use standard URL parsing for URLs without ClickMagick placeholders
+              const urlObj = new URL(url, window.location.origin);
+              currentParams.forEach((value, key) => {
+                if (!urlObj.searchParams.has(key)) {
+                  urlObj.searchParams.set(key, value);
+                }
+              });
+              return urlObj.toString();
+            }
           } catch (e) {
             // Fallback: append parameters as query string
             const separator = url.includes("?") ? "&" : "?";
@@ -1547,8 +1608,35 @@
             totalCurrent.textContent = data.total.current;
             shipping.textContent = data.shipping;
 
+            // Preserve ClickMagick click ID if it already exists
+            let checkoutUrl = data.checkout;
+            const currentHref = cta.getAttribute('href') || cta.href;
+            
+            // Extract click ID from current href if it exists and is not a placeholder
+            if (currentHref && currentHref.includes('cid=') && !currentHref.includes('[cmc_vid]')) {
+              try {
+                const currentUrl = new URL(currentHref, window.location.origin);
+                const currentCid = currentUrl.searchParams.get('cid');
+                const currentSck = currentUrl.searchParams.get('sck');
+                
+                // If we have a real click ID (not placeholder), preserve it
+                if (currentCid && currentCid !== '[cmc_vid]' && currentCid.startsWith('cmc')) {
+                  // Replace [cmc_vid] placeholders in the new checkout URL with the preserved click ID
+                  checkoutUrl = checkoutUrl.replace(/\[cmc_vid\]/g, currentCid);
+                }
+              } catch (e) {
+                // If URL parsing fails, try manual extraction
+                const cidMatch = currentHref.match(/[?&]cid=([^&]+)/);
+                const sckMatch = currentHref.match(/[?&]sck=([^&]+)/);
+                
+                if (cidMatch && cidMatch[1] && cidMatch[1] !== '[cmc_vid]' && cidMatch[1].startsWith('cmc')) {
+                  checkoutUrl = checkoutUrl.replace(/\[cmc_vid\]/g, decodeURIComponent(cidMatch[1]));
+                }
+              }
+            }
+
             // Adiciona parâmetros da URL ao checkout
-            const checkoutUrl = addParamsToUrl(data.checkout);
+            checkoutUrl = addParamsToUrl(checkoutUrl);
             cta.href = checkoutUrl;
             card.dataset.activeLink = checkoutUrl;
 
