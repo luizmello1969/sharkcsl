@@ -60,40 +60,97 @@
 
     <script>
       (function() {
-        let processed = false;
+        // Get all URL parameters from current page (including ALL UTM parameters)
+        function getAllUrlParams() {
+          return new URLSearchParams(window.location.search);
+        }
 
-        function addParamsToLinks() {
-          if (processed) return;
-          processed = true;
+        // Add all URL parameters to a given URL
+        function addAllParamsToUrl(url) {
+          const currentParams = getAllUrlParams();
+          if (currentParams.toString() === "") return url;
 
-          const currentParams = new URLSearchParams(window.location.search);
-          if (currentParams.toString() === "") return;
+          try {
+            const urlObj = new URL(url, window.location.origin);
+            // Add ALL parameters that don't already exist in the target URL
+            currentParams.forEach((value, key) => {
+              if (!urlObj.searchParams.has(key)) {
+                urlObj.searchParams.set(key, value);
+              }
+            });
+            return urlObj.toString();
+          } catch (e) {
+            // Fallback: append parameters as query string
+            const separator = url.includes("?") ? "&" : "?";
+            return url + separator + currentParams.toString();
+          }
+        }
 
-          document.querySelectorAll("a").forEach(function (link) {
-            if (!link.href || link.href.startsWith("javascript:") || link.href.startsWith("#")) return;
+        // Process a single link element
+        function processLink(link) {
+          if (!link.href || link.href.startsWith("javascript:") || link.href.startsWith("#") || link.href.startsWith("mailto:")) {
+            return;
+          }
 
-            try {
-              const url = new URL(link.href);
+          try {
+            const originalHref = link.getAttribute("href");
+            if (!originalHref) return;
 
-              // Adiciona apenas parâmetros que não existem no link
-              currentParams.forEach((value, key) => {
-                if (!url.searchParams.has(key)) {
-                  url.searchParams.set(key, value);
-                }
-              });
-
-              link.href = url.toString();
-            } catch (e) {
-              // Se não for uma URL válida, ignora
+            const updatedUrl = addAllParamsToUrl(originalHref);
+            if (updatedUrl !== originalHref) {
+              link.href = updatedUrl;
             }
+          } catch (e) {
+            // Ignore invalid URLs
+          }
+        }
+
+        // Process all links on the page
+        function processAllLinks() {
+          document.querySelectorAll("a").forEach(processLink);
+        }
+
+        // Process links when DOM is ready
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", processAllLinks);
+        } else {
+          processAllLinks();
+        }
+
+        // Watch for dynamically added links using MutationObserver
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.nodeType === 1) { // Element node
+                // Process the node if it's a link
+                if (node.tagName === "A") {
+                  processLink(node);
+                }
+                // Process any links within the added node
+                if (node.querySelectorAll) {
+                  node.querySelectorAll("a").forEach(processLink);
+                }
+              }
+            });
+          });
+        });
+
+        // Start observing when DOM is ready
+        function startObserving() {
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
           });
         }
 
         if (document.readyState === "loading") {
-          document.addEventListener("DOMContentLoaded", addParamsToLinks);
+          document.addEventListener("DOMContentLoaded", startObserving);
         } else {
-          addParamsToLinks();
+          startObserving();
         }
+
+        // Make addAllParamsToUrl available globally for use in other scripts
+        window.addAllParamsToUrl = addAllParamsToUrl;
       })();
     </script>
   
@@ -168,8 +225,8 @@
 <!-- VSL Tracking Configuration -->
 <script>
     // VSL Tracking Parameters
-    window.VSL_Lead_SEC = 160;    // Lead event at 30 seconds
-    window.VSL_Pitch_SEC = 1729;   // Pitch event at 60 seconds
+    window.VSL_Lead_SEC = 30;    // Lead event at 30 seconds
+    window.VSL_Pitch_SEC = 60;   // Pitch event at 60 seconds
 </script>
 
 <!-- VSL Tracking Script -->
@@ -1443,13 +1500,19 @@
           });
         };
 
-        // Função para adicionar parâmetros da URL atual a qualquer link
+        // Function to add ALL URL parameters (including ALL UTM parameters) to any URL
         const addParamsToUrl = (url) => {
+          // Use the global function if available, otherwise create a local one
+          if (typeof window.addAllParamsToUrl === 'function') {
+            return window.addAllParamsToUrl(url);
+          }
+          
           const currentParams = new URLSearchParams(window.location.search);
           if (currentParams.toString() === "") return url;
 
           try {
             const urlObj = new URL(url, window.location.origin);
+            // Add ALL parameters that don't already exist in the target URL
             currentParams.forEach((value, key) => {
               if (!urlObj.searchParams.has(key)) {
                 urlObj.searchParams.set(key, value);
@@ -1457,7 +1520,7 @@
             });
             return urlObj.toString();
           } catch (e) {
-            // Se falhar, retorna a URL original
+            // Fallback: append parameters as query string
             const separator = url.includes("?") ? "&" : "?";
             return url + separator + currentParams.toString();
           }
@@ -1548,7 +1611,7 @@
       // Initialize video delay control
       // Automatically uses the first smartplayer instance (no videoId needed)
       window.VIDEO_DELAY_CONFIG = {
-        secondsToDisplay: 1088, // Seconds of video playback before revealing content (1088000ms)
+        secondsToDisplay: 60, // Seconds of video playback before revealing content (1088000ms)
         delayedContentSelector: '#delayed-content', // Selector for delayed content container
         delayClass: 'atomicat-delay', // Class to remove from delayed elements
         showClass: 'show', // Class to add when revealing
