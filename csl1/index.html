@@ -88,14 +88,18 @@
 
         // Process a single link element
         function processLink(link) {
-          if (!link.href || link.href.startsWith("javascript:") || link.href.startsWith("#") || link.href.startsWith("mailto:")) {
+          const originalHref = link.getAttribute("href");
+          if (!originalHref) return;
+
+          // Skip hash links, javascript links, mailto links, and relative paths without domain
+          if (originalHref.startsWith("#") || 
+              originalHref.startsWith("javascript:") || 
+              originalHref.startsWith("mailto:") ||
+              originalHref.startsWith("tel:")) {
             return;
           }
 
           try {
-            const originalHref = link.getAttribute("href");
-            if (!originalHref) return;
-
             const updatedUrl = addAllParamsToUrl(originalHref);
             if (updatedUrl !== originalHref) {
               link.href = updatedUrl;
@@ -1431,14 +1435,14 @@
                 "Cancel anytime",
               ],
               checkout:
-                "https://garaherb.mycartpanda.com/checkout/202986846:1?subscription=3362&afid=p6k1k5aDJT",
+                "https://garaherb.mycartpanda.com/checkout/202986846:1?subscription=3362&afid=p6k1k5aDJT&cid=[cmc_vid]&sck=[cmc_vid]",
             },
             "one-time": {
               price: "69",
               total: { original: "$178", current: "$138" },
               shipping: "+ FREE SHIPPING!",
               benefits: [],
-              checkout: "https://garaherb.mycartpanda.com/checkout/203016366:1?afid=YMjXhRIiXT",
+              checkout: "https://garaherb.mycartpanda.com/checkout/203016366:1?afid=YMjXhRIiXT&cid=[cmc_vid]&sck=[cmc_vid]",
             },
           },
           three: {
@@ -1452,8 +1456,7 @@
                 "Cancel anytime",
                 "Auto-delivery every 90 days",
               ],
-              checkout:
-                "https://garaherb.mycartpanda.com/checkout/202991817:1?subscription=3364&afid=paqbxkaIkn",
+              checkout:"https://garaherb.mycartpanda.com/checkout/202991817:1?subscription=3364&afid=paqbxkaIkn&cid=[cmc_vid]&sck=[cmc_vid]",
             },
             "one-time": {
               price: "49",
@@ -1464,7 +1467,7 @@
                 "Free Shipping",
                 "60-Day Money Back Guarantee",
               ],
-              checkout: "https://garaherb.mycartpanda.com/checkout/203016367:1?afid=YMjXhRIiXT",
+              checkout: "https://garaherb.mycartpanda.com/checkout/203016367:1?afid=YMjXhRIiXT&cid=[cmc_vid]&sck=[cmc_vid]",
             },
           },
           one: {
@@ -1478,14 +1481,14 @@
                 "Cancel anytime",
               ],
               checkout:
-                "https://garaherb.mycartpanda.com/checkout/202991086:1?subscription=3363&afid=DslwrZnrA6",
+                "https://garaherb.mycartpanda.com/checkout/202991086:1?subscription=3363&afid=DslwrZnrA6&cid=[cmc_vid]&sck=[cmc_vid]",
             },
             "one-time": {
               price: "89",
               total: { original: "$129", current: "$89" },
               shipping: "+ FREE SHIPPING!",
               benefits: [],
-              checkout: "https://garaherb.mycartpanda.com/checkout/203016365:1?afid=YMjXhRIiXT",
+              checkout: "https://garaherb.mycartpanda.com/checkout/203016365:1?afid=YMjXhRIiXT&cid=[cmc_vid]&sck=[cmc_vid]",
             },
           },
         };
