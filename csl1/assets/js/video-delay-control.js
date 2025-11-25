@@ -41,6 +41,7 @@
       this.isDisplayed = false;
       this.videoInstance = null;
       this.timeUpdateHandler = null;
+      this.intervalId = null;
       
       // Check if already displayed
       if (this.config.storageKey) {
@@ -105,9 +106,26 @@
           }
         }
 
+        // Clear interval if running
+        if (this.intervalId) {
+          clearInterval(this.intervalId);
+          this.intervalId = null;
+        }
+
         // Remove event listener if video instance exists
         if (this.videoInstance && this.timeUpdateHandler) {
-          this.videoInstance.off('timeupdate', this.timeUpdateHandler);
+          try {
+            // Try different methods to remove event listener
+            if (typeof this.videoInstance.off === 'function') {
+              this.videoInstance.off('timeupdate', this.timeUpdateHandler);
+            } else if (typeof this.videoInstance.removeEventListener === 'function') {
+              this.videoInstance.removeEventListener('timeupdate', this.timeUpdateHandler);
+            } else if (this.videoInstance.video && typeof this.videoInstance.video.removeEventListener === 'function') {
+              this.videoInstance.video.removeEventListener('timeupdate', this.timeUpdateHandler);
+            }
+          } catch (e) {
+            this.log('Could not remove event listener:', e);
+          }
         }
 
       } catch (error) {
@@ -170,8 +188,6 @@
           return;
         }
 
-        this.log(`Current time: ${currentTime.toFixed(2)}s / ${this.config.secondsToDisplay}s`);
-
         if (currentTime >= this.config.secondsToDisplay) {
           this.revealContent();
         }
@@ -179,6 +195,17 @@
 
       // Attach event listener
       this.videoInstance.on('timeupdate', this.timeUpdateHandler);
+
+      // Log every second to console
+      this.intervalId = setInterval(() => {
+        if (this.isDisplayed) {
+          clearInterval(this.intervalId);
+          return;
+        }
+        
+        const currentTime = this.videoInstance?.video?.currentTime || 0;
+        console.log(`[Video Delay] Current: ${currentTime.toFixed(2)}s | Delay: ${this.config.secondsToDisplay}s | Remaining: ${Math.max(0, (this.config.secondsToDisplay - currentTime).toFixed(2))}s`);
+      }, 1000);
 
       // Also check immediately in case video is already past the threshold
       if (this.videoInstance.video && this.videoInstance.video.currentTime >= this.config.secondsToDisplay) {
@@ -198,8 +225,25 @@
      * Cleanup - remove event listeners
      */
     destroy() {
+      // Clear interval if running
+      if (this.intervalId) {
+        clearInterval(this.intervalId);
+        this.intervalId = null;
+      }
+
       if (this.videoInstance && this.timeUpdateHandler) {
-        this.videoInstance.off('timeupdate', this.timeUpdateHandler);
+        try {
+          // Try different methods to remove event listener
+          if (typeof this.videoInstance.off === 'function') {
+            this.videoInstance.off('timeupdate', this.timeUpdateHandler);
+          } else if (typeof this.videoInstance.removeEventListener === 'function') {
+            this.videoInstance.removeEventListener('timeupdate', this.timeUpdateHandler);
+          } else if (this.videoInstance.video && typeof this.videoInstance.video.removeEventListener === 'function') {
+            this.videoInstance.video.removeEventListener('timeupdate', this.timeUpdateHandler);
+          }
+        } catch (e) {
+          this.log('Could not remove event listener:', e);
+        }
       }
       this.videoInstance = null;
       this.timeUpdateHandler = null;
