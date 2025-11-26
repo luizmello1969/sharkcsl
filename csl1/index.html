@@ -260,8 +260,8 @@
 <!-- VSL Tracking Configuration -->
 <script>
     // VSL Tracking Parameters
-    window.VSL_Lead_SEC = 30;    // Lead event at 30 seconds
-    window.VSL_Pitch_SEC = 60;   // Pitch event at 60 seconds
+    window.VSL_Lead_SEC = 160;    // Lead event at 30 seconds
+    window.VSL_Pitch_SEC = 1088;   // Pitch event at 60 seconds
 </script>
 
 <!-- VSL Tracking Script -->
@@ -1702,7 +1702,7 @@
       // Initialize video delay control
       // Automatically uses the first smartplayer instance (no videoId needed)
       window.VIDEO_DELAY_CONFIG = {
-        secondsToDisplay: 60, // Seconds of video playback before revealing content (1088000ms)
+        secondsToDisplay: 10, // Seconds of video playback before revealing content (1088000ms)
         delayedContentSelector: '#delayed-content', // Selector for delayed content container
         delayClass: 'atomicat-delay', // Class to remove from delayed elements
         showClass: 'show', // Class to add when revealing

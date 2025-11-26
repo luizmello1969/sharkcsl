@@ -91,6 +91,11 @@
         if (delayedContent) {
           delayedContent.classList.add(this.config.showClass);
           delayedContent.setAttribute('aria-hidden', 'false');
+          
+          // Scroll to delayed content after a short delay to ensure it's visible
+          setTimeout(() => {
+            delayedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 100);
         }
 
         // Save to localStorage if configured
@@ -98,8 +103,8 @@
           localStorage.setItem(this.config.storageKey, 'true');
         }
 
-        // Scroll to element if configured
-        if (this.config.scrollToId) {
+        // Scroll to element if configured (fallback for custom scrollToId)
+        if (this.config.scrollToId && this.config.scrollToId !== this.config.delayedContentSelector.replace('#', '')) {
           const scrollElement = document.getElementById(this.config.scrollToId);
           if (scrollElement) {
             scrollElement.scrollIntoView({ behavior: 'smooth' });
