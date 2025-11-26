@@ -91,12 +91,15 @@
         if (delayedContent) {
           delayedContent.classList.add(this.config.showClass);
           delayedContent.setAttribute('aria-hidden', 'false');
-          
-          // Scroll to delayed content after a short delay to ensure it's visible
-          setTimeout(() => {
-            delayedContent.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }, 100);
         }
+
+        // Scroll to #kits section after a short delay to ensure content is visible
+        setTimeout(() => {
+          const kitsSection = document.getElementById('kits');
+          if (kitsSection) {
+            kitsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100);
 
         // Save to localStorage if configured
         if (this.config.storageKey) {
