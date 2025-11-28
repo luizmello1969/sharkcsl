@@ -93,13 +93,24 @@
           delayedContent.setAttribute('aria-hidden', 'false');
         }
 
-        // Scroll to #kits section after a short delay to ensure content is visible
+        // Scroll to #kits section after a delay to ensure content is visible
         setTimeout(() => {
           const kitsSection = document.getElementById('kits');
           if (kitsSection) {
-            kitsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Find the heading inside the kits section to scroll to
+            const kitsHeading = kitsSection.querySelector('h2.title');
+            const targetElement = kitsHeading || kitsSection;
+            
+            // Calculate scroll position with offset
+            const yOffset = 50; // Offset from top of viewport
+            const y = targetElement.getBoundingClientRect().top + window.pageYOffset - yOffset;
+            
+            window.scrollTo({
+              top: Math.max(0, y), // Ensure we don't scroll to negative position
+              behavior: 'smooth'
+            });
           }
-        }, 100);
+        }, 500);
 
         // Save to localStorage if configured
         if (this.config.storageKey) {
