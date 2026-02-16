@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="robots" content="index, follow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W2K59BZ');</script>
+    <!-- End Google Tag Manager -->
+
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🆕</text></svg>"
+    />
+
+    <title>SHARK_TK236R</title>
+    <meta
+      name="title"
+      content="Check this news about this product on Shark Tank"
+    />
+    <meta
+      name="description"
+      content="Check this news about this product on Shark Tank."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Check this news about this product on Shark Tank"
+    />
+    <meta
+      property="og:description"
+      content="Check this news about this product on Shark Tank"
+    />
+    <meta property="og:image" content="garaherb.com/assets/img/product.png" />
+
+    <!-- Open Graph / Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta
+      property="twitter:title"
+      content="Check this news about this product on Shark Tank"
+    />
+    <meta
+      property="twitter:description"
+      content="Check this news about this product on Shark Tank."
+    />
+    <meta
+      property="twitter:image"
+      content="garaherb.com/assets/img/product.png"
+    />
+
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script>
+      (function() {
+        // Get all URL parameters from current page (including ALL UTM parameters)
+        function getAllUrlParams() {
+          return new URLSearchParams(window.location.search);
+        }
+
+        // Add all URL parameters to a given URL
+        function addAllParamsToUrl(url) {
+          const currentParams = getAllUrlParams();
+          if (currentParams.toString() === "") return url;
+
+          try {
+            // Check if URL contains ClickMagick placeholders that need to be preserved
+            const hasClickMagickPlaceholders = url.includes('[cmc_vid]') || url.includes('[cmc_') || url.includes('[clkm]');
+            
+            if (hasClickMagickPlaceholders) {
+              // Manually build URL to preserve ClickMagick placeholders
+              const urlParts = url.split('?');
+              const baseUrl = urlParts[0];
+              const existingParams = urlParts[1] || '';
+              
+              // Parse existing params manually to preserve placeholders
+              const existingParamPairs = existingParams ? existingParams.split('&') : [];
+              const existingKeys = new Set();
+              existingParamPairs.forEach(pair => {
+                const key = pair.split('=')[0];
+                existingKeys.add(key);
+              });
+              
+              // Build new params string
+              const newParams = [];
+              existingParamPairs.forEach(pair => newParams.push(pair));
+              
+              // Add new params that don't exist
+              currentParams.forEach((value, key) => {
+                if (!existingKeys.has(key)) {
+                  newParams.push(key + '=' + encodeURIComponent(value));
+                }
+              });
+              
+              return baseUrl + (newParams.length > 0 ? '?' + newParams.join('&') : '');
+            } else {
+              // Use standard URL parsing for URLs without ClickMagick placeholders
+              const urlObj = new URL(url, window.location.origin);
+              currentParams.forEach((value, key) => {
+                if (!urlObj.searchParams.has(key)) {
+                  urlObj.searchParams.set(key, value);
+                }
+              });
+              return urlObj.toString();
+            }
+          } catch (e) {
+            // Fallback: append parameters as query string
+            const separator = url.includes("?") ? "&" : "?";
+            return url + separator + currentParams.toString();
+          }
+        }
+
+        // Process a single link element
+        function processLink(link) {
+          const originalHref = link.getAttribute("href");
+          if (!originalHref) return;
+
+          // Skip hash links, javascript links, mailto links, and relative paths without domain
+          if (originalHref.startsWith("#") || 
+              originalHref.startsWith("javascript:") || 
+              originalHref.startsWith("mailto:") ||
+              originalHref.startsWith("tel:")) {
+            return;
+          }
+
+          try {
+            const updatedUrl = addAllParamsToUrl(originalHref);
+            if (updatedUrl !== originalHref) {
+              link.href = updatedUrl;
+            }
+          } catch (e) {
+            // Ignore invalid URLs
+          }
+        }
+
+        // Process all links on the page
+        function processAllLinks() {
+          document.querySelectorAll("a").forEach(processLink);
+        }
+
+        // Process links when DOM is ready
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", processAllLinks);
+        } else {
+          processAllLinks();
+        }
+
+        // Watch for dynamically added links using MutationObserver
+        const observer = new MutationObserver(function(mutations) {
+          mutations.forEach(function(mutation) {
+            mutation.addedNodes.forEach(function(node) {
+              if (node.nodeType === 1) { // Element node
+                // Process the node if it's a link
+                if (node.tagName === "A") {
+                  processLink(node);
+                }
+                // Process any links within the added node
+                if (node.querySelectorAll) {
+                  node.querySelectorAll("a").forEach(processLink);
+                }
+              }
+            });
+          });
+        });
+
+        // Start observing when DOM is ready
+        function startObserving() {
+          observer.observe(document.body, {
+            childList: true,
+            subtree: true
+          });
+        }
+
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", startObserving);
+        } else {
+          startObserving();
+        }
+
+        // Make addAllParamsToUrl available globally for use in other scripts
+        window.addAllParamsToUrl = addAllParamsToUrl;
+      })();
+    </script>
+  
+    <style>
+      .vturb-fold{
+        background: linear-gradient(180deg,#1c4db3 0%, #0b1c52 100%);
+        color:#fff;
+        padding: 24px 0 40px;
+      }
+      .vturb-header{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        gap:12px;
+        padding-bottom:18px;
+      }
+      .vturb-header .logo{height:38px; width:auto;}
+      .vturb-header strong{font-weight:700; font-size:18px; letter-spacing:.2px;}
+      .vturb-header strong span{color:#fff;}
+      .vturb-video-wrap{display:flex;justify-content:center;}
+      .vturb-video-placeholder{
+        width: min(960px, 94vw);
+        aspect-ratio: 16 / 9;
+        background: #000;
+        border-radius: 10px;
+        box-shadow: 0 12px 30px rgba(0,0,0,.35);
+        position:relative;
+        overflow:hidden;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+      }
+      .vturb-video-inner{
+        width:100%;
+        height:100%;
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        border:2px dashed rgba(255,255,255,.3);
+      }
+      .vturb-video-inner p{
+        font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+        font-size:20px;
+        opacity:.8;
+      }
+
+      .delayed-content{display:none;}
+      .delayed-content.show{display:block;}
+    </style>
+
+  
+<script>!function(i,n){i._plt=i._plt||(n&&n.timeOrigin?n.timeOrigin+n.now():Date.now())}(window,performance);</script>
+<link rel="preload" href="https://scripts.converteai.net/b4b1559f-fdd4-4f27-b40c-2bc564c92338/players/693192511c7a1b2bd319137c/v4/player.js" as="script">
+<link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/b4b1559f-fdd4-4f27-b40c-2bc564c92338/69319233a93efe8639a120ed/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+<script type="text/javascript" src="https://rt.livinghelthylife.org/track.js"></script>
+
+
+<!-- VSL Tracking Configuration -->
+<script>
+    // VSL Tracking Parameters
+    window.VSL_Lead_SEC = 160;    // Lead event at 30 seconds
+    window.VSL_Pitch_SEC = 1088;   // Pitch event at 60 seconds
+</script>
+
+<!-- VSL Tracking Script -->
+<script src="https://assets.livinghealthylife.org/scripts/vsl-rt2.js"></script>
+
+</head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2K59BZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- VTurb Top Fold (visible immediately) -->
+    <section class="vturb-fold" id="vturb-fold">
+      <div class="vturb-header container">
+        <img src="assets/img/logo.svg" alt="GaraHerb" class="logo" />
+        <strong><span>GaraHerb</span> from Shark Tank Supplements</strong>
+      </div>
+
+      <div class="vturb-video-wrap container">
+        <!-- TODO: COLE AQUI O CÓDIGO DO VÍDEO DO VTURB -->
+        <!-- Ex.: <iframe ...></iframe> -->
+        <div id="vturb-video" class="vturb-video-placeholder">
+<vturb-smartplayer id="vid-693192511c7a1b2bd319137c" style="display: block; margin: 0 auto; width: 100%; "></vturb-smartplayer> <script type="text/javascript"> var s=document.createElement("script"); s.src="https://scripts.converteai.net/b4b1559f-fdd4-4f27-b40c-2bc564c92338/players/693192511c7a1b2bd319137c/v4/player.js", s.async=!0,document.head.appendChild(s); </script>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <div class="delayed-content" id="delayed-content" aria-hidden="true">
+<div class="faixa">
+      <div class="item">
+        <span><img src="assets/img/shark.svg" alt="" />FREE SHIPPING</span>
+        <span><img src="assets/img/shark.svg" alt="" />3-5 BUSINESS DAYS</span>
+        <span><img src="assets/img/shark.svg" alt="" />DISCREET PACKAGING</span>
+        <span><img src="assets/img/shark.svg" alt="" />FREE SHIPPING</span>
+        <span><img src="assets/img/shark.svg" alt="" />3-5 BUSINESS DAYS</span>
+        <span><img src="assets/img/shark.svg" alt="" />DISCREET PACKAGING</span>
+        <span><img src="assets/img/shark.svg" alt="" />FREE SHIPPING</span>
+        <span><img src="assets/img/shark.svg" alt="" />3-5 BUSINESS DAYS</span>
+        <span><img src="assets/img/shark.svg" alt="" />DISCREET PACKAGING</span>
+      </div>
+    </div>
+    <header>
+      <div class="container">
+        <img src="assets/img/logo.svg" alt="" class="logo" />
+        <strong> <span>Garaherb</span> from Shark Tank Supplements </strong>
+      </div>
+    </header>
+
+    <main class="hero">
+      <img src="assets/img/sharktank-hero-CRXHtPXv.webp" alt="" class="bg" />
+      <div class="container">
+        <img src="assets/img/selo.webp" alt="" class="selo" />
+        <h1>As seen on Shark Tank…</h1>
+        <h2>
+          At Last! Announcing the First Scientifically Proven Formula to Restore
+          Male Potency Back to Its Prime Days!
+        </h2>
+
+        <p>
+          Forget Blue Pills, Get Hard Whenever You Want, Stay Hard The Whole
+          Night
+        </p>
+
+        <blockquote>
+          <i
+            >"This is the most brilliant product I've seen in my entire career"
+          </i>
+
+          <strong>– Lori Greiner, Shark Tank </strong>
+        </blockquote>
+
+        <a href="#kits" class="btn"
+          >Get your Garaherb today with a discount and free shipping!</a
+        >
+      </div>
+    </main>
+
+    <article class="container">
+      <section>
+        <div>
+          <img
+            alt="Garaherb on Shark Tank"
+            loading="lazy"
+            src="assets/img/pitch-garaherb.webp"
+          />
+        </div>
+        <h2>Why Did Lori Greiner Invest $1 Million in This Formula?</h2>
+        <div>
+          <p>
+            <span>Julia Caldwell</span> – PhD in Urology from Harvard University
+            and best-selling author – came to Shark Tank with a bold (and
+            never-before-seen) proposal: asking for a 1-million-dollar
+            investment for her supplement, <span class="blue">Garaherb</span>…
+          </p>
+          <p>
+            A revolutionary formula in the fight against male sexual problems,
+            with near-guaranteed results in reversing erectile dysfunction.
+          </p>
+          <p>
+            Julia presented her product's spectacular lab results, and the
+            Sharks couldn't have been more surprised:
+          </p>
+          <p class="quout">
+            In the studies,
+            <i class="blue">96% of participants</i>
+            who tested Garaherb achieved firmer, thicker, and instant erections,
+            compared to the placebo group, which showed only a 6% improvement.
+          </p>
+          <p class="center">This is an extraordinary result in science.</p>
+          <p>
+            In addition, Garaherb has no side effects, made from 100% natural
+            ingredients, and FDA-approved…
+          </p>
+          <p>
+            Making it more effective and safer than blue pills, over-the-counter
+            supplements, pumps, or injections.
+          </p>
+          <p>
+            When Lori Greiner realized the revolution this product could bring
+            to ED treatment, she didn't hesitate and offered 1 million dollars
+            to become a partner in the company.
+          </p>
+          <p>
+            Today, thanks to Lori and Julia's efforts, Garaherb has already
+            impacted the lives of over
+            <span class="blue">150,000 men</span> who were able to get rid of
+            their limpness problems for good.
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="area-img">
+            <img
+              alt="Lori Greiner holding Garaherb product"
+              loading="lazy"
+              src="assets/img/garaherb.webp"
+            />
+            <div class="sh">Shark Tank Star</div>
+          </div>
+          <div class="content">
+            <blockquote>
+              "We are confident that Garaherb can put an end to Erectile
+              Dysfunction in the United States"
+            </blockquote>
+
+            <span>
+              <b>- Lori Greiner</b>
+              Shark Tank Investor
+            </span>
+          </div>
+        </div>
+      </section>
+      <section>
+        <h2>
+          But Why Does Garaherb Work So Well (And Even Outperform Viagra)?
+        </h2>
+
+        <video autoplay loop muted playsinline>
+          <source src="assets/img/gif1.mp4" type="video/mp4" />
+        </video>
+
+        <p>
+          Over the years, ultra-processed foods, preservatives, pesticides,
+          pollution, and chemical contaminants in our water create small
+          "cracks" in the artery walls—especially the penile arteries, which are
+          the most delicate in the body.
+        </p>
+        <p>
+          To fix this issue, the body develops cholesterol plaques to "patch"
+          these gaps.
+        </p>
+        <p>
+          However, as the decades go by, these cholesterol plaques build up more
+          and more.
+        </p>
+        <p>
+          And since the penile arteries are very small and narrow, this buildup
+          starts to clog the veins.
+        </p>
+        <p class="red">
+          Once that happens, blood flow is cut off. And without blood flow,
+          there's no way to achieve an erection.
+        </p>
+
+        <div class="card-2">
+          <h3>The Garaherb Solution</h3>
+
+          <video autoplay loop muted playsinline>
+            <source src="assets/img/gif2.mp4" type="video/mp4" />
+          </video>
+
+          <p>
+            To fix this,
+            <span class="blue">Garaherb</span> contains a patented combination
+            of 8 ingredients proven by Harvard, Stanford, and Oxford that enter
+            the arteries and remove 100% of the cholesterol plaques.
+          </p>
+          <p>
+            This way, blood starts flowing again and your erections
+            return—automatically!
+          </p>
+          <p style="color: #364153">
+            Not just temporary erections like the blue pills provide, but
+            instant, long-lasting, rock-hard erections, whenever you want—just
+            like in your 20s!
+          </p>
+          <p>
+            Just 1 capsule a day, after waking up, and Garaherb's powerful blend
+            of ingredients will start dissolving the toxic plaques blocking your
+            sexual performance.
+          </p>
+          <p>
+            Then, within a few weeks, your arteries will be clean, the blood
+            will be flowing again, and you'll see your buddy respond
+            instantly—on command!
+          </p>
+          <p class="center">
+            Garaherb is the only formula on the market with this mechanism. Not
+            even Viagra has this kind of power!
+          </p>
+        </div>
+        <div class="card-3">
+          <h3 class="center">Formula Tested and Approved By</h3>
+          <img src="assets/img/univ.png" alt="Garaherb" />
+        </div>
+      </section>
+      <section class="s3">
+        <h2>Garaherb vs. Viagra &amp; Other Supplements</h2>
+        <div class="grid-2">
+          <div class="ruim cd">
+            <h3 style="color: red">Viagra &amp; Other Supplements</h3>
+
+            <img
+              alt="Anatomy with Viagra"
+              loading="lazy"
+              src="assets/img/p1.webp"
+            />
+
+            <ul>
+              <li>
+                <svg
+                  stroke="red"
+                  fill="red"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                  ></path></svg
+                ><span
+                  >Dangerous Side-Effects (From head aches to blindness!)</span
+                >
+              </li>
+              <li>
+                <svg
+                  stroke="red"
+                  fill="red"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                  ></path></svg
+                ><span>Temporary Erection</span>
+              </li>
+              <li>
+                <svg
+                  stroke="red"
+                  fill="red"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                  ></path></svg
+                ><span>Must be used 1 hour before</span>
+              </li>
+              <li>
+                <svg
+                  stroke="red"
+                  fill="red"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                  ></path></svg
+                ><span>Requires frequent use</span>
+              </li>
+              <li>
+                <svg
+                  stroke="red"
+                  fill="red"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm121.6 313.1c4.7 4.7 4.7 12.3 0 17L338 377.6c-4.7 4.7-12.3 4.7-17 0L256 312l-65.1 65.6c-4.7 4.7-12.3 4.7-17 0L134.4 338c-4.7-4.7-4.7-12.3 0-17l65.6-65-65.6-65.1c-4.7-4.7-4.7-12.3 0-17l39.6-39.6c4.7-4.7 12.3-4.7 17 0l65 65.7 65.1-65.6c4.7-4.7 12.3-4.7 17 0l39.6 39.6c4.7 4.7 4.7 12.3 0 17L312 256l65.6 65.1z"
+                  ></path></svg
+                ><span>Does not promote ED reversal</span>
+              </li>
+            </ul>
+          </div>
+          <div class="bom cd" style="background: #eff6ff">
+            <h3 style="color: #1c398e">Garaherb</h3>
+
+            <img
+              alt="Anatomy with Garaherb"
+              loading="lazy"
+              src="assets/img/p2.webp"
+            />
+
+            <ul>
+              <li>
+                <svg
+                  stroke="green"
+                  fill="green"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  ></path></svg
+                ><span>No side effects</span>
+              </li>
+              <li>
+                <svg
+                  stroke="green"
+                  fill="green"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  ></path></svg
+                ><span
+                  >Long-lasting, rock-hard erections (up to 60 minutes!)</span
+                >
+              </li>
+              <li>
+                <svg
+                  stroke="green"
+                  fill="green"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  ></path></svg
+                ><span>Just 1 capsule in the morning</span>
+              </li>
+              <li>
+                <svg
+                  stroke="green"
+                  fill="green"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  ></path></svg
+                ><span>Daily use only during treatment</span>
+              </li>
+              <li>
+                <svg
+                  stroke="green"
+                  fill="green"
+                  stroke-width="0"
+                  viewBox="0 0 512 512"
+                  aria-hidden="true"
+                  height="1em"
+                  width="1em"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M504 256c0 136.967-111.033 248-248 248S8 392.967 8 256 119.033 8 256 8s248 111.033 248 248zM227.314 387.314l184-184c6.248-6.248 6.248-16.379 0-22.627l-22.627-22.627c-6.248-6.249-16.379-6.249-22.628 0L216 308.118l-70.059-70.059c-6.248-6.248-16.379-6.248-22.628 0l-22.627 22.627c-6.248 6.248-6.248 16.379 0 22.627l104 104c6.249 6.249 16.379 6.249 22.628.001z"
+                  ></path></svg
+                ><span
+                  >Promotes ED reversal with almost guaranteed results</span
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <a class="btn" href="#kits"
+          >Get your Garaherb today with a discount and free shipping!</a
+        >
+      </section>
+    </article>
+
+    <section class="bene">
+      <div class="container">
+        <h2>Garaherb - Shark Tank Edition</h2>
+        <h3>
+          The Only Doctor-Approved Formula And Backed By Shark Tank To Give Men
+          Long-Lasting, Rock-Hard Erections!
+        </h3>
+
+        <div class="content">
+          <img src="assets/img/product.png" loading="lazy" alt="Garaherb" />
+
+          <div>
+            <h4>100% Satisfaction Guaranteed</h4>
+            <ul>
+              <li>Stiffer and longer-lasting erections</li>
+              <li>Increased libido</li>
+              <li>Improved thickness and size</li>
+              <li>Nights of pleasure restored</li>
+              <li>Your lady satisfied in bed</li>
+              <li>Reignited passion in your marriage</li>
+              <li>Reversal of erectile dysfunction</li>
+              <li>Increased confidence and self-esteem</li>
+            </ul>
+
+            <a href="#kits" class="btn"
+              >Get your Garaherb today with a discount and free shipping!</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="depoimentos container">
+      <h2>
+        Over <b>150,000 Men</b> Reported Better Sexual Performance Using
+        Garaherb
+      </h2>
+
+      <ul>
+        <li>
+          <img src="assets/img/dep-1.png" alt="Garaherb" />
+
+          <div class="content">
+            <blockquote>
+              "Today I can satisfy her in bed every night and we are more in
+              love than ever"
+            </blockquote>
+
+            <div class="area-nome">
+              <strong>
+                Michael R.
+
+                <small>52 years old</small>
+              </strong>
+
+              <div class="veri">Verified</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="assets/img/dep-2.png" alt="Garaherb" />
+          <div class="content">
+            <blockquote>
+              "He gets hard in an instant and now makes me climax multiple
+              times."
+            </blockquote>
+
+            <div class="area-nome">
+              <strong>
+                Sarah M.
+
+                <small>48 years old</small>
+              </strong>
+
+              <div class="veri">Verified</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="assets/img/dep-3.png" alt="Garaherb" />
+
+          <div class="content">
+            <blockquote>
+              "Every night I get rock hard for 60 minutes. Honestly, I feel like
+              I'm in my 20s again"
+            </blockquote>
+
+            <div class="area-nome">
+              <strong>
+                David K.
+
+                <small>81 years old</small>
+              </strong>
+
+              <div class="veri">Verified</div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <img src="assets/img/dep-4.png" alt="Garaherb" />
+
+          <div class="content">
+            <blockquote>
+              "I'm 56 years old, I've tried everything... but nothing worked.
+              Garaherb changed my life!"
+            </blockquote>
+
+            <div class="area-nome">
+              <strong>
+                Robert T.
+
+                <small>56 years old</small>
+              </strong>
+
+              <div class="veri">Verified</div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <div class="aval">
+        <img src="assets/img/star.png" alt="" /><b>9.7/10</b> based on 23,812
+        reviews
+      </div>
+    </section>
+
+    <section class="area-kits pd" id="kits">
+      <div class="container">
+        <h2 class="title">Choose Your Garaherb Package</h2>
+
+        <p>
+          Select the package that best fits your needs and start experiencing
+          the benefits today.
+        </p>
+
+        <ul class="kits-grid">
+          <li class="kit-card" data-kit="two">
+            <div class="card-flag">Most Popular</div>
+
+            <div class="pack-heading">
+              <strong>2 BOTTLES</strong>
+              <span>60 DAY SUPPLY</span>
+            </div>
+
+            <div class="product-shot">
+              <img src="assets/img/mockup_2.webp" alt="2 Bottles" />
+            </div>
+
+            <div class="price-row">
+              <span class="price-value">$69</span>
+              <span class="per-bottle">PER BOTTLE</span>
+            </div>
+
+            <div class="benefits-wrap">
+              <ul class="benefits">
+              </ul>
+            </div>
+
+            <a class="cta-btn secondary" id="ViewContent" href="#subscribe-two">Order Now</a>
+
+            <div class="total">
+              Total: <s>$358</s> <span class="current">$158</span>
+            </div>
+            <div class="shipping-note">+ $9.99 SHIPPING!</div>
+          </li>
+
+          <li class="kit-card best" data-kit="three">
+            <div class="card-flag best-flag">* BEST VALUE - Limited Offer!</div>
+
+            <div class="pack-heading">
+              <strong>6 BOTTLES</strong>
+              <span>90 DAY SUPPLY</span>
+            </div>
+
+            <div class="product-shot">
+              <img src="assets/img/03.webp" alt="3 Bottles" />
+            </div>
+
+            <div class="price-row">
+              <span class="price-value">$49</span>
+              <span class="per-bottle">PER BOTTLE</span>
+            </div>
+
+            <div class="benefits-wrap">
+              <ul class="benefits">
+                <li>You Save $150!</li>
+                <li>Free Shipping</li>
+                <li>60-Day Money Back Guarantee</li>
+              </ul>
+            </div>
+
+            <a class="cta-btn primary" id="ViewContent" href="#subscribe-three">ORDER NOW</a>
+            <div class="secure-note">Secure Checkout - 256-bit SSL</div>
+
+            <div class="total">
+              Total: <s>$1074</s> <span class="current">$294</span>
+            </div>
+            <div class="shipping-note">+ FREE SHIPPING!</div>
+          </li>
+
+          <li class="kit-card" data-kit="one">
+            <div class="card-flag">Basic</div>
+
+            <div class="pack-heading">
+              <strong>3 BOTTLE</strong>
+              <span>30 DAY SUPPLY</span>
+            </div>
+
+            <div class="product-shot">
+              <img src="assets/img/01.webp" alt="1 Bottle" />
+            </div>
+
+            <div class="price-row">
+              <span class="price-value">$69</span>
+              <span class="per-bottle">PER BOTTLE</span>
+            </div>
+
+            <div class="benefits-wrap">
+              <ul class="benefits">
+              </ul>
+            </div>
+
+            <a class="cta-btn secondary" id="ViewContent" href="#subscribe-one">Order Now</a>
+
+            <div class="total">
+              Total: <s>$537</s> <span class="current">$207</span>
+            </div>
+            <div class="shipping-note">+ FREE SHIPPING!</div>
+          </li>
+        </ul>
+
+        <span class="dados"
+          >FREE SHIPPING | 3-5 BUSINESS DAYS | DISCREET PACKAGING | 60 Days
+          Satisfaction Guarantee</span
+        >
+      </div>
+    </section>
+
+    <section class="garantia">
+      <div class="container">
+        <img src="assets/img/selo.png" alt="Garaherb" />
+
+        <h2>100% Satisfaction Guaranteed</h2>
+
+        <p>
+          Garaherb® is backed by a 100% satisfaction guarantee for a full 60
+          days from your purchase. If you are not completely satisfied with the
+          product, its results, or your experience, just let us know by sending
+          an email to support@garaherb.com. That's right, simply return all the
+          products, including the empty bottles, anytime within 60 days of your
+          purchase to be eligible for our guarantee.
+        </p>
+
+        <p>
+          That is the trust and confidence we put into Garaherb®: we stand
+          behind your results with our commitment.
+        </p>
+
+        <a href="#kits" class="btn"
+          >Get your Garaherb today with a discount and free shipping!</a
+        >
+      </div>
+    </section>
+
+    <section class="urgencia">
+      <div class="container">
+        <h2>Don't Wait Another Second</h2>
+
+        <p>
+          Why wait when you have a scientifically proven formula with hundreds
+          of thousands of real results proving it really works in fighting ED?
+        </p>
+
+        <p>
+          The only thing that will happen without Garaherb is going back to
+          failing in the bedroom, getting embarrassed in front of a woman,
+          seeing the frustration in her eyes, being forced to resort to blue
+          pills, and losing even more nights of pleasure that could be enjoyed
+          starting today.
+        </p>
+        <p>
+          But with Garaherb, you get back those instant, rock-hard erections
+          that leave your woman weak in the knees, wild nights become part of
+          your routine, the fire in your relationship is rekindled, your
+          confidence increases, you gain more respect, the fights at home end,
+          and you become a real man again. A life full of sexual intimacy is
+          always better.
+        </p>
+        <p>
+          <b
+            >So don't waste any more time and get your Garaherb package right
+            now!
+          </b>
+        </p>
+
+        <a href="#kits" class="btn"
+          >Get your Garaherb today with a discount and free shipping!</a
+        >
+      </div>
+    </section>
+
+    <section class="area-kits pd">
+      <div class="container">
+        <h2 class="title">Choose Your Garaherb Package</h2>
+
+        <p>
+          Select the package that best fits your needs and start experiencing
+          the benefits today.
+        </p>
+
+        <ul class="kits-grid">
+          <li class="kit-card" data-kit="two">
+            <div class="card-flag">Most Popular</div>
+
+            <div class="pack-heading">
+              <strong>2 BOTTLES</strong>
+              <span>60 DAY SUPPLY</span>
+            </div>
+
+            <div class="product-shot">
+              <img src="assets/img/mockup_2.webp" alt="2 Bottles" />
+            </div>
+
+            <div class="price-row">
+              <span class="price-value">$79</span>
+              <span class="per-bottle">PER BOTTLE</span>
+            </div>
+
+            <div class="benefits-wrap">
+              <ul class="benefits">
+              </ul>
+            </div>
+
+            <a class="cta-btn secondary" id="ViewContent" href="#subscribe-two">Order Now</a>
+
+            <div class="total">
+              Total: <s>$178</s> <span class="current">$138</span>
+            </div>
+            <div class="shipping-note">+ FREE SHIPPING!</div>
+          </li>
+
+          <li class="kit-card best" data-kit="three">
+            <div class="card-flag best-flag">* BEST VALUE - Limited Offer!</div>
+
+            <div class="pack-heading">
+              <strong>6 BOTTLES</strong>
+              <span>90 DAY SUPPLY</span>
+            </div>
+
+            <div class="product-shot">
+              <img src="assets/img/03.webp" alt="3 Bottles" />
+            </div>
+
+            <div class="price-row">
+              <span class="price-value">$49</span>
+              <span class="per-bottle">PER BOTTLE</span>
+            </div>
+
+            <div class="benefits-wrap">
+              <ul class="benefits">
+                <li>You Save $150!</li>
+                <li>Free Shipping</li>
+                <li>60-Day Money Back Guarantee</li>
+              </ul>
+            </div>
+
+            <a class="cta-btn primary" id="ViewContent" href="#subscribe-three">ORDER NOW</a>
+            <div class="secure-note">Secure Checkout - 256-bit SSL</div>
+
+            <div class="total">
+              Total: <s>$297</s> <span class="current">$147</span>
+            </div>
+            <div class="shipping-note">+ FREE SHIPPING!</div>
+          </li>
+
+          <li class="kit-card" data-kit="one">
+            <div class="card-flag">Basic</div>
+
+            <div class="pack-heading">
+              <strong>3 BOTTLE</strong>
+              <span>30 DAY SUPPLY</span>
+            </div>
+
+            <div class="product-shot">
+              <img src="assets/img/01.webp" alt="1 Bottle" />
+            </div>
+
+            <div class="price-row">
+              <span class="price-value">$69</span>
+              <span class="per-bottle">PER BOTTLE</span>
+            </div>
+
+            <div class="benefits-wrap">
+              <ul class="benefits">
+              </ul>
+            </div>
+
+            <a class="cta-btn secondary" id="ViewContent" href="#subscribe-one">Order Now</a>
+
+            <div class="total">
+              Total: <s>$129</s> <span class="current">$89</span>
+            </div>
+            <div class="shipping-note">+ FREE SHIPPING!</div>
+          </li>
+        </ul>
+
+        <span class="dados"
+          >FREE SHIPPING | 3-5 BUSINESS DAYS | DISCREET PACKAGING | 60 Days
+          Satisfaction Guarantee</span
+        >
+      </div>
+    </section>
+
+    <section class="faq">
+      <div class="container">
+        <h2 class="title">Frequently Asked Questions</h2>
+
+        <div class="accordion">
+          <div class="item">
+            <div class="header">
+              <p>
+                I'm 63 years old, I've tried everything: pills, penis pumps,
+                testosterone supplements, but nothing worked. Does Garaherb work
+                for me too?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                Look, no matter how old you are, how long you've been suffering
+                from erectile dysfunction or what you've tried, the truth is
+                that your erectile dysfunction problem is caused by a very
+                simple factor: Cholesterol plaques clogging up the arteries in
+                the penis. This prevents blood flow... And consequently, you
+                can't get erections. Well, that's exactly what Garaherb fixes...
+                Garaherb contains a blend of eight ingredients capable of
+                removing these fatty plaques, boosting blood flow by 324% and
+                protecting your body so that you never suffer from it again...
+                Which will give you hard, powerful erections whenever you want
+                them. That's why Garaherb works for anyone, regardless of their
+                age, what they've experienced or how long they've suffered from
+                erectile dysfunction. Garaherb will therefore work for you.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>
+                How long will it take for me to get back to normal erections?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                Look, it's difficult to say this because each person's body is
+                different, but generally, in the 1st week you start to feel more
+                energy, libido and mental clarity. Then, between the 2nd and 3rd
+                week, you start to notice firm erections appearing
+                spontaneously... Now, when you'll get firm, hard erections again
+                depend a lot on your body. Some people can get rid of ED in 8
+                weeks, while others may take longer. This will depend on how
+                clogged the arteries in your penis are... And you can't know
+                that without a battery of tests. That's why we recommend that
+                anyone buys the three-pack... Because this will ensure that you
+                have enough stock to permanently eliminate toxic plaques,
+                restore blood flow and recover your erections forever.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>
+                You said the delivery time was up to 5 days, but it arrived at
+                my house in just 2. Are you speeding up deliveries?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                Actually, the fast delivery happens because you chose the
+                3-bottle option. Our shipping team tends to prioritize customers
+                who purchase the 3-month package. That's why it's very common
+                for our customers to receive Garaherb well before the expected
+                delivery time.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>
+                Will I be able to get an erection using Garaherb even if I don't
+                change my lifestyle?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                Without a doubt. Your lifestyle does not affect Garaherb's
+                results in any way. It doesn't matter what you drink, eat, your
+                genetics, or even if you watch pornography. The results of
+                Garaherb on your body will be the same because you will be
+                addressing the root cause of all erection problems.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>
+                I bought Garaherb for my husband 20 days ago, and he has been
+                treating me in bed like never before. He is 56 years old. Does
+                Garaherb have any contraindications?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                Unlike 99% of supplements and pills sold in pharmacies or
+                online... Garaherb is made with 100% natural ingredients, has no
+                side effects, and is not addictive. Therefore, it can be taken
+                by any man. It's even recommended for men who suffer from high
+                blood pressure, cardiovascular diseases, and diabetes... Because
+                it helps expel toxins from the bloodstream, balancing the
+                essential hormones for male health.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>
+                What will appear on my credit card statement, and how will the
+                package arrive?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                We know that our customers value discretion and privacy. That's
+                why the only item that will appear on your statement will be the
+                name of the company responsible for the billing, which uses the
+                same security system as the largest banks in America. The
+                package that will arrive at your registered address is also very
+                discreet, so you can rest assured about that.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>
+                I've been taking Garaherb daily for twelve days, and I'm lasting
+                over an hour with my wife. Is it possible to increase that time?
+              </p>
+            </div>
+            <div class="body">
+              <p>
+                Definitely, you're still in treatment. Many customers report
+                that, with 3 months of using Garaherb, they can maintain a
+                relationship for up to 2 uninterrupted hours. Keep using
+                Garaherb and thank me later.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>Can I buy Garaherb in stores?</p>
+            </div>
+            <div class="body">
+              <p>
+                This time, the answer is no. To maintain our high quality
+                standards while keeping prices low... We decided to eliminate
+                the middleman and deliver Garaherb directly to you. And now,
+                with this special offer for new customers, you can get it at the
+                lowest price we've ever offered.
+              </p>
+            </div>
+          </div>
+
+          <div class="item">
+            <div class="header">
+              <p>I liked it! I want to start, how do I do it?</p>
+            </div>
+            <div class="body">
+              <p>
+                Excellent! This will be the best decision of your life. Just
+                choose your Garaherb package by clicking the button below the
+                video. Once your payment is approved, we will send your order
+                for dispatch immediately. This way, in just a few days, your
+                Garaherb package will arrive at your house in discreet and
+                private packaging. So, go ahead and secure your package right
+                now. I'm sure this will be the best decision of your life.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#kits" class="btn"
+          >Get your Garaherb today with a discount and free shipping!</a
+        >
+      </div>
+    </section>
+    </div><!-- end delayed-content -->
+<footer>
+      <div class="container">
+        <div>
+          <section class="r1">
+            <h2>Advertising Disclosure</h2>
+            <div>
+              <p>
+                This site may contain advertisements from Facebook/Meta and
+                Google Ads. These platforms may collect information about your
+                interaction with ads for targeting and analytics purposes. You
+                can manage ad preferences in your account settings.
+              </p>
+            </div>
+          </section>
+          <section>
+            <h2>Medical and Legal Disclaimer</h2>
+            <div>
+              <p>
+                The information we provide is not intended to replace
+                consultation with a qualified medical professional. We encourage
+                you to inform your doctor about any changes you make to your
+                lifestyle and discuss them with him or her. For questions or
+                concerns about any medical conditions you may have, please
+                contact your doctor. The content of the website and the product
+                for sale are based on the author's opinion and are provided "AS
+                IS" and "AS AVAILABLE". You should conduct your own research and
+                verify the information with other sources when researching
+                health issues and always review the information carefully with
+                your healthcare professional before using any of the protocols
+                presented on this website and/or the product sold here.
+              </p>
+              <p>
+                Testimonials, case studies, and examples found on this page are
+                results submitted to us by our customers and may not reflect the
+                typical buyer's experience, may not apply to an average person,
+                and are not intended to represent or guarantee that any person
+                will achieve the same or similar results. Some names and
+                personally identifying information on this site have been
+                changed to protect individuals' privacy.
+              </p>
+              <p>
+                The statements on this website have not been evaluated by the
+                Food and Drug Administration. This product is not intended to
+                diagnose, treat, cure, or prevent any disease. The information
+                provided by this website or this company is not a substitute for
+                a face-to-face consultation with your physician and should not
+                be construed as individual medical advice.
+              </p>
+              <p>
+                The testimonials on this website are individual cases and do not
+                guarantee that you will get the same results. All content,
+                including text, graphics, images, and information, contained on
+                or available through this website is for general information
+                purposes only. You are encouraged to confirm any information
+                obtained from or through this website with other sources and
+                review all information regarding any medical condition or
+                treatment with your physician.
+              </p>
+              <p>
+                Never disregard professional medical advice or delay seeking
+                medical treatment because of something you have read on or
+                accessed through this website.
+              </p>
+            </div>
+          </section>
+        </div>
+        <div>
+          <div class="menu">
+            <p>© 2025 Garaherb. All rights reserved.</p>
+            <nav>
+              <ul>
+                <li>
+                  <a href="../privacy.html">Privacy Policy</a>
+                </li>
+                <li>•</li>
+                <li>
+                  <a href="../terms.html">Terms of Service</a>
+                </li>
+                <li>•</li>
+                <li>
+                  <a href="../contact.html">Contact</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        const kitOptions = {
+          two: {
+            subscribe: {
+              price: "57",
+              total: { original: "$358", current: "$158" },
+              shipping: "+ FREE SHIPPING!",
+              benefits: [
+                "Save 17% with subscription",
+                "Free shipping on all orders",
+                "Auto-delivery every 60 days",
+                "Cancel anytime",
+              ],
+              checkout: "https://garaherb.mycartpanda.com/checkout/193383598:1?afid=RDytNEwHNl&cid=[cmc_vid]&sck=[cmc_vid]",
+            },
+            "one-time": {
+              price: "79",
+              total: { original: "$358", current: "$158" },
+              shipping: "+ $9.99 SHIPPING!",
+              benefits: [],
+              checkout: "https://garaherb.mycartpanda.com/checkout/193383598:1?afid=RDytNEwHNl&cid=[cmc_vid]&sck=[cmc_vid]",
+            },
+          },
+          three: {
+            subscribe: {
+              price: "39",
+              total: { original: "$1074", current: "$294" },
+              shipping: "+ FREE SHIPPING!",
+              benefits: [
+                "Save 20% with subscription",
+                "Free shipping on all orders",
+                "Cancel anytime",
+                "Auto-delivery every 90 days",
+              ],
+              checkout: "https://garaherb.mycartpanda.com/checkout/193383600:1?afid=RDytNEwHNl&cid=[cmc_vid]&sck=[cmc_vid]",
+            },
+            "one-time": {
+              price: "49",
+              total: { original: "$1074", current: "$294" },
+              shipping: "+ FREE SHIPPING!",
+              benefits: [
+                "You Save $150!",
+                "Free Shipping",
+                "60-Day Money Back Guarantee",
+              ],
+              checkout: "https://garaherb.mycartpanda.com/checkout/193383600:1?afid=RDytNEwHNl&cid=[cmc_vid]&sck=[cmc_vid]",
+            },
+          },
+          one: {
+            subscribe: {
+              price: "79",
+              total: { original: "$537", current: "$207" },
+              shipping: "+ FREE SHIPPING!",
+              benefits: [
+                "Save 15% with subscription",
+                "Auto-delivery every 30 days",
+                "Cancel anytime",
+              ],
+              checkout: "https://garaherb.mycartpanda.com/checkout/193383599:1?afid=RDytNEwHNl&cid=[cmc_vid]&sck=[cmc_vid]",
+            },
+            "one-time": {
+              price: "69",
+              total: { original: "$537", current: "$207" },
+              shipping: "+ FREE SHIPPING!",
+              benefits: [],
+              checkout: "https://garaherb.mycartpanda.com/checkout/193383599:1?afid=RDytNEwHNl&cid=[cmc_vid]&sck=[cmc_vid]",
+            },
+          },
+        };
+
+        const buildBenefits = (listEl, benefits) => {
+          listEl.innerHTML = "";
+
+          benefits.forEach((item) => {
+            const li = document.createElement("li");
+            li.textContent = item;
+            listEl.appendChild(li);
+          });
+        };
+
+        // Function to add ALL URL parameters (including ALL UTM parameters) to any URL
+        const addParamsToUrl = (url) => {
+          // Use the global function if available, otherwise create a local one
+          if (typeof window.addAllParamsToUrl === 'function') {
+            return window.addAllParamsToUrl(url);
+          }
+          
+          const currentParams = new URLSearchParams(window.location.search);
+          if (currentParams.toString() === "") return url;
+
+          try {
+            // Check if URL contains ClickMagick placeholders that need to be preserved
+            const hasClickMagickPlaceholders = url.includes('[cmc_vid]') || url.includes('[cmc_') || url.includes('[clkm]');
+            
+            if (hasClickMagickPlaceholders) {
+              // Manually build URL to preserve ClickMagick placeholders
+              const urlParts = url.split('?');
+              const baseUrl = urlParts[0];
+              const existingParams = urlParts[1] || '';
+              
+              // Parse existing params manually to preserve placeholders
+              const existingParamPairs = existingParams ? existingParams.split('&') : [];
+              const existingKeys = new Set();
+              existingParamPairs.forEach(pair => {
+                const key = pair.split('=')[0];
+                existingKeys.add(key);
+              });
+              
+              // Build new params string
+              const newParams = [];
+              existingParamPairs.forEach(pair => newParams.push(pair));
+              
+              // Add new params that don't exist
+              currentParams.forEach((value, key) => {
+                if (!existingKeys.has(key)) {
+                  newParams.push(key + '=' + encodeURIComponent(value));
+                }
+              });
+              
+              return baseUrl + (newParams.length > 0 ? '?' + newParams.join('&') : '');
+            } else {
+              // Use standard URL parsing for URLs without ClickMagick placeholders
+              const urlObj = new URL(url, window.location.origin);
+              currentParams.forEach((value, key) => {
+                if (!urlObj.searchParams.has(key)) {
+                  urlObj.searchParams.set(key, value);
+                }
+              });
+              return urlObj.toString();
+            }
+          } catch (e) {
+            // Fallback: append parameters as query string
+            const separator = url.includes("?") ? "&" : "?";
+            return url + separator + currentParams.toString();
+          }
+        };
+
+        document.querySelectorAll(".kit-card").forEach((card) => {
+          const key = card.dataset.kit;
+          const price = card.querySelector(".price-value");
+          const totalOriginal = card.querySelector(".total s");
+          const totalCurrent = card.querySelector(".total .current");
+          const shipping = card.querySelector(".shipping-note");
+          const benefitsWrap = card.querySelector(".benefits-wrap");
+          const benefitsList = card.querySelector(".benefits");
+          const cta = card.querySelector(".cta-btn");
+
+          const applyState = () => {
+            const data = kitOptions[key]["one-time"];
+            price.textContent = `$${data.price}`;
+            totalOriginal.textContent = data.total.original;
+            totalCurrent.textContent = data.total.current;
+            shipping.textContent = data.shipping;
+
+            // Preserve ClickMagick click ID if it already exists
+            let checkoutUrl = data.checkout;
+            const currentHref = cta.getAttribute('href') || cta.href;
+            
+            // Extract click ID from current href if it exists and is not a placeholder
+            if (currentHref && currentHref.includes('cid=') && !currentHref.includes('[cmc_vid]')) {
+              try {
+                const currentUrl = new URL(currentHref, window.location.origin);
+                const currentCid = currentUrl.searchParams.get('cid');
+                const currentSck = currentUrl.searchParams.get('sck');
+                
+                // If we have a real click ID (not placeholder), preserve it
+                if (currentCid && currentCid !== '[cmc_vid]' && currentCid.startsWith('cmc')) {
+                  // Replace [cmc_vid] placeholders in the new checkout URL with the preserved click ID
+                  checkoutUrl = checkoutUrl.replace(/\[cmc_vid\]/g, currentCid);
+                }
+              } catch (e) {
+                // If URL parsing fails, try manual extraction
+                const cidMatch = currentHref.match(/[?&]cid=([^&]+)/);
+                const sckMatch = currentHref.match(/[?&]sck=([^&]+)/);
+                
+                if (cidMatch && cidMatch[1] && cidMatch[1] !== '[cmc_vid]' && cidMatch[1].startsWith('cmc')) {
+                  checkoutUrl = checkoutUrl.replace(/\[cmc_vid\]/g, decodeURIComponent(cidMatch[1]));
+                }
+              }
+            }
+
+            // Adiciona parâmetros da URL ao checkout
+            checkoutUrl = addParamsToUrl(checkoutUrl);
+            cta.href = checkoutUrl;
+            card.dataset.activeLink = checkoutUrl;
+
+            if (data.benefits.length) {
+              benefitsWrap.classList.remove("empty");
+              buildBenefits(benefitsList, data.benefits);
+            } else {
+              benefitsWrap.classList.add("empty");
+              benefitsList.innerHTML = "";
+            }
+          };
+
+          card.addEventListener("click", (event) => {
+            const link =
+              card.dataset.activeLink || (cta ? cta.getAttribute("href") : "");
+            if (link) {
+              window.location.href = link;
+            }
+          });
+
+          if (cta) {
+            cta.addEventListener("click", (event) => event.stopPropagation());
+          }
+
+          applyState();
+        });
+      })();
+    </script>
+
+    <script>
+      document
+        .querySelectorAll(".accordion .item .header")
+        .forEach((header) => {
+          header.addEventListener("click", function () {
+            const item = this.parentNode;
+            if (item.classList.contains("active")) {
+              item.classList.remove("active");
+            } else {
+              document
+                .querySelectorAll(".accordion .item")
+                .forEach((i) => i.classList.remove("active"));
+              item.classList.add("active");
+            }
+          });
+        });
+
+    </script>
+  
+    <!-- Video Delay Control Script -->
+    <script src="assets/js/video-delay-control.js"></script>
+    <script>
+      // Initialize video delay control
+      // Automatically uses the first smartplayer instance (no videoId needed)
+      window.VIDEO_DELAY_CONFIG = {
+        secondsToDisplay: 1088, // Seconds of video playback before revealing content (1088000ms)
+        delayedContentSelector: '#delayed-content', // Selector for delayed content container
+        delayClass: 'atomicat-delay', // Class to remove from delayed elements
+        showClass: 'show', // Class to add when revealing
+        storageKey: 'videoDelayDisplayed', // localStorage key
+        scrollToId: null, // Optional: ID of element to scroll to after reveal
+        maxAttempts: 20, // Max attempts to find video player
+        retryDelay: 1000, // Delay between retry attempts (ms)
+        debug: false // Set to true for console logging
+      };
+      
+      // Initialize when script is loaded
+      if (typeof initVideoDelayControl !== 'undefined') {
+        initVideoDelayControl(window.VIDEO_DELAY_CONFIG);
+      }
+    </script>
+
+  </body>
+</html>
+
+
