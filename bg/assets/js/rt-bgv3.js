@@ -249,17 +249,6 @@
     }
 
     /**
-     * Append clickid to the current page URL
-     */
-    function patchPageUrl(clickId) {
-        var url = new URL(window.location.href);
-        if (!url.searchParams.has('clickid')) {
-            url.searchParams.set('clickid', clickId);
-            window.history.replaceState({}, '', url.toString());
-        }
-    }
-
-    /**
      * Main initialization function
      */
     function init() {
@@ -271,7 +260,6 @@
             captureMetaPixelParams();
             initTracking(clickId);
             setupViewContentHandler(clickId);
-            patchPageUrl(clickId);
         } else {
             console.log('[VSL Tracker] No ClickId found');
         }
