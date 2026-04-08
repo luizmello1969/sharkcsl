@@ -37,43 +37,35 @@
     }
 
     /**
-     * Find parameter by length (20-40 characters)
-     */
-    function findParameterByLength(searchParams) {
-        for (const [key, value] of searchParams.entries()) {
-            if (typeof value === 'string' && value.length >= 20 && value.length <= 40) {
-                return value;
-            }
-        }
-        return null;
-    }
-
-    /**
      * Find click ID using RedTrack logic
      */
     function findClickId(urlObj) {
-        // 1. Try cookie
+        // 1. Try cookie (set by unilpclick.js)
         const cookieId = getCookie('rtkclickid-store');
-        if (cookieId) {
+        if (cookieId && cookieId !== 'undefined') {
             console.log("[VSL Tracker] Tracking ID found in cookie: " + cookieId);
             return cookieId;
         }
-        // 2. Try known URL params
+        // 2. Try URL params (only explicit clickid params)
         const searchParams = urlObj.searchParams;
-        const knownParamNames = ['rtkcid', 'clickid', 'cid', 'subid', 'tid'];
+        const knownParamNames = ['rtkcid', 'clickid'];
         for (let i = 0; i < knownParamNames.length; i++) {
             if (searchParams.has(knownParamNames[i])) {
                 const paramValue = searchParams.get(knownParamNames[i]);
-                console.log(`[VSL Tracker] Tracking ID found in param ${knownParamNames[i]}: ${paramValue}`);
-                return paramValue;
+                if (paramValue && paramValue !== 'undefined') {
+                    console.log(`[VSL Tracker] Tracking ID found in param ${knownParamNames[i]}: ${paramValue}`);
+                    return paramValue;
+                }
             }
         }
-        // 3. Try any param by length
-        const potentialId = findParameterByLength(searchParams);
-        if (potentialId) {
-            console.log("[VSL Tracker] Potential tracking ID found by length: " + potentialId);
-            return potentialId;
-        }
+        // 3. Try sessionStorage (set by unilpclick.js)
+        try {
+            const sessionId = sessionStorage.getItem('rtkclickid');
+            if (sessionId && sessionId !== 'undefined') {
+                console.log("[VSL Tracker] Tracking ID found in session: " + sessionId);
+                return sessionId;
+            }
+        } catch (e) {}
         return null;
     }
 
