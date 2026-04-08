@@ -78,5 +78,7 @@ if (menuBtn && mainNav) {
   });
 }
 
-document.getElementById("year").textContent = new Date().getFullYear();
-document.getElementById("copyYear").textContent = new Date().getFullYear();
+var yearEl = document.getElementById("year");
+if (yearEl) yearEl.textContent = new Date().getFullYear();
+var copyYearEl = document.getElementById("copyYear");
+if (copyYearEl) copyYearEl.textContent = new Date().getFullYear();
