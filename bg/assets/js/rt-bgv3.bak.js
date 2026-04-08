@@ -18,6 +18,10 @@
     console.log("[VSL Tracker] VSL_Lead_SEC:", VSL_Lead_SEC);
     console.log("[VSL Tracker] VSL_Pitch_SEC:", VSL_Pitch_SEC);
 
+    // Meta Pixel parameters (captured after pixel fires)
+    let v_fbc = '';
+    let v_fbp = '';
+
     // Event tracking flags
     let events = {
         vslPlay: false,
@@ -34,6 +38,23 @@
         const parts = value.split(`; ${name}=`);
         if (parts.length === 2) return parts.pop().split(';').shift();
         return null;
+    }
+
+    /**
+     * Capture Meta Pixel fbp and fbc from cookies
+     */
+    function captureMetaPixelParams() {
+        v_fbp = getCookie('_fbp') || '';
+        v_fbc = getCookie('_fbc') || '';
+        // Also check URL for fbclid to construct fbc if cookie is missing
+        if (!v_fbc) {
+            const fbclid = new URL(window.location.href).searchParams.get('fbclid');
+            if (fbclid) {
+                v_fbc = 'fb.1.' + Date.now() + '.' + fbclid;
+            }
+        }
+        if (v_fbp) console.log('[VSL Tracker] v_fbp:', v_fbp);
+        if (v_fbc) console.log('[VSL Tracker] v_fbc:', v_fbc);
     }
 
     /**
@@ -85,18 +106,24 @@
 
         let postbackUrl = '';
 
+        // Re-capture in case Meta Pixel set cookies after init
+        captureMetaPixelParams();
+
+        const fbParams = (v_fbp ? `&sub19=${encodeURIComponent(v_fbp)}` : '') +
+                         (v_fbc ? `&sub20=${encodeURIComponent(v_fbc)}` : '');
+
         switch (eventType) {
             case 'VSL_Play':
-                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=VSL_Play&sub18=${clickId}&status=approved`;
+                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=VSL_Play&sub18=${clickId}&status=approved${fbParams}`;
                 break;
             case 'VSL_Lead':
-                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=VSL_Lead&sub18=${clickId}&status=approved`;
+                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=VSL_Lead&sub18=${clickId}&status=approved${fbParams}`;
                 break;
             case 'VSL_Pitch':
-                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=VSL_Pitch&sub18=${clickId}&status=approved`;
+                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=VSL_Pitch&sub18=${clickId}&status=approved${fbParams}`;
                 break;
             case 'ViewContent':
-                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=ViewContent&sub18=${clickId}&status=approved`;
+                postbackUrl = `${POSTBACK_BASE}?clickid=${clickId}&ptoken=${POSTBACK_TOKEN}&type=ViewContent&sub18=${clickId}&status=approved${fbParams}`;
                 break;
             default:
                 console.error('[VSL Tracker] Unknown event type:', eventType);
@@ -230,6 +257,7 @@
 
         if (clickId) {
             console.log('[VSL Tracker] ClickId found:', clickId);
+            captureMetaPixelParams();
             initTracking(clickId);
             setupViewContentHandler(clickId);
         } else {
