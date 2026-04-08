@@ -4,6 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <script src="https://assets.balanceyourlevels.com/scripts/src-replace.js"></script>
+
     <!-- Google Tag Manager -->
     <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
     new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
@@ -11,56 +13,6 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W2K59BZ');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Resolve ClickMagick bracket placeholders to real UTM values -->
-    <script>
-    (function() {
-      var p = new URLSearchParams(window.location.search);
-
-      // Map bracket placeholders to actual URL params
-      var resolve = {
-        '[utmsource]':   p.get('utm_source')   || '',
-        '[utmcampaign]': p.get('utm_campaign') || '',
-        '[utmmedium]':   p.get('utm_medium')   || '',
-        '[utmsrc]':      p.get('src')           || '',
-        '[utmterm]':     p.get('utm_term')      || '',
-        '[utmcontent]':  p.get('utm_content')   || ''
-      };
-
-      function patchLinks() {
-        document.querySelectorAll('a[href*="buygoods.com/secure/checkout"]').forEach(function(a) {
-          var href = a.getAttribute('href');
-          // Resolve bracket placeholders
-          for (var placeholder in resolve) {
-            if (href.indexOf(placeholder) !== -1) {
-              href = href.split(placeholder).join(encodeURIComponent(resolve[placeholder]));
-            }
-          }
-          // Deduplicate parameters - keep first occurrence only
-          var parts = href.split('?');
-          if (parts[1]) {
-            var seen = {};
-            var unique = [];
-            parts[1].split('&').forEach(function(pair) {
-              var key = pair.split('=')[0];
-              if (!seen[key]) {
-                seen[key] = true;
-                unique.push(pair);
-              }
-            });
-            href = parts[0] + '?' + unique.join('&');
-          }
-          a.setAttribute('href', href);
-        });
-      }
-
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', patchLinks);
-      } else {
-        patchLinks();
-      }
-    })();
-    </script>
 
     <title>BG_SHARK_L1_FB</title>
 
