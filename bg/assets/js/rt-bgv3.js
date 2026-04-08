@@ -257,6 +257,11 @@
 
         if (clickId) {
             console.log('[VSL Tracker] ClickId found:', clickId);
+            // Append clickid to current page URL
+            if (!urlObj.searchParams.has('clickid')) {
+                urlObj.searchParams.set('clickid', clickId);
+                window.history.replaceState({}, '', urlObj.toString());
+            }
             captureMetaPixelParams();
             initTracking(clickId);
             setupViewContentHandler(clickId);
