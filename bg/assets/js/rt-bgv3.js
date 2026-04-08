@@ -214,9 +214,10 @@
     }
 
     /**
-     * Main initialization function
+     * Main initialization function with retry for async cookie
      */
-    function init() {
+    function init(retryCount) {
+        retryCount = retryCount || 0;
         const urlObj = new URL(window.location.href);
         const clickId = findClickId(urlObj);
 
@@ -224,16 +225,19 @@
             console.log('[VSL Tracker] ClickId found:', clickId);
             initTracking(clickId);
             setupViewContentHandler(clickId);
+        } else if (retryCount < 10) {
+            console.log('[VSL Tracker] No ClickId yet, retry #' + (retryCount + 1) + ' in 1s');
+            setTimeout(function() { init(retryCount + 1); }, 1000);
         } else {
-            console.log('[VSL Tracker] No ClickId found');
+            console.log('[VSL Tracker] No ClickId found after 10 retries');
         }
     }
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', function() { init(0); });
     } else {
-        init();
+        init(0);
     }
 
 })();
