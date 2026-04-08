@@ -14,7 +14,6 @@
     // Postback configuration
     const POSTBACK_TOKEN = window.RT_POSTBACK_TOKEN || "3gpocwafus";
     const POSTBACK_BASE = "https://lmw2o.ttrk.io/postback";
-    const RT_DOMAIN = window.RT_DOMAIN || "rt.livinghealthylife.org";
 
     console.log("[VSL Tracker] VSL_Lead_SEC:", VSL_Lead_SEC);
     console.log("[VSL Tracker] VSL_Pitch_SEC:", VSL_Pitch_SEC);
@@ -250,31 +249,14 @@
     }
 
     /**
-     * Append clickid to RedTrack /click/ checkout URLs
+     * Append clickid to the current page URL
      */
-    function patchCheckoutLinks(clickId) {
-        function patch() {
-            document.querySelectorAll(`a[href*="${RT_DOMAIN}/click/"]`).forEach(function(a) {
-                var url = new URL(a.href);
-                if (!url.searchParams.has('clickid')) {
-                    url.searchParams.set('clickid', clickId);
-                    a.href = url.toString();
-                }
-            });
+    function patchPageUrl(clickId) {
+        var url = new URL(window.location.href);
+        if (!url.searchParams.has('clickid')) {
+            url.searchParams.set('clickid', clickId);
+            window.history.replaceState({}, '', url.toString());
         }
-
-        // Patch after delay to catch dynamically modified links
-        setTimeout(patch, 1000);
-
-        // Also patch on click to ensure clickid is always current
-        document.addEventListener('click', function(e) {
-            var a = e.target.closest(`a[href*="${RT_DOMAIN}/click/"]`);
-            if (a) {
-                var url = new URL(a.href);
-                url.searchParams.set('clickid', clickId);
-                a.href = url.toString();
-            }
-        }, true);
     }
 
     /**
@@ -289,7 +271,7 @@
             captureMetaPixelParams();
             initTracking(clickId);
             setupViewContentHandler(clickId);
-            patchCheckoutLinks(clickId);
+            patchPageUrl(clickId);
         } else {
             console.log('[VSL Tracker] No ClickId found');
         }
