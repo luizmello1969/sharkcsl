@@ -786,5 +786,53 @@
       // Inicia o contador quando a página carregar
       initCountdown();
     </script>
+
+    <!-- Deduplicate checkout link params (runs last, after all scripts) -->
+    <script>
+    (function() {
+      function dedupLinks() {
+        document.querySelectorAll('a[href*="buygoods.com/secure/checkout"]').forEach(function(a) {
+          var parts = a.href.split('?');
+          if (!parts[1]) return;
+          var seen = {};
+          var unique = [];
+          parts[1].split('&').forEach(function(pair) {
+            var key = pair.split('=')[0];
+            if (!seen[key]) {
+              seen[key] = true;
+              unique.push(pair);
+            }
+          });
+          a.href = parts[0] + '?' + unique.join('&');
+        });
+      }
+
+      // Run after DOM ready + small delay to catch dynamically modified links
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { setTimeout(dedupLinks, 500); });
+      } else {
+        setTimeout(dedupLinks, 500);
+      }
+
+      // Also deduplicate on click in case scripts modify links after our cleanup
+      document.addEventListener('click', function(e) {
+        var a = e.target.closest('a[href*="buygoods.com/secure/checkout"]');
+        if (a) {
+          var parts = a.href.split('?');
+          if (!parts[1]) return;
+          var seen = {};
+          var unique = [];
+          parts[1].split('&').forEach(function(pair) {
+            var key = pair.split('=')[0];
+            if (!seen[key]) {
+              seen[key] = true;
+              unique.push(pair);
+            }
+          });
+          a.href = parts[0] + '?' + unique.join('&');
+        }
+      }, true);
+    })();
+    </script>
   </body>
 </html>
