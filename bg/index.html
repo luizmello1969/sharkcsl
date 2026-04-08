@@ -76,6 +76,29 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <script>
+      // Clean URL: resolve bracket placeholders and deduplicate params before sending to BuyGoods
+      var cleanUrl = (function() {
+        var url = new URL(window.location.href);
+        var p = url.searchParams;
+        var resolve = {
+          '[utmsource]':   p.get('utm_source')   || '',
+          '[utmcampaign]': p.get('utm_campaign') || '',
+          '[utmmedium]':   p.get('utm_medium')   || '',
+          '[utmsrc]':      p.get('src')           || ''
+        };
+        var clean = new URLSearchParams();
+        p.forEach(function(val, key) {
+          if (!clean.has(key)) {
+            var resolved = val;
+            for (var placeholder in resolve) {
+              if (resolved === placeholder) resolved = resolve[placeholder];
+            }
+            clean.set(key, resolved);
+          }
+        });
+        return url.origin + url.pathname + (clean.toString() ? '?' + clean.toString() : '');
+      })();
+
       var mysrc =
         "https://tracking.buygoods.com/track/?a=12348&firstcookie=0" +
         "&tracking_redirect=&referrer=" +
@@ -83,7 +106,7 @@
         "&sessid2=" +
         ReadCookie("sessid2") +
         "&product=ste6,ste6dtc,ste1,ste2,ste3,ste3177&vid1=&vid2=&vid3=&caller_url=" +
-        encodeURIComponent(window.location.href);
+        encodeURIComponent(cleanUrl);
       if (typeof add_to_cart !== "undefined") {
         mysrc = mysrc + "&add_to_cart=" + add_to_cart;
       }
