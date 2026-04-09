@@ -76,6 +76,28 @@
     <link rel="stylesheet" href="assets/css/style.css" />
 
     <script>
+      // Append subid params to page URL before BuyGoods reads it
+      (function() {
+        var url = new URL(window.location.href);
+        var p = url.searchParams;
+        var mappings = {
+          subid:  p.get('utm_source')   || '',
+          subid2: p.get('utm_campaign') || '',
+          subid3: p.get('pid')          || '',
+          subid4: p.get('src')          || ''
+        };
+        var changed = false;
+        for (var key in mappings) {
+          if (mappings[key] && !p.has(key)) {
+            url.searchParams.set(key, mappings[key]);
+            changed = true;
+          }
+        }
+        if (changed) {
+          window.history.replaceState({}, '', url.toString());
+        }
+      })();
+
       var mysrc =
         "https://tracking.buygoods.com/track/?a=12348&firstcookie=0" +
         "&tracking_redirect=&referrer=" +
@@ -138,7 +160,7 @@
     window.VSL_Pitch_SEC = 60;   // Pitch event at 60 seconds
 </script>
 <!-- VSL Tracking Script -->
-<script src="assets/js/cmc-bg.js"></script>
+<script src="https://assets.livinghealthylife.org/scripts/vsl-tracking2.js"></script>
 
 
 

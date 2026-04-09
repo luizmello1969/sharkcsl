@@ -224,7 +224,7 @@
             subid:   p.get('utm_source')  || '',
             subid2:  p.get('utm_campaign') || '',
             subid3:  p.get('pid')          || '',
-            subid4:  p.get('utm_content')  || '',
+            subid4:  p.get('src')           || '',
             subid5:  clickId
         };
         var selector = 'a[href*="buygoods.com/secure/checkout"]';
