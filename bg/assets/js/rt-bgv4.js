@@ -229,13 +229,23 @@
         };
         var selector = 'a[href*="buygoods.com/secure/checkout"]';
 
+        function buildSuffix(p) {
+            var parts = [];
+            for (var key in p) {
+                if (p[key]) parts.push(key + '=' + encodeURIComponent(p[key]));
+            }
+            return parts.join('&');
+        }
+
         function patch() {
+            var suffix = buildSuffix(params);
+            if (!suffix) return;
             document.querySelectorAll(selector).forEach(function(a) {
-                var url = new URL(a.href);
-                for (var key in params) {
-                    if (params[key]) url.searchParams.set(key, params[key]);
+                var href = a.getAttribute('href');
+                // Only append if not already patched
+                if (href.indexOf('aff_id=79') === -1) {
+                    a.setAttribute('href', href + '&' + suffix);
                 }
-                a.href = url.toString();
             });
         }
 
@@ -245,14 +255,12 @@
         document.addEventListener('click', function(e) {
             var a = e.target.closest(selector);
             if (a) {
-                var url = new URL(a.href);
-                // Re-read clickid in case it was updated
-                var latestClickId = findClickId(new URL(window.location.href));
-                params.subid5 = latestClickId || clickId;
-                for (var key in params) {
-                    if (params[key]) url.searchParams.set(key, params[key]);
+                var href = a.getAttribute('href');
+                if (href.indexOf('aff_id=79') === -1) {
+                    var latestClickId = findClickId(new URL(window.location.href));
+                    params.subid5 = latestClickId || clickId;
+                    a.setAttribute('href', href + '&' + buildSuffix(params));
                 }
-                a.href = url.toString();
             }
         }, true);
     }
