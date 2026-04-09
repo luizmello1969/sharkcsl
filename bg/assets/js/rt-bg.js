@@ -214,36 +214,6 @@
     }
 
     /**
-     * Append clickid and referrer to checkout links
-     */
-    function patchCheckoutLinks(clickId) {
-        var suffix = 'clickid=' + encodeURIComponent(clickId) + '&referrer=';
-        var selector = 'a[href*="rt.livinghealthylife.org/click"]';
-
-        function patch() {
-            document.querySelectorAll(selector).forEach(function(a) {
-                var href = a.getAttribute('href');
-                if (href.indexOf('clickid=') === -1) {
-                    a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + suffix);
-                }
-            });
-        }
-
-        patch();
-
-        // Also patch on click as safety net
-        document.addEventListener('click', function(e) {
-            var a = e.target.closest(selector);
-            if (a) {
-                var href = a.getAttribute('href');
-                if (href.indexOf('clickid=') === -1) {
-                    a.setAttribute('href', href + (href.indexOf('?') > -1 ? '&' : '?') + suffix);
-                }
-            }
-        }, true);
-    }
-
-    /**
      * Main initialization function with retry for async cookie
      */
     function init(retryCount) {
@@ -253,7 +223,6 @@
 
         if (clickId) {
             console.log('[VSL Tracker] ClickId found:', clickId);
-            patchCheckoutLinks(clickId);
             initTracking(clickId);
             setupViewContentHandler(clickId);
         } else if (retryCount < 10) {
