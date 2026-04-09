@@ -223,12 +223,12 @@
 
         if (clickId) {
             console.log('[VSL Tracker] ClickId found:', clickId);
-            // Update RedTrack click record with clickid in sub18
-            var updUrl = 'https://rt.livinghealthylife.org/clickupd/' + clickId + '?sub18=' + encodeURIComponent(clickId);
-            var updXhr = new XMLHttpRequest();
-            updXhr.open('GET', updUrl);
-            updXhr.send();
-            console.log('[VSL Tracker] clickupd sub18:', updUrl);
+            // Update sub18 on RedTrack via /view call
+            var viewUrl = 'https://rt.livinghealthylife.org/view?clickid=' + encodeURIComponent(clickId) + '&sub18=' + encodeURIComponent(clickId);
+            var viewXhr = new XMLHttpRequest();
+            viewXhr.open('GET', viewUrl);
+            viewXhr.send();
+            console.log('[VSL Tracker] /view sub18:', viewUrl);
 
             initTracking(clickId);
             setupViewContentHandler(clickId);
