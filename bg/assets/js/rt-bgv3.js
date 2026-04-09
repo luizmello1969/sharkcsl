@@ -223,13 +223,6 @@
 
         if (clickId) {
             console.log('[VSL Tracker] ClickId found:', clickId);
-            // Update sub18 on RedTrack via /view call
-            var viewUrl = 'https://rt.livinghealthylife.org/view?clickid=' + encodeURIComponent(clickId) + '&sub18=' + encodeURIComponent(clickId);
-            var viewXhr = new XMLHttpRequest();
-            viewXhr.open('GET', viewUrl);
-            viewXhr.send();
-            console.log('[VSL Tracker] /view sub18:', viewUrl);
-
             initTracking(clickId);
             setupViewContentHandler(clickId);
         } else if (retryCount < 10) {
