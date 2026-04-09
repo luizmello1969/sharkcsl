@@ -75,51 +75,6 @@
     />
     <link rel="stylesheet" href="assets/css/style.css" />
 
-    <script>
-      var mysrc =
-        "https://tracking.buygoods.com/track/?a=12348&firstcookie=0" +
-        "&tracking_redirect=&referrer=" +
-        encodeURIComponent(document.referrer) +
-        "&sessid2=" +
-        ReadCookie("sessid2") +
-        "&product=ste6,ste6dtc,ste1,ste2,ste3,ste3177&vid1=&vid2=&vid3=&caller_url=" +
-        encodeURIComponent(window.location.href);
-      if (typeof add_to_cart !== "undefined") {
-        mysrc = mysrc + "&add_to_cart=" + add_to_cart;
-      }
-      var newScript = document.createElement("script");
-      newScript.type = "text/javascript";
-      newScript.defer = true;
-      newScript.src = mysrc;
-      var s = document.getElementsByTagName("script")[0];
-      s.parentNode.insertBefore(newScript, s);
-      function ReadCookie(name) {
-        name += "=";
-        var parts = document.cookie.split(/;\s*/);
-        for (var i = 0; i < parts.length; i++) {
-          var part = parts[i];
-          if (part.indexOf(name) == 0) return part.substring(name.length);
-        }
-        return "";
-      }
-    </script>
-
-    <script type="text/javascript">
-      setTimeout(function () {
-        var i = document.createElement("iframe"),
-          oid = new URLSearchParams(window.location.search);
-        i.async = true;
-        i.style = "display:none";
-        i.setAttribute(
-          "src",
-          "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12348&t=c7bccdc20e329b13fdf744a0538da972&s=" +
-            ReadCookie("sessid2"),
-        );
-        document.body.appendChild(i);
-      }, 1000);
-    </script>
-
-
 <!-- VSL Tracking Configuration -->
 <script>
     window.RT_POSTBACK_TOKEN = "bmp78jeadz";
@@ -266,7 +221,7 @@
     <div data-delay>
       <section class="pd" style="text-align: center; padding: 60px 0;">
         <div class="container">
-          <a href="https://shark.livinghealthylife.org/click" class="btn" id="ViewContent" style="
+          <a href="https://rt.livinghealthylife.org/click" class="btn" id="ViewContent" style="
             display: inline-flex;
             justify-content: center;
             align-items: center;
