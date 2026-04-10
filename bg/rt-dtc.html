@@ -102,6 +102,39 @@
         display: none;
       }
 
+      /* DTC CTA Button */
+      .dtc-cta {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        padding: 24px 48px;
+        font-size: 26px;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-decoration: none;
+        border-radius: 50px;
+        border-bottom: 6px solid #116800;
+        background: linear-gradient(180deg, #35f60f 0%, #1fa604 100%);
+        line-height: 1.2;
+        max-width: 600px;
+        margin: 0 auto;
+        animation: pulsar alternate infinite 0.7s;
+        transition: all 0.3s;
+      }
+      .dtc-cta:hover {
+        filter: brightness(110%);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(53, 246, 15, 0.4);
+      }
+      @media (max-width: 600px) {
+        .dtc-cta {
+          font-size: 18px;
+          padding: 18px 24px;
+          max-width: 90%;
+        }
+      }
+
       /* Mobile optimizations */
       @media (max-width: 600px) {
         main {
@@ -221,24 +254,7 @@
     <div data-delay>
       <section class="pd" style="text-align: center; padding: 60px 0;">
         <div class="container">
-          <a href="https://rt.livinghealthylife.org/click" class="btn" id="ViewContent" style="
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            gap: 16px;
-            color: #fff;
-            padding: 24px 48px;
-            font-size: 28px;
-            font-weight: 700;
-            text-transform: uppercase;
-            border-radius: 50px;
-            border-bottom: 6px solid #116800;
-            background: linear-gradient(180deg, #35f60f 0%, #1fa604 100%);
-            line-height: 1;
-            max-width: 600px;
-            margin: 0 auto;
-            animation: pulsar alternate infinite 0.7s;
-          ">Yes, I want SteelPower now!</a>
+          <a href="https://rt.livinghealthylife.org/click" class="dtc-cta" id="ViewContent">Yes, I want SteelPower now!</a>
         </div>
       </section>
     </div>
