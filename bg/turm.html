@@ -607,13 +607,13 @@
     <footer>
       <div class="container center">
         <nav>
-          <a href="terms.html">Terms & Conditions</a>
-          <a href="privacy.html">Privacy Policy</a>
-          <a href="contact.html">Contact</a>
-          <a href="disclaimer.html">Disclaimer</a>
-          <a href="reference.html">Reference</a>
-          <a href="refund.html">Refund</a>
-          <a href="shipping.html">Shipping</a>
+          <a href="terms.html" style="color: #101010;">Terms & Conditions</a>
+          <a href="privacy.html" style="color: #101010;">Privacy Policy</a>
+          <a href="contact.html" style="color: #101010;">Contact</a>
+          <a href="disclaimer.html" style="color: #101010;">Disclaimer</a>
+          <a href="reference.html" style="color: #101010;">Reference</a>
+          <a href="refund.html" style="color: #101010;">Refund</a>
+          <a href="shipping.html" style="color: #101010;">Shipping</a>
         </nav>
 
         <!--<div class="disclaimer">
@@ -665,8 +665,8 @@
                 window.scrolledOnce = true;
                 setTimeout(() => {
                   document
-                    .getElementById("kits")
-                    .scrollIntoView({ behavior: "smooth" });
+                    .querySelector("vturb-smartplayer")
+                    .scrollIntoView({ behavior: "smooth", block: "start" });
                 }, 300);
               }
             }
