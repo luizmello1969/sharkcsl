@@ -243,7 +243,7 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <main class="pd">
+    <main class="pd" style="padding-bottom: 0 !important;">
       <div class="container">
         <h1 style="text-align: center">INCREASE YOUR VOLUME!</h1>
 
@@ -253,9 +253,9 @@
       </div>
     </main>
     <div data-delay>
-      <section class="pd" style="text-align: center; padding: 60px 0;">
+      <section style="text-align: center; padding: 10px 0 40px;">
         <div class="container">
-          <a href="https://rt.livinghealthylife.org/click" class="dtc-cta" id="ViewContent">Yes, I want SteelPower now!</a>
+          <a href="https://rt.livinghealthylife.org/click" class="dtc-cta" id="ViewContent">Yes, I want <span style="color: #ffd902;">SteelPower</span> now!</a>
         </div>
       </section>
     </div>
@@ -307,6 +307,31 @@
           persist: true,
         });
 
+        // Scroll to top of video when delayed content is revealed
+        const target = document.querySelector("[data-delay]");
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (
+              mutation.attributeName === "style" ||
+              mutation.attributeName === "class"
+            ) {
+              const isVisible =
+                window.getComputedStyle(target).display !== "none";
+              if (isVisible && !window.scrolledOnce) {
+                window.scrolledOnce = true;
+                setTimeout(() => {
+                  document
+                    .querySelector("vturb-smartplayer")
+                    .scrollIntoView({ behavior: "smooth", block: "start" });
+                }, 300);
+              }
+            }
+          });
+        });
+
+        if (target) {
+          observer.observe(target, { attributes: true });
+        }
       });
     </script>
 
