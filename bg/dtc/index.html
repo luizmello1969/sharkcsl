@@ -1,0 +1,631 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SteelPower</title>
+
+    <meta
+      name="title"
+      content="Supports stronger performance, longer endurance, and renewed confidence naturally."
+    />
+    <meta
+      name="description"
+      content="Supports stronger performance, longer endurance, and renewed confidence naturally."
+    />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="" />
+    <meta
+      property="og:title"
+      content="Supports stronger performance, longer endurance, and renewed confidence naturally."
+    />
+    <meta
+      property="og:description"
+      content="Supports stronger performance, longer endurance, and renewed confidence naturally."
+    />
+    <meta
+      property="og:image"
+      content="assets/img/3.png"
+    />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="" />
+    <meta
+      property="twitter:title"
+      content="Supports stronger performance, longer endurance, and renewed confidence naturally."
+    />
+    <meta
+      property="twitter:description"
+      content="Supports stronger performance, longer endurance, and renewed confidence naturally."
+    />
+    <meta
+      property="twitter:image"
+      content="assets/img/3.png"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.svg"
+      type="image/x-icon"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/style.css" />
+
+    <script>
+      var mysrc =
+        "https://tracking.buygoods.com/track/?a=12348&firstcookie=0" +
+        "&tracking_redirect=&referrer=" +
+        encodeURIComponent(document.referrer) +
+        "&sessid2=" +
+        ReadCookie("sessid2") +
+        "&product=ste6,ste6dtc,ste1,ste2,ste3,ste3177&vid1=&vid2=&vid3=&caller_url=" +
+        encodeURIComponent(window.location.href);
+      if (typeof add_to_cart !== "undefined") {
+        mysrc = mysrc + "&add_to_cart=" + add_to_cart;
+      }
+      var newScript = document.createElement("script");
+      newScript.type = "text/javascript";
+      newScript.defer = true;
+      newScript.src = mysrc;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(newScript, s);
+      function ReadCookie(name) {
+        name += "=";
+        var parts = document.cookie.split(/;\s*/);
+        for (var i = 0; i < parts.length; i++) {
+          var part = parts[i];
+          if (part.indexOf(name) == 0) return part.substring(name.length);
+        }
+        return "";
+      }
+    </script>
+
+    <script type="text/javascript">
+      setTimeout(function () {
+        var i = document.createElement("iframe"),
+          oid = new URLSearchParams(window.location.search);
+        i.async = true;
+        i.style = "display:none";
+        i.setAttribute(
+          "src",
+          "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12348&t=c7bccdc20e329b13fdf744a0538da972&s=" +
+            ReadCookie("sessid2"),
+        );
+        document.body.appendChild(i);
+      }, 1000);
+    </script>
+  </head>
+  <body>
+    <iframe
+      src="https://go.maxweb.com/conversion/iframe/?a=12558&token=a11ffe929c84a284e786e072ba0bcbbe"
+      height="0"
+      width="0"
+      frameborder="0"
+      style="display: none"
+      aria-hidden="true"
+      tabindex="-1"
+    ></iframe>
+
+    <div id="geo-offer" style="display:none;text-align:center;background:#282828;color:#fff;font-weight:700;text-transform:uppercase;padding:14px 12px;font-size:22px;letter-spacing:.03em;">
+      <span class="geo-flag" style="font-size:34px;line-height:1;vertical-align:middle;display:inline-block;margin:0 14px;"></span>
+      EXCLUSIVE OFFER FOR <span id="geo-cc" style="color:#ffd902;"></span>
+      <span class="geo-flag" style="font-size:34px;line-height:1;vertical-align:middle;display:inline-block;margin:0 14px;"></span>
+    </div>
+    <script>
+      (function () {
+        function emojiFlagOK() {
+          try {
+            var c = document.createElement("canvas");
+            c.width = c.height = 16;
+            var x = c.getContext("2d");
+            x.textBaseline = "top";
+            x.font = "16px Arial";
+            x.fillText("🇺🇸", 0, 0);
+            var d = x.getImageData(0, 0, 16, 16).data;
+            for (var i = 0; i < d.length; i += 4)
+              if (d[i + 3] > 0 && (d[i] !== d[i + 1] || d[i + 1] !== d[i + 2]))
+                return true;
+            return false;
+          } catch (e) {
+            return false;
+          }
+        }
+        function emoji(cc) {
+          return cc.toUpperCase().replace(/./g, function (c) {
+            return String.fromCodePoint(127397 + c.charCodeAt());
+          });
+        }
+        function render(cc) {
+          if (!cc) return;
+          cc = cc.toUpperCase();
+          var html = emojiFlagOK()
+            ? emoji(cc)
+            : '<img src="https://flagcdn.com/48x36/' +
+              cc.toLowerCase() +
+              '.png" alt="' +
+              cc +
+              '" style="display:block;width:42px;height:32px;">';
+          var flags = document.querySelectorAll(".geo-flag");
+          for (var i = 0; i < flags.length; i++) flags[i].innerHTML = html;
+          var name = cc;
+          try {
+            name = new Intl.DisplayNames(["en"], { type: "region" }).of(cc) || cc;
+          } catch (e) {}
+          document.getElementById("geo-cc").textContent = name;
+          document.getElementById("geo-offer").style.display = "block";
+        }
+        var cached = sessionStorage.getItem("geo-cc");
+        if (cached) {
+          render(cached);
+          return;
+        }
+        fetch("https://www.cloudflare.com/cdn-cgi/trace")
+          .then(function (r) {
+            return r.text();
+          })
+          .then(function (t) {
+            var m = t.match(/loc=([A-Z]{2})/);
+            if (m) {
+              sessionStorage.setItem("geo-cc", m[1]);
+              render(m[1]);
+            }
+          })
+          .catch(function () {});
+      })();
+    </script>
+
+    <header style="padding: 14px 0;">
+      <div class="container">
+        <h1>
+          CLAIM YOUR <u>SteelPower</u> DISCOUNT PACK BELOW
+          <b>AVAILABLE ONLY WHILE SUPPLIES LAST!</b>
+        </h1>
+
+        <span id="contador">10:00</span>
+      </div>
+    </header>
+
+    <section class="area-kits pd" id="kits">
+      <div class="container center-flex">
+        <ul class="z10">
+          <li class="kit-option k1">
+            <a
+              href="https://buygoods.com/secure/checkout.html?account_id=12348&product_codename=ste2&redirect=aHR0cHM6Ly9iZy5zdGVlbHBvd2VyLnNob3AvZmItZmUxMjMtc3Av"
+            >
+              <div class="header">STARTER</div>
+
+              <div class="main">
+                <strong>2 BOTTLES</strong>
+                <span class="days">60 Day Supply</span>
+                <div class="area-img">
+                  <img src="assets/img/2.png" alt="2 Bottles" />
+                </div>
+              </div>
+
+              <div class="footer">
+                <div class="price"><strong>$79</strong> / bottle</div>
+
+                <ul>
+                  <li class="orrivi">FAST SHIPPING</li>
+                  <li class="orrivi">FREE SHIPPING</li>
+                </ul>
+
+                <button class="button">
+                  <img src="assets/img/button.webp" alt="Add To Cart" />
+                </button>
+                <img
+                  src="assets/img/card.png"
+                  alt="Credit Cards"
+                  class="bandeiras"
+                />
+
+                <div class="valores">
+                  <span>Total =</span>
+                  <s>$358</s>
+                  <span>$158</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="kit-option best-option">
+            <a
+              href="https://buygoods.com/secure/checkout.html?account_id=12348&product_codename=ste6dtc&redirect=aHR0cHM6Ly9iZy5zdGVlbHBvd2VyLnNob3AvZmEtZmU2LXNwLw=="
+            >
+              <div class="header" style="background: #ffd902">MOST POPULAR</div>
+
+              <div class="main">
+                <strong>6 BOTTLES</strong>
+                <span class="days">180 Day Supply</span>
+                <div class="area-img">
+                  <img src="assets/img/kit-6.png" alt="6 Bottles" />
+                  <div class="save">
+                    <b>Save <br />$780 <br />TODAY</b>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                <div class="price"><strong>$49</strong> / bottle</div>
+                <ul>
+                  <li>FAST &amp; FREE SHIPPING</li>
+                  <li>60 DAYS GUARANTEE</li>
+                </ul>
+                <button class="button">
+                  <img src="assets/img/button.webp" alt="Add To Cart" />
+                </button>
+
+                <img
+                  src="assets/img/card.png"
+                  alt="Credit Cards"
+                  class="bandeiras"
+                />
+
+                <div class="valores">
+                  <span>Total =</span>
+                  <s>$1074</s>
+                  <span>$294</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="kit-option k3">
+            <a
+              href="https://buygoods.com/secure/checkout.html?account_id=12348&product_codename=ste3&redirect=aHR0cHM6Ly9iZy5zdGVlbHBvd2VyLnNob3AvZmItZmUxMjMtc3Av"
+            >
+              <div class="header">STANDARD</div>
+
+              <div class="main">
+                <strong>3 BOTTLES</strong>
+                <span class="days">90 Day Supply</span>
+                <div class="area-img">
+                  <img src="assets/img/kit-3.png" alt="3 Bottles" />
+                  <div class="save">
+                    <b
+                      >Save <br />
+                      $330<br />TODAY</b
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                <div class="price"><strong>$69</strong> / bottle</div>
+
+                <ul>
+                  <li class="morromeno">FAST &amp; FREE SHIPPING</li>
+                  <li>60 DAYS GUARANTEE</li>
+                </ul>
+                <button class="button">
+                  <img src="assets/img/button.webp" alt="Add To Cart" />
+                </button>
+                <img
+                  src="assets/img/card.png"
+                  alt="Credit Cards"
+                  class="bandeiras"
+                />
+
+                <div class="valores">
+                  <span>Total =</span>
+                  <s>$537</s>
+                  <span>$207</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+
+      <section class="guarantee pd">
+        <div class="container center z10">
+          <img src="assets/img/selo.png" alt="100% SATISFACTION GUARANTEED" />
+
+          <h2 class="title">100% SATISFACTION GUARANTEED</h2>
+
+          <p>
+            Your purchase is protected by our 60-Day Satisfaction Promise from
+            the original purchase date. If you're not satisfied with your
+            experience, simply contact us through this
+            <a href="contact.html" style="text-decoration: underline"
+              >link to our Contact Page</a
+            >, and our team will make it right.
+          </p>
+
+          <a href="#kits" class="btn">order now</a>
+        </div>
+      </section>
+    </section>
+    <div class="divisor">
+      <ul class="container">
+        <li id="shield">Secure & Discreet <br />Payment</li>
+        <li id="seal">60-DAY Guarantee</li>
+        <li id="truck">One-Time Fee, <br />No Autoship</li>
+      </ul>
+    </div>
+
+    <div class="bg">
+      <img src="assets/img/luz1.png" alt="" loading="lazy" class="light l1" />
+      <img src="assets/img/luz1.png" alt="" loading="lazy" class="light l2" />
+    </div>
+
+    <header>
+      <div class="container">
+        <h1>
+          CLAIM YOUR <u>SteelPower</u> DISCOUNT PACK BELOW
+          <b>AVAILABLE ONLY WHILE SUPPLIES LAST!</b>
+        </h1>
+
+        <span id="contador">10:00</span>
+      </div>
+    </header>
+
+    <section class="area-kits a2 pd">
+      <div class="container center-flex">
+        <ul class="z10">
+          <li class="kit-option k1">
+            <a
+              href="https://buygoods.com/secure/checkout.html?account_id=12348&product_codename=ste2&redirect=aHR0cHM6Ly9iZy5zdGVlbHBvd2VyLnNob3AvZmItZmUxMjMtc3Av"
+            >
+              <div class="header">STARTER</div>
+
+              <div class="main">
+                <strong>2 BOTTLES</strong>
+                <span class="days">60 Day Supply</span>
+                <div class="area-img">
+                  <img src="assets/img/2.png" alt="2 Bottles" />
+                </div>
+              </div>
+
+              <div class="footer">
+                <div class="price"><strong>$79</strong> / bottle</div>
+
+                <ul>
+                  <li class="orrivi">FAST SHIPPING</li>
+                  <li class="orrivi">FREE SHIPPING</li>
+                </ul>
+
+                <button class="button">
+                  <img src="assets/img/button.webp" alt="Add To Cart" />
+                </button>
+                <img
+                  src="assets/img/card.png"
+                  alt="Credit Cards"
+                  class="bandeiras"
+                />
+
+                <div class="valores">
+                  <span>Total =</span>
+                  <s>$358</s>
+                  <span>$158</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="kit-option best-option">
+            <a
+              href="https://buygoods.com/secure/checkout.html?account_id=12348&product_codename=ste6dtc&redirect=aHR0cHM6Ly9iZy5zdGVlbHBvd2VyLnNob3AvZmEtZmU2LXNwLw=="
+            >
+              <div class="header" style="background: #ffd902">MOST POPULAR</div>
+
+              <div class="main">
+                <strong>6 BOTTLES</strong>
+                <span class="days">180 Day Supply</span>
+                <div class="area-img">
+                  <img src="assets/img/kit-6.png" alt="6 Bottles" />
+                  <div class="save">
+                    <b>Save <br />$780 <br />TODAY</b>
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                <div class="price"><strong>$49</strong> / bottle</div>
+                <ul>
+                  <li>FAST &amp; FREE SHIPPING</li>
+                  <li>60 DAYS GUARANTEE</li>
+                </ul>
+                <button class="button">
+                  <img src="assets/img/button.webp" alt="Add To Cart" />
+                </button>
+
+                <img
+                  src="assets/img/card.png"
+                  alt="Credit Cards"
+                  class="bandeiras"
+                />
+
+                <div class="valores">
+                  <span>Total =</span>
+                  <s>$1074</s>
+                  <span>$294</span>
+                </div>
+              </div>
+            </a>
+          </li>
+
+          <li class="kit-option k3">
+            <a
+              href="https://buygoods.com/secure/checkout.html?account_id=12348&product_codename=ste3&redirect=aHR0cHM6Ly9iZy5zdGVlbHBvd2VyLnNob3AvZmItZmUxMjMtc3Av"
+            >
+              <div class="header">STANDARD</div>
+
+              <div class="main">
+                <strong>3 BOTTLES</strong>
+                <span class="days">90 Day Supply</span>
+                <div class="area-img">
+                  <img src="assets/img/kit-3.png" alt="3 Bottles" />
+                  <div class="save">
+                    <b
+                      >Save <br />
+                      $330<br />TODAY</b
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="footer">
+                <div class="price"><strong>$69</strong> / bottle</div>
+
+                <ul>
+                  <li class="morromeno">FAST &amp; FREE SHIPPING</li>
+                  <li>60 DAYS GUARANTEE</li>
+                </ul>
+                <button class="button">
+                  <img src="assets/img/button.webp" alt="Add To Cart" />
+                </button>
+                <img
+                  src="assets/img/card.png"
+                  alt="Credit Cards"
+                  class="bandeiras"
+                />
+
+                <div class="valores">
+                  <span>Total =</span>
+                  <s>$537</s>
+                  <span>$207</span>
+                </div>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container center">
+        <a href="#kits" class="logo">
+          <img src="assets/img/logo.svg" alt="SteelPower" />
+        </a>
+
+        <nav>
+          <a href="terms.html">Terms & Conditions</a>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="contact.html">Contact</a>
+          <a href="disclaimer.html">Disclaimer</a>
+          <a href="reference.html">Reference</a>
+          <a href="refund.html">Refund</a>
+          <a href="shipping.html">Shipping</a>
+        </nav>
+
+        <div class="disclaimer">
+          <p>
+            These statements have not been evaluated by the Food and Drug
+            Administration. This product is not intended to diagnose, treat,
+            cure, or prevent any disease. The information provided on this site
+            is for informational purposes only and is not intended as a
+            substitute for advice from your physician or other healthcare
+            professional or any information contained on or in any product label
+            or packaging. You should not use the information on this site for
+            diagnosis or treatment of any health problem or for prescription of
+            any medication or other treatment. You should consult with a
+            healthcare professional before starting any diet, exercise or
+            supplementation program, before taking any medication, or if you
+            have or suspect you might have a health problem.
+          </p>
+        </div>
+      </div>
+
+      <div class="copy">
+        <span
+          >Copyright <span id="copyYear"></span> © SteelPower. All Rights
+          Reserved.</span
+        >
+        <small>19655 E 35th Drive Suite 100 Aurora, CO 80011</small>
+      </div>
+    </footer>
+
+    <style>
+      span#disclaimer * {
+        display: block !important;
+        color: #fff;
+      }
+    </style>
+    <span id="disclaimer"></span>
+    <script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=12348"></script>
+
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
+      const ingredientsSwiper = new Swiper(".ingredientsSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: ".ingredientsSwiper .swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          900: {
+            slidesPerView: 4,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      const testimonialsSwiper = new Swiper(".testemonialsSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        pagination: {
+          el: ".testemonialsSwiper .swiper-pagination",
+          clickable: true,
+        },
+        breakpoints: {
+          600: {
+            slidesPerView: 2,
+            spaceBetween: 20,
+          },
+          900: {
+            slidesPerView: 3,
+            spaceBetween: 30,
+          },
+        },
+      });
+
+      // Contador regressivo de 30 minutos
+      function initCountdown() {
+        let totalSeconds = 10 * 60; // 30 minutos em segundos
+
+        function updateDisplay() {
+          const minutes = Math.floor(totalSeconds / 60);
+          const seconds = totalSeconds % 60;
+          const display = `${String(minutes).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+
+          // Atualiza todos os elementos com id="contador"
+          document.querySelectorAll("#contador").forEach((el) => {
+            el.textContent = display;
+          });
+        }
+
+        function countdown() {
+          if (totalSeconds > 0) {
+            totalSeconds--;
+            updateDisplay();
+          } else {
+            clearInterval(timer);
+          }
+        }
+
+        updateDisplay();
+        const timer = setInterval(countdown, 1000);
+      }
+
+      // Inicia o contador quando a página carregar
+      initCountdown();
+    </script>
+  </body>
+</html>
