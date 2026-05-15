@@ -1,0 +1,2988 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Vigortrix</title>
+
+    <link rel="stylesheet" href="./src/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="./src/all.min.css"
+      integrity="sha512-q3eWabyZPc1XTCmF+8/LuE1ozpg5xxn7iO89yfSOd5/oKvyqLngoNGsx8jq92Y8eXJ/IRxQbEC+FGSYxtk2oiw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
+      rel="stylesheet"
+      href="./src/simple-line-icons.min.css"
+      integrity="sha512-QKC1UZ/ZHNgFzVKSAhV5v5j73eeL9EEN289eKAEFaAjgAiobVAnVv/AGuPbXsKl1dNoel3kNr6PYnSiTzVVBCw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./src/styles.min.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+
+    <!--Script buygoods-->
+    <script>
+      var mysrc =
+        "https://tracking.buygoods.com/track/?a=10104&firstcookie=0" +
+        "&tracking_redirect=&referrer=" +
+        encodeURIComponent(document.referrer) +
+        "&sessid2=" +
+        ReadCookie("sessid2") +
+        "&product=vig1,vig3,vig6&vid1=&vid2=&vid3=&caller_url=" +
+        encodeURIComponent(window.location.href);
+      if (typeof add_to_cart !== "undefined") {
+        mysrc = mysrc + "&add_to_cart=" + add_to_cart;
+      }
+      var newScript = document.createElement("script");
+      newScript.type = "text/javascript";
+      newScript.defer = true;
+      newScript.src = mysrc;
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(newScript, s);
+      function ReadCookie(name) {
+        name += "=";
+        var parts = document.cookie.split(/;\s*/);
+        for (var i = 0; i < parts.length; i++) {
+          var part = parts[i];
+          if (part.indexOf(name) == 0) return part.substring(name.length);
+        }
+        return "";
+      }
+    </script>
+
+    <script type="text/javascript">
+      setTimeout(function () {
+        var i = document.createElement("iframe");
+        i.async = true;
+        i.style = "display:none";
+        i.setAttribute(
+          "src",
+          "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=10104&t=b637e7e5cc67ecf8df48bf77a6b437b9&s=" +
+            ReadCookie("sessid2")
+        );
+        document.body.appendChild(i);
+      }, 1000);
+    </script>
+
+    <style>
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+
+      /*.hero-fixed-bg-od { background: url('assets/images/dtc/top-bg.png'); background-size: cover; background-position: bottom; }*/
+      .hero-fixed-bg-od {
+        background: black;
+      }
+
+      #CTA-to-scoll {
+        transform: skewY(-2deg);
+        padding: 6rem 0 3rem;
+        background: black;
+      }
+
+      #CTA-to-scoll > .container {
+        transform: skewY(2deg);
+      }
+
+      .bottleArea.featured .h5-alt {
+        position: relative;
+        z-index: 2;
+      }
+    </style>
+    <style>
+      h1 {
+        font-size: 36px;
+      }
+
+      .topbar {
+        text-align: center;
+        padding: 1rem 10px;
+        background-color: black;
+        color: white;
+      }
+
+      .topbar .row {
+        position: relative;
+        max-width: fit-content;
+        margin: 0 auto;
+        flex-wrap: nowrap;
+      }
+
+      .topbar .row::before {
+        content: "";
+        position: absolute;
+        height: 2px;
+        background: #303030;
+        width: 100%;
+        top: calc(50% - 1px);
+      }
+
+      .topbar .col-1 {
+        width: auto;
+        background: black;
+        padding: 4px 16px;
+        border-radius: 20px;
+        border: 2px solid #303030;
+        z-index: 1;
+      }
+
+      .topbar .col-1:first-child {
+        color: #e50000;
+        font-weight: bold;
+      }
+
+      .topbar p {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+
+      .average-rating {
+        text-align: center;
+        margin: -45px 0 45px;
+      }
+
+      .average-rating img {
+        margin-top: -5px;
+      }
+
+      .stock-box {
+        text-align: center;
+        font-size: 1.6rem;
+        padding: 1rem 0;
+        margin: 0;
+        font-weight: bold;
+        color: #333333;
+      }
+
+      .stock-box span {
+        color: #ac2716;
+        font-size: 2rem;
+      }
+
+      .purchases-disclaimer {
+        position: fixed;
+        right: -800px;
+        bottom: 20px;
+        padding: 0.5rem 1rem;
+        background-color: black;
+        color: white;
+        border-radius: 8px;
+        font-size: 1.2rem;
+        font-style: italic;
+        box-shadow: 0 -2px 6px rgba(0, 0, 0, 0.1);
+        border: 3px solid #ac2716;
+        transition: 0.6s;
+        z-index: 999;
+      }
+
+      .purchases-box {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+        align-items: center;
+      }
+
+      .purchases-box img {
+        max-width: 70px;
+      }
+
+      .purchased-bottle {
+        background: #ffffff;
+        border-radius: 50%;
+      }
+
+      .bottle-img {
+        max-width: 240px;
+        width: 100% !important;
+      }
+
+      .price-ttl {
+        font-size: 70px;
+      }
+
+      .flex {
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 10px;
+      }
+
+      .vcentered {
+        align-items: center;
+      }
+
+      .column {
+        flex: 1;
+      }
+
+      .product-box {
+        display: block;
+        text-decoration: none;
+        color: #212529;
+        padding: 0;
+        margin-bottom: 1rem;
+        text-align: center;
+      }
+
+      .product-box h5 {
+        font-size: 16px;
+      }
+
+      .product-box .bottleArea {
+        padding: 1rem;
+      }
+
+      .product-box .bottleArea .bottle-img {
+        padding: 0;
+      }
+
+      .product-box .perBottle {
+        margin-top: 10px;
+        margin-left: 0;
+      }
+
+      .product-box .price-ttl {
+        font-size: 50px;
+      }
+
+      .product-box .discount {
+        padding: 0 !important;
+        text-align: center;
+      }
+
+      .product-box .discount svg {
+        font-size: 20px;
+        margin: 0 !important;
+      }
+
+      .product-box .discount .lto {
+        letter-spacing: 0.5px;
+      }
+
+      .product-box .bottlePrice h6 {
+        margin: 0;
+      }
+
+      .product-box .addToCart {
+        padding: 8px 16px;
+        margin: 6px 0 0;
+      }
+
+      @media (min-width: 770px) {
+        .mobile-only {
+          display: none;
+        }
+      }
+
+      @media (max-width: 991px) {
+        .average-rating {
+          margin: -10px 0 10px;
+        }
+
+        .average-rating img {
+          margin-top: -7px;
+          width: 110px !important;
+        }
+      }
+
+      @media (max-width: 769px) {
+        .hero-fixed-bg-od {
+          padding-bottom: 1.5rem !important;
+        }
+
+        .purchases-disclaimer {
+          font-size: 0.85rem;
+          padding: 0.25rem 0.5rem;
+          max-width: 220px;
+        }
+
+        .purchases-box img {
+          max-width: 40px;
+        }
+
+        .desktop-only {
+          display: none;
+        }
+      }
+
+      @media (min-width: 500px) {
+        .product-box .price-ttl {
+          font-size: 70px;
+        }
+      }
+
+      @media (max-width: 499px) {
+        h1 {
+          font-size: 26px;
+        }
+
+        .topbar p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+
+    <style type="text/css">
+      ._2rvzkq-53TUAkYiu9dwuER * {
+        box-sizing: border-box;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER {
+        font-family: Open Sans, Arial, sans-serif !important;
+        position: relative;
+        transition: height 200ms;
+        /**
+         * Positions
+         */
+        /*
+         @media (min-width: 768px) {
+         .ds24b-badge {
+         padding: 14px;
+         img {
+         height: 22px;
+         }
+         }
+         .ds24b-trust {
+         font-size: 19px;
+         line-height: 22px;
+         > img {
+         width: 16px;
+         height: 19px;
+         }
+         }
+         &.ds24b-corner-bottom-left {
+         .ds24b-footer {
+         padding-left: 165px;
+         }
+         }
+         &.ds24b-corner-bottom-right {
+         .ds24b-footer {
+         padding-right: 165px;
+         }
+         }
+         }*/
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-container {
+        z-index: 99;
+        position: relative;
+        right: 0;
+        left: 0;
+        height: 45px;
+        background-color: #fff;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-with-footer .ds24b-container {
+        height: unset;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-badge,
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-footer {
+        background-color: white;
+        padding: 10px;
+        display: block;
+        text-align: center;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-badge img {
+        height: 20px;
+        max-width: 100%;
+        vertical-align: baseline;
+        border: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-badge > a.ds24b-icon {
+        text-decoration: none;
+        outline: none;
+        border: none;
+        color: #404040;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-badge .ds24b-text {
+        display: none;
+        font-size: 10px;
+        margin-left: 20px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-trust {
+        text-transform: uppercase;
+        font-size: 15.5px;
+        line-height: 20px;
+        border-left: lightgrey 1px solid;
+        padding-left: 10px;
+        margin-left: 10px;
+        position: relative;
+        top: -4px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-trust > img {
+        position: relative;
+        top: 1px;
+        vertical-align: baseline;
+        margin-right: 5px;
+        height: 17px;
+        width: 13px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-top .ds24b-container {
+        top: 0;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-bottom.ds24b-with-footer .ds24b-footer {
+        padding-top: 5px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-bottom .ds24b-container {
+        bottom: 0;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-bottom.ds24b-shift-1 {
+        margin-top: 45px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-bottom.ds24b-shift-1 .ds24b-container {
+        bottom: 45px;
+      }
+
+      @media (max-width: 768px) {
+        ._2rvzkq-53TUAkYiu9dwuER.ds24b-bottom.ds24b-shift-corner-1 {
+          margin-top: 37px;
+        }
+
+        ._2rvzkq-53TUAkYiu9dwuER.ds24b-bottom.ds24b-shift-corner-1
+          .ds24b-container {
+          bottom: 37px;
+        }
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-corner-bottom-left .ds24b-footer {
+        padding-left: 130px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-corner-bottom-right .ds24b-footer {
+        padding-right: 130px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-sticky .ds24b-container {
+        position: fixed;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER {
+        /*
+         * DARK
+         */
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge {
+        background: linear-gradient(
+          to bottom,
+          rgba(239, 209, 0, 0.75) 0,
+          rgba(226, 162, 51, 0.75) 38%,
+          rgba(240, 195, 40, 0.75) 60%,
+          rgba(255, 241, 163, 0.75) 86%,
+          rgba(255, 225, 62, 0.75) 100%
+        );
+        color: #5e6c6e;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge .ds24b-trust,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge .ds24b-text {
+        color: #5e6c6e;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge a,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge a:visited,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge a:focus,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold .ds24b-badge a:active {
+        color: #0000ff;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-gold .ds24b-badge {
+        background: linear-gradient(
+          to bottom,
+          #efd100 0,
+          #e2a233 38%,
+          #f0c328 60%,
+          #fff1a3 86%,
+          #ffe13e 100%
+        );
+        /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-gold.ds24b-with-footer
+        .ds24b-badge,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold.ds24b-with-footer .ds24b-badge {
+        color: #5e6c6e;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a:visited,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a:focus,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a:active,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold.ds24b-with-footer .ds24b-badge a,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a:visited,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a:focus,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-gold.ds24b-with-footer
+        .ds24b-badge
+        a:active {
+        color: #0000ff;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-with-text .ds24b-badge .ds24b-text {
+        display: inline-block;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-with-text .ds24b-badge .ds24b-trust {
+        display: none;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER .ds24b-badge {
+        background-color: white;
+        font-size: 10px;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-red .ds24b-badge {
+        background: linear-gradient(#ffbfbf 0%, #ce6969 100%);
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-red .ds24b-trust {
+        color: #505050;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-blue .ds24b-badge {
+        background: linear-gradient(#e0f3ff 0%, #addaff 100%);
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-blue .ds24b-trust {
+        color: #505050;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-green .ds24b-badge {
+        background: linear-gradient(#f2ffe0 0%, #d1ff8c 100%);
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-green .ds24b-trust {
+        color: #505050;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-with-footer .ds24b-badge,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark .ds24b-trust,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark .ds24b-text {
+        color: #eaeaea;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-with-footer .ds24b-badge,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark .ds24b-badge {
+        font-size: 10px;
+        background-color: #2e3436;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-with-footer .ds24b-badge a,
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark .ds24b-badge a {
+        color: #dddddd;
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-green .ds24b-badge {
+        background: linear-gradient(#9bc90d 0%, #79a70a 100%);
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-red .ds24b-badge {
+        background: linear-gradient(#f70505 0%, #8f0808 100%);
+      }
+
+      ._2rvzkq-53TUAkYiu9dwuER.ds24b-dark.ds24b-blue .ds24b-badge {
+        background: linear-gradient(#2989d8 0%, #1e5799 100%);
+      }
+    </style>
+    <style type="text/css">
+      ._1j2t1DPDp4o5VU-RniczLb * {
+        box-sizing: border-box;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal {
+        font-family: Open Sans, Arial, sans-serif !important;
+        display: none;
+        background-color: rgba(0, 0, 0, 0.25);
+        position: fixed;
+        z-index: 2147483647;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal.ds24b-open {
+        display: block;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal .ds24b-dialog {
+        max-width: 550px;
+        margin: 0 auto;
+        border: 1px solid #ccc;
+        color: #2f485c;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        top: 20px;
+        position: relative;
+        background-color: #fff;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal .ds24b-dialog .ds24b-header {
+        padding: 5px 15px;
+        border-bottom: 1px solid #ccc;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal .ds24b-dialog .ds24b-header a,
+      ._1j2t1DPDp4o5VU-RniczLb
+        .ds24b-modal
+        .ds24b-dialog
+        .ds24b-header
+        a:visited {
+        text-decoration: none;
+        padding-left: 0;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb
+        .ds24b-modal
+        .ds24b-dialog
+        .ds24b-header
+        a
+        > img {
+        height: 20px;
+        width: 115.417px;
+        vertical-align: middle;
+        margin: 10px 0;
+        border: none;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb
+        .ds24b-modal
+        .ds24b-dialog
+        .ds24b-header
+        .ds24b-trust {
+        margin: 10px 0 10px 10px;
+        text-transform: uppercase;
+        font-size: 15.5px;
+        line-height: 22px;
+        border-left: lightgrey 1px solid;
+        padding-left: 5px;
+        position: relative;
+        top: 4px;
+        color: #404040;
+        font-weight: normal;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb
+        .ds24b-modal
+        .ds24b-dialog
+        .ds24b-header
+        .ds24b-trust
+        > img {
+        width: 25.2px;
+        position: relative;
+        top: 1px;
+        height: 19px;
+        padding: 0 5px;
+        border: none;
+        vertical-align: baseline;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb
+        .ds24b-modal
+        .ds24b-dialog
+        .ds24b-header
+        .ds24b-close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        opacity: 0.6;
+        margin-top: -2px;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        -webkit-appearance: none;
+        font-size: 21px;
+        font-weight: 700;
+        text-shadow: 0 1px 0 #fff;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal .ds24b-dialog .ds24b-body {
+        padding: 15px;
+        font-size: 12px;
+        line-height: 1.5em;
+      }
+
+      ._1j2t1DPDp4o5VU-RniczLb .ds24b-modal .ds24b-dialog .ds24b-headline {
+        font-size: 14px;
+        margin-bottom: 17px;
+      }
+
+      @media (min-width: 768px) {
+        ._1j2t1DPDp4o5VU-RniczLb
+          .ds24b-modal
+          .ds24b-dialog
+          .ds24b-header
+          a
+          > img {
+          height: 22px;
+          width: 123.417px;
+        }
+
+        ._1j2t1DPDp4o5VU-RniczLb
+          .ds24b-modal
+          .ds24b-dialog
+          .ds24b-header
+          .ds24b-trust {
+          font-size: 19px;
+          padding-left: 10px;
+        }
+
+        ._1j2t1DPDp4o5VU-RniczLb
+          .ds24b-modal
+          .ds24b-dialog
+          .ds24b-header
+          .ds24b-trust
+          > img {
+          width: 23.2px;
+          height: 17px;
+        }
+
+        ._1j2t1DPDp4o5VU-RniczLb
+          .ds24b-modal
+          .ds24b-dialog
+          .ds24b-header
+          .ds24b-close {
+          top: 15px;
+        }
+      }
+    </style>
+    <style>
+      .bottleArea {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .bottle-img {
+        max-width: 240px;
+        width: 100% !important;
+        margin: 0 auto;
+        height: 270px;
+        object-fit: contain;
+        object-position: center;
+      }
+
+      .row.mobile-only {
+        display: none;
+      }
+
+      @media (max-width: 769px) {
+        .desktop-only {
+          display: grid;
+        }
+
+        .buy-yellow-btn,
+        .cta-btn {
+          width: 100% !important;
+        }
+      }
+    </style>
+    <!-- Begin of Digistore24 Trusted Badge Code -->
+
+    <!-- End of Digistore24 Trusted Badge Code -->
+  </head>
+
+  <body data-disable-user-interaction="" cz-shortcut-listen="true">
+    <main id="order-now-page" class="position-relative">
+      <div>
+        <div class="position-relative" id="offer">
+          <section class="hero-fixed-bg-od pt-10 pattern-bg">
+            <div class="container text-white z-2 position-relative">
+              <div class="row">
+                <div class="col-12 col-lg-9 mx-auto top-heading-box">
+                  <!--<div id="CTA-to-scoll"></div>-->
+                  <h1
+                    class="text-uppercase fw-bold text-white mb-lg-5 text-center font-third has-separator-center"
+                  >
+                    <strong
+                      >CLAIM YOUR Vigortrix DISCOUNT PACK BELOW
+                      <span style="color: #ff3300"
+                        >WHILE STOCKS LAST!</span
+                      ></strong
+                    >
+                  </h1>
+                  <p class="average-rating">
+                    <b
+                      >Average Customer Rating 4.9
+                      <img
+                        src="./src/stars-rate.svg"
+                        loading="lazy"
+                        width="100"
+                        alt=""
+                    /></b>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div
+              class="hero-fixed-bg2 w-100 h-100 position-absolute start-0 top-0"
+            ></div>
+          </section>
+          <!--<div class="vmask d-none d-md-block"></div>-->
+        </div>
+        <section class="negative-top-margin cfa-section">
+          <div class="container cfa-container">
+            <div class="row desktop-only">
+              <div
+                class="col-12 col-md-4 text-center mb-3 order-md-first order-sm-last order-sm-last order-last zoom price-box-wrap"
+              >
+                <div class="bottleArea cta-1-bttl">
+                  <div class="bottleTitle bottle-top-highlight mb-0">
+                    <h3 class="fw-semibold mb-0 color2 pb-0">Try One</h3>
+                    <h5 class="mt-0 h5-alt pt-0">30 Days, 1 Bottle</h5>
+                    <div class="cta-vshape"></div>
+                  </div>
+                  <img
+                    class="img-fluid bottle-img cta-1b"
+                    src="./src/vigortrix1.png"
+                    loading="lazy"
+                  />
+                  <div class="priceTag">
+                    <h1
+                      class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                    >
+                      $89
+                    </h1>
+                    <h6 class="perBottle va-top d-inline-block">
+                      Per <br />Bottle
+                    </h6>
+                  </div>
+                  <div class="bottlePrice">
+                    <div class="cta-mx-reset">
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto text-primary"
+                          ><strong>YOU SAVE $110!</strong></span
+                        >
+                      </div>
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto"
+                          ><strong>60-DAYS GUARANTEE</strong></span
+                        >
+                      </div>
+                    </div>
+                    <a
+                      class="addToCart cta-btn btn"
+                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                    >
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Basic Offer</span>
+                    </a>
+                    <img
+                      class="img-fluid mb-3 crads-img"
+                      src="./src/cards.png"
+                      loading="lazy"
+                    />
+                    <h6 class="fw-bold fs-16">
+                      <span class="shipping">TOTAL:</span
+                      ><span class="oldPrice mx-1 color3">&nbsp;$179&nbsp;</span
+                      ><span class="newPrice mx-1">$89</span><br /><span
+                        class="shipping"
+                        >+$9.99&nbsp;SHIPPING</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-4 text-center mb-3 order-md-1 order-sm-first order-first zoom price-box-wrap position-relative"
+              >
+                <div class="bottleArea featured cta-6-bttl">
+                  <div class="bottleTitle bottle-top-highlight mb-0">
+                    <h3 class="fw-semibold mb-0 color2 pb-0">Best Value</h3>
+                    <h5 class="mt-0 h5-alt pt-0">180 Days, 6 Bottles</h5>
+                    <div class="cta-vshape"></div>
+                  </div>
+                  <img
+                    class="img-fluid bottle-img cta-6b"
+                    src="./src/vigortrix6.png"
+                    loading="lazy"
+                  />
+                  <div class="priceTag">
+                    <h1
+                      class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                    >
+                      $49
+                    </h1>
+                    <h6 class="perBottle va-top d-inline-block">
+                      Per <br />Bottle
+                    </h6>
+                  </div>
+                  <div class="bottlePrice">
+                    <div class="cta-mx-reset">
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto text-primary"
+                          ><strong>YOU SAVE $780!</strong></span
+                        >
+                      </div>
+                      <div class="discount alt">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto">BIGGEST DISCOUNT</span>
+                      </div>
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto">60-DAYS GUARANTEE</span>
+                      </div>
+                    </div>
+                    <a
+                      class="pulse animated infinite addToCart cta-btn btn"
+                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                    >
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Best Offer!</span>
+                    </a>
+                    <img
+                      class="img-fluid mb-3 crads-img"
+                      src="./src/cards.png"
+                      loading="lazy"
+                    />
+                    <h6 class="fw-bold fs-16">
+                      <span class="shipping">TOTAL:</span
+                      ><span class="oldPrice mx-1 color3"
+                        >&nbsp;$1074&nbsp;</span
+                      ><span class="newPrice mx-1">$294</span><br /><span
+                        class="shipping"
+                        >+&nbsp;<span class="text-danger">FREE</span> US
+                        SHIPPING&nbsp;</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-4 text-center mb-3 order-md-last zoom price-box-wrap"
+              >
+                <div class="bottleArea cta-3-bttl">
+                  <div class="bottleTitle bottle-top-highlight mb-0">
+                    <h3 class="fw-semibold mb-0 color2 pb-0">Good Value</h3>
+                    <h5 class="mt-0 h5-alt pt-0">90 Days, 3 Bottles</h5>
+                    <div class="cta-vshape"></div>
+                  </div>
+                  <img
+                    class="img-fluid bottle-img cta-3b"
+                    src="./src/vigortrix3.png"
+                    loading="lazy"
+                  />
+                  <div class="priceTag">
+                    <h1
+                      class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                    >
+                      $69
+                    </h1>
+                    <h6 class="perBottle va-top d-inline-block">
+                      Per <br />Bottle
+                    </h6>
+                  </div>
+                  <div class="bottlePrice">
+                    <div class="cta-mx-reset">
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto text-primary"
+                          ><strong>YOU SAVE $360!</strong></span
+                        >
+                      </div>
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto">60-DAYS GUARANTEE</span>
+                      </div>
+                    </div>
+                    <a
+                      class="addToCart cta-btn btn"
+                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                    >
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Good Offer</span>
+                    </a>
+                    <img
+                      class="img-fluid mb-3 crads-img"
+                      src="./src/cards.png"
+                      loading="lazy"
+                    />
+                    <h6 class="fw-bold fs-16">
+                      <span class="shipping">TOTAL:</span
+                      ><span class="oldPrice mx-1 color3">&nbsp;$537&nbsp;</span
+                      ><span class="newPrice mx-1">$207</span><br /><span
+                        class="shipping"
+                        >+&nbsp;<span class="text-danger">FREE</span> US
+                        SHIPPING&nbsp;</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mobile-only">
+              <a
+                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                class="product-box"
+              >
+                <div
+                  class="bottleArea cta-3-bttl"
+                  style="background-color: #fff4d4; border: 4px solid black"
+                >
+                  <div class="flex vcentered">
+                    <div class="column">
+                      <h5><b>180 Days, 6 Bottles</b></h5>
+                      <img
+                        class="bottle-img"
+                        src="./src/vigortrix6.png"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="priceTag">
+                        <h1
+                          class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                        >
+                          $49
+                        </h1>
+                        <h6 class="perBottle va-top d-inline-block">
+                          Per <br />Bottle
+                        </h6>
+                      </div>
+                      <div class="bottlePrice">
+                        <div class="discount">
+                          <svg
+                            width="1em"
+                            height="1em"
+                            class="me-2 fs-24"
+                            style="color: #e9b400"
+                          >
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>BEST OFFER!</b></span
+                          >
+                        </div>
+                        <div class="discount">
+                          <svg width="1em" height="1em" class="me-2 fs-24">
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>YOU SAVE $780!</b></span
+                          >
+                        </div>
+                        <h6 class="fw-bold fs-16">
+                          <span class="shipping">TOTAL:</span
+                          ><span class="oldPrice mx-1 color3"
+                            >&nbsp;$1074&nbsp;</span
+                          ><span class="newPrice mx-1">$294</span><br /><span
+                            class="shipping"
+                            >+&nbsp;<span class="text-danger">FREE</span
+                            >&nbsp;US&nbsp;SHIPPING</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pulse animated infinite addToCart cta-btn btn">
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                class="product-box"
+              >
+                <div class="bottleArea cta-3-bttl">
+                  <div class="flex vcentered">
+                    <div class="column">
+                      <h5><b>90 Days, 3 Bottles</b></h5>
+                      <img
+                        class="bottle-img"
+                        src="./src/vigortrix3.png"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="priceTag">
+                        <h1
+                          class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                        >
+                          $69
+                        </h1>
+                        <h6 class="perBottle va-top d-inline-block">
+                          Per <br />Bottle
+                        </h6>
+                      </div>
+                      <div class="bottlePrice">
+                        <div class="discount">
+                          <span class="lto text-primary"
+                            ><b>BASIC OFFER</b></span
+                          >
+                        </div>
+                        <div class="discount">
+                          <svg width="1em" height="1em" class="me-2 fs-24">
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>YOU SAVE $360!</b></span
+                          >
+                        </div>
+                        <h6 class="fw-bold fs-16">
+                          <span class="shipping">TOTAL:</span
+                          ><span class="oldPrice mx-1 color3"
+                            >&nbsp;$537&nbsp;</span
+                          ><span class="newPrice mx-1">$207</span><br /><span
+                            class="shipping"
+                            >+&nbsp;<span class="text-danger">FREE</span
+                            >&nbsp;US&nbsp;SHIPPING</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pulse animated infinite addToCart cta-btn btn">
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                class="product-box"
+              >
+                <div class="bottleArea cta-3-bttl">
+                  <div class="flex vcentered">
+                    <div class="column">
+                      <h5><b>30 Days, 1 Bottle</b></h5>
+                      <img
+                        class="bottle-img"
+                        src="./src/vigortrix1.png"
+                        loading="lazy"
+                        style="max-width: 100px"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="priceTag">
+                        <h1
+                          class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                        >
+                          $89
+                        </h1>
+                        <h6 class="perBottle va-top d-inline-block">
+                          Per <br />Bottle
+                        </h6>
+                      </div>
+                      <div class="bottlePrice">
+                        <div class="discount">
+                          <svg width="1em" height="1em" class="me-2 fs-24">
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>YOU SAVE $110!</b></span
+                          >
+                        </div>
+                        <h6 class="fw-bold fs-16">
+                          <span class="shipping">TOTAL:</span
+                          ><span class="oldPrice mx-1 color3"
+                            >&nbsp;$179&nbsp;</span
+                          ><span class="newPrice mx-1">$69</span><br /><span
+                            class="shipping"
+                            >+$9.99&nbsp;SHIPPING</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pulse animated infinite addToCart cta-btn btn">
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="stock-box">
+              <span class="stock">22</span> bottles in stock.
+            </div>
+            <div class="purchases-disclaimer" style="right: -800px">
+              <div class="purchases-box">
+                <div class="purchased-bottle">
+                  <img
+                    id="one-bottle"
+                    src="./src/vigortrix1.png"
+                    style="display: none"
+                  />
+                  <img
+                    id="three-bottles"
+                    src="./src/vigortrix3.png"
+                    style="display: block"
+                  />
+                  <img
+                    id="six-bottles"
+                    src="./src/vigortrix6.png"
+                    style="display: none"
+                  />
+                </div>
+                <div class="purchase-info">
+                  <span id="customer-name">Pedro</span> in
+                  <span id="customer-location">Urban Honolulu CDP</span> just
+                  bought <span id="items-purchased">3 bottles</span>!
+                </div>
+              </div>
+            </div>
+            <section class="pt-40" style="margin-bottom: 4rem">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-12 mx-auto">
+                    <div class="d-flex badges-images mx-auto">
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/usa.png"
+                        title="Manufactured in the USA"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/fda.png"
+                        title="FDA Inspected"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/cgmp.png"
+                        title="Current Good Manufacturing Practice"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/gf.png"
+                        title="Gluten FREE"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/bpa.png"
+                        title="BPA FREE"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/ngmo.png"
+                        title="Non-GMO"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="definitions d-none">
+              <div>
+                <svg version="2.0">
+                  <defs>
+                    <symbol
+                      id="tick"
+                      viewBox="0 0 512 512"
+                      width="100%"
+                      height="100%"
+                    >
+                      <g fill="currentColor">
+                        <path
+                          d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
+                        ></path>
+                      </g>
+                    </symbol>
+                    <symbol
+                      id="cart"
+                      viewBox="0 0 455.297 455.297"
+                      width="100%"
+                      height="100%"
+                    >
+                      <g>
+                        <circle cx="65.993" cy="417.586" r="35"></circle>
+                        <path
+                          d="M30.993,322.586v30h182.879c-5.914-9.267-10.676-19.335-14.094-30H30.993z"
+                        ></path>
+                        <path
+                          d="M323.059,183.727c-54.826,0-99.431,44.604-99.431,99.429s44.604,99.429,99.431,99.429 c54.825,0,99.429-44.604,99.429-99.429S377.884,183.727,323.059,183.727z M384.559,298.157h-46.5v46.5h-30v-46.5h-46.5v-30h46.5 v-46.5h30v46.5h46.5V298.157z"
+                        ></path>
+                        <path
+                          d="M393.673,2.711l-12.294,75H0l25.888,158.454c2.833,17.282,19.479,31.422,36.992,31.422h131.688 c7.715-64.052,62.392-113.859,128.49-113.859c26.887,0,51.884,8.244,72.6,22.333l23.496-143.349h36.142v-30H393.673z"
+                        ></path>
+                        <path
+                          d="M323.059,412.586c-12.147,0-23.907-1.686-35.062-4.829c-0.912,3.118-1.404,6.416-1.404,9.829c0,19.33,15.67,35,35,35 c19.33,0,35-15.67,35-35c0-3.145-0.421-6.19-1.2-9.089C345.054,411.166,334.219,412.586,323.059,412.586z"
+                        ></path>
+                      </g>
+                    </symbol>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="definitions d-none">
+              <svg version="2.0">
+                <defs>
+                  <symbol
+                    id="tick"
+                    viewBox="0 0 512 512"
+                    width="100%"
+                    height="100%"
+                  >
+                    <g fill="currentColor">
+                      <path
+                        d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
+                      ></path>
+                    </g>
+                  </symbol>
+                  <symbol
+                    id="cart"
+                    viewBox="0 0 455.297 455.297"
+                    width="100%"
+                    height="100%"
+                  >
+                    <g>
+                      <circle cx="65.993" cy="417.586" r="35"></circle>
+                      <path
+                        d="M30.993,322.586v30h182.879c-5.914-9.267-10.676-19.335-14.094-30H30.993z"
+                      ></path>
+                      <path
+                        d="M323.059,183.727c-54.826,0-99.431,44.604-99.431,99.429s44.604,99.429,99.431,99.429 c54.825,0,99.429-44.604,99.429-99.429S377.884,183.727,323.059,183.727z M384.559,298.157h-46.5v46.5h-30v-46.5h-46.5v-30h46.5 v-46.5h30v46.5h46.5V298.157z"
+                      ></path>
+                      <path
+                        d="M393.673,2.711l-12.294,75H0l25.888,158.454c2.833,17.282,19.479,31.422,36.992,31.422h131.688 c7.715-64.052,62.392-113.859,128.49-113.859c26.887,0,51.884,8.244,72.6,22.333l23.496-143.349h36.142v-30H393.673z"
+                      ></path>
+                      <path
+                        d="M323.059,412.586c-12.147,0-23.907-1.686-35.062-4.829c-0.912,3.118-1.404,6.416-1.404,9.829c0,19.33,15.67,35,35,35 c19.33,0,35-15.67,35-35c0-3.145-0.421-6.19-1.2-9.089C345.054,411.166,334.219,412.586,323.059,412.586z"
+                      ></path>
+                    </g>
+                  </symbol>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </section>
+        <div class="pattern-bg-light">
+          <section
+            class="testimonials pt-100 pb-1 pb-lg-5"
+            style="background: none !important"
+          >
+            <div class="container">
+              <div>
+                <p class="fw-semibold text-center fw-bold small-title">
+                  <span style="color: rgb(51, 51, 51)">TESTIMONIALS</span>
+                </p>
+                <h1
+                  class="text-center mb-4 font-third fw-bold has-separator-center"
+                >
+                  <span style="color: rgb(51, 51, 51)">Real Vigortrix </span
+                  ><span class="text-primary">Users</span
+                  ><span style="color: rgb(51, 51, 51)"
+                    >, Real Life‑Changing </span
+                  ><span class="text-primary">Results</span>
+                </h1>
+              </div>
+              <div class="row row-bordered pb-4 pb-lg-3">
+                <div class="col-md-2 col-lg-2">
+                  <img
+                    class="img-fluid d-block mx-auto testimonial-thumb"
+                    src="./src/review1.jpg"
+                    loading="lazy"
+                  />
+                  <p class="fs-3 text-center font-third lh-reset">
+                    John Miller
+                  </p>
+                  <h5 class="text-center font-primary mb-0 pb-0 font-third">
+                    45, Austin, Texas
+                  </h5>
+                </div>
+                <div class="col">
+                  <p class="quote position-relative">
+                    <i class="fas fa-quote-right quote-icon text-dark"></i
+                    ><span class="p-quote text-center text-md-start"
+                      >"I stumbled upon VIGORTRIX when it felt like my marriage
+                      was on the brink of collapse, all due to performance
+                      issues that emerged after 20 years of a harmonious
+                      relationship and an active sex life with my wife. The
+                      onset of this problem shook us to our core, but
+                      fortunately, VIGORTRIX arrived as an unexpected solution.
+                      Since then, I’ve experienced a remarkable revitalization,
+                      reminiscent of my younger years, allowing both my wife and
+                      me to once again enjoy an intense and fulfilling love
+                      life."</span
+                    >
+                  </p>
+                  <div class="text-center text-md-start">
+                    <p
+                      class="fs-5 fw-bold d-inline me-3 text-secondary font-third fw-bold"
+                    >
+                      <span style="color: rgb(51, 51, 51)"
+                        >Verified Purchase</span
+                      >
+                    </p>
+                    <img
+                      class="rating-stars"
+                      src="./src/ratingStars.png"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row row-bordered pt-3 pb-4 pb-lg-3">
+                <div class="col-md-2 col-lg-2">
+                  <img
+                    class="img-fluid testimonial-thumb d-block mx-auto"
+                    src="./src/review2.jpg"
+                    loading="lazy"
+                  />
+                  <p class="fs-3 text-center font-third lh-reset">
+                    Sarah Thompson
+                  </p>
+                  <h5 class="font-primary mb-0 pb-0 text-center font-third">
+                    42, Denver, Colorado
+                  </h5>
+                </div>
+                <div class="col">
+                  <p class="position-relative p-quote">
+                    <i class="fas fa-quote-right quote-icon text-dark"></i
+                    ><span class="p-quote text-center text-md-start"
+                      >"Watching my husband struggle with ED was
+                      heart-wrenching; it felt like our connection was slipping
+                      away. I had desires and craved intimacy, but it led to
+                      constant frustration. However, VIGORTRIX entered our lives
+                      and became part of our daily routine. The change was
+                      noticeable. His self-esteem soared, and so did our
+                      closeness. It was as if we were newlyweds again,
+                      rediscovering each other with renewed passion and joy.
+                      VIGORTRIX didn't just help him; it healed us."</span
+                    >
+                  </p>
+                  <div class="text-center text-md-start">
+                    <p class="fs-5 fw-bold d-inline me-3 font-third fw-bold">
+                      Verified Purchase
+                    </p>
+                    <img
+                      class="rating-stars"
+                      src="./src/ratingStars.png"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row row-bordered pt-3 pb-4 pb-lg-3">
+                <div class="col-md-2 col-lg-2">
+                  <img
+                    class="img-fluid testimonial-thumb d-block mx-auto"
+                    src="./src/review3.jpg"
+                    loading="lazy"
+                  />
+                  <p class="fs-3 text-center font-third lh-reset">
+                    Mark Johnson
+                  </p>
+                  <h5 class="font-primary mb-0 pb-0 text-center font-third">
+                    54, Orlando, Florida
+                  </h5>
+                </div>
+                <div class="col">
+                  <p class="position-relative p-quote">
+                    <i class="fas fa-quote-right quote-icon text-dark"></i
+                    ><span class="p-quote text-center text-md-start"
+                      >"I never thought that at 54, I’d be facing intimacy
+                      issues with my wife. Admitting this is tough, as it
+                      significantly shook my confidence as a man. The leadership
+                      role I always played at home seemed to fade away. But
+                      then, by chance, I found VIGORTRIX online, and everything
+                      changed. It has become an essential part of my routine, to
+                      the point that I can’t go a day without it, which is why I
+                      always stock up. It’s thanks to this product that I was
+                      able to confront and overcome the challenge of performance
+                      problems."</span
+                    >
+                  </p>
+                  <div class="text-center text-md-start">
+                    <p class="fs-5 fw-bold d-inline me-3 font-third fw-bold">
+                      Verified Purchase
+                    </p>
+                    <img
+                      class="rating-stars"
+                      src="./src/ratingStars.png"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row row-bordered pt-3 pb-4 pb-lg-3">
+                <div class="col-md-2 col-lg-2">
+                  <img
+                    class="img-fluid testimonial-thumb d-block mx-auto"
+                    src="./src/review4.jpg"
+                    loading="lazy"
+                  />
+                  <p class="fs-3 text-center font-third lh-reset">
+                    David Carter
+                  </p>
+                  <h5 class="font-primary mb-0 pb-0 text-center font-third">
+                    48, Seattle, Washington
+                  </h5>
+                </div>
+                <div class="col">
+                  <p class="position-relative p-quote">
+                    <i class="fas fa-quote-right quote-icon text-dark"></i
+                    ><span class="p-quote text-center text-md-start"
+                      >"For me, VIGORTRIX came with a slew of unexpected
+                      benefits. In a way I no longer thought possible, I
+                      regained my self-confidence. Now, my erections last for
+                      over an hour, I feel more energized, and I even lost 6
+                      pounds. I’m truly impressed."</span
+                    >
+                  </p>
+                  <div class="text-center text-md-start fw-bold">
+                    <p class="fs-5 fw-bold d-inline fw-bold me-3 font-third">
+                      Verified Purchase
+                    </p>
+                    <img
+                      class="rating-stars"
+                      src="./src/ratingStars.png"
+                      loading="lazy"
+                    />
+                  </div>
+                </div>
+              </div>
+              <h4 class="small mb-40 text-center text-md-start">
+                * Results may Vary
+              </h4>
+            </div>
+          </section>
+        </div>
+        <section id="order-section" class="py-100">
+          <div class="container">
+            <div class="row gx-lg-5">
+              <div
+                class="col-12 col-md-6 col-lg-6 align-items-xxl-center text-center"
+              >
+                <div class="shadow-box h-100 text-center text-md-end mr-60">
+                  <img
+                    class="img-fluid mb-lg-0"
+                    src="./src/vigortrix3.png"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-6">
+                <p class="lead small-title">Order Now</p>
+                <h1 class="has-separator font-third fw-bold">
+                  100% Satisfaction <span class="text-primary">GUARANTEED</span>
+                </h1>
+                <h6 class="mt-10">
+                  Vigortrix comes with a 100% Money Back Guarantee - 60 full
+                  days from your original purchase
+                </h6>
+                <div>
+                  <a
+                    class="btn btn-primary text-uppercase mt-30 buy-yellow-btn yellow-small"
+                    role="button"
+                    href="#order-now"
+                    >Order Now</a
+                  >
+                </div>
+                <div class="pt-4 buy-car clearfix">
+                  <img class="car" src="./src/car-black.png" />
+                  <div class="car-text">
+                    <h4
+                      class="mb-0 text-start font-third text-uppercase fw-bold"
+                    >
+                      Every 6 Bottles Order Gets FREE Shipping Too!
+                    </h4>
+                    <p class="small mb-0">
+                      *96% Of Customers Order 6 Bottles (Our Recommended Option)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!--<section id="ingredients" class="bg-dark pattern-bg text-white elements_bg py-100 fw-bold text-primary">
+               <div class="container z-2 position-relative">
+                <h1 class="text-center text-white font-third fw-bold">Inside Every <span class="text-primary">Vigortrix</span>&nbsp;Capsule You’ll Find:</h1>
+                <h3 class="fw-normal text-center pb-3 mb-4 font-third fw-bold has-separator-center"><span class="text-primary">8 CAREFULLY-SELECTED INGREDIENTS</span>&nbsp;That Support Your Sex Life Goals</h3>
+                <div class="row d-xl-flex justify-content-xl-center text-center g-lg-5">
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/hawthorn.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Hawthorn Berry</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">&nbsp;Promotes Circulation</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/gb.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Tribulus</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">Heightens Libido</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/mira.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Chrysin</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">Oxidative Stress Shield</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/catuaba.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Epimedium</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">&nbsp;Facilitates Blood Flow</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/i-ginseng-root.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Saw Palmetto</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">Testosterone <br>Production Aid</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/nicain.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Tongkat Ali</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">Improves <br>Sexual Performance</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/Epimedium.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Winged Treebine</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">Enhances <br>Natural Stamina</p>
+                  </div>
+                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
+                    <div>
+                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/capsicum.jpg" loading="lazy">
+                    </div>
+                    <div class="text-center ingredients-name">
+                      <h5 class="mb-0 font-third fw-bold text-primary">Magnesium</h5>
+                    </div>
+                    <p class="lh-p mb-0 text-white">Supports <br>Testosterone Levels</p>
+                  </div>
+                </div>
+               </div>
+               </section>-->
+        <section class="blue-box mx-auto py-100 pattern-bg-light">
+          <div class="container">
+            <p class="text-center fw-bold small-title text-black">
+              Vigortrix Q&amp;A
+            </p>
+            <h1
+              class="text-center mb-4 font-third has-separator-center fw-bold"
+            >
+              Frequently Asked Questions
+            </h1>
+            <div class="accordion" role="tablist" id="accordion-2">
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-1"
+                    aria-expanded="true"
+                    aria-controls="accordion-2 .item-1"
+                  >
+                    HOW CAN I GET STARTED?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse show item-1"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      To start enjoying VIGORTRIX and embark on your new journey
+                      towards a life filled with vitality, energy, and joy,
+                      simply choose the pack option that appeals to you the
+                      most. On the next page, fill in your details and confirm
+                      your order. Your request will be forwarded to our
+                      responsive warehouse team, who will prepare and dispatch
+                      your order, plus notify you about the shipment. You can
+                      begin your VIGORTRIX experience in just a few days! Click
+                      on the option that suits you best below to take advantage
+                      while VIGORTRIX is still available.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-2"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-2"
+                  >
+                    IS Vigortrix RIGHT FOR ME?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-2"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      VIGORTRIX has been providing incredible support for men's
+                      sexual health in their 30s, 40s, 50s, and even 70s.
+                      Crafted from the insights of modern science, VIGORTRIX's
+                      formula is both gentle and potent, made entirely from pure
+                      plant ingredients and natural minerals. And now, you can
+                      take confidence in knowing it's proudly made in the United
+                      States of America, combining the finest domestic and
+                      international ingredients, in a state-of-the-art facility
+                      that’s FDA registered and GMP certified.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-3"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-3"
+                  >
+                    WHAT KIND OF RESULTS CAN I EXPECT FROM Vigortrix?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-3"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      The results with VIGORTRIX typically unfold in stages,
+                      depending on how long you continue using the supplement.
+                      Generally, they go something like this: Stage 1. You’ll
+                      feel significantly better overall, with more energy,
+                      clearer thoughts, and restful sleep—like turning back the
+                      clock a decade or two. That’s how you’ll feel again. Stage
+                      2. You’ll begin to notice firmer muscles and erections,
+                      along with increased energy and stamina. Stage 3. All your
+                      improvements solidify as long as you take VIGORTRIX for at
+                      least three continuous months. This is when the
+                      inflammation affecting your reproductive system is
+                      significantly reduced, allowing you to enjoy a fulfilling
+                      sex life, regardless of age.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-4"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-4"
+                  >
+                    HOW LONG WILL IT TAKE TO SEE RESULTS?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-4"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      Everyone is different, so the time it takes to see results
+                      can vary. Most people start noticing a difference within
+                      the first week. In our tests, the best outcomes are
+                      achieved when you take VIGORTRIX consistently for 3 months
+                      (or longer) to allow enough time to cleanse, renew, and
+                      revitalize. That’s why we highly recommend you take
+                      advantage of our promotional discount package for 3 or 6
+                      bottles.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-5"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-5"
+                  >
+                    WHAT IF Vigortrix DOESN’T WORK FOR ME?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-5"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      I want you to be thrilled with your purchase, not just
+                      satisfied. And you won't know until you try it! So, you
+                      can use VIGORTRIX for 60 days, backed by my 'No Questions
+                      Asked 100% Money Back Guarantee.' The only way to be fully
+                      convinced is to try this amazing formula for yourself and
+                      see the results.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-6"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-6"
+                  >
+                    CAN YOU TELL ME ABOUT THE GUARANTEE AGAIN?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-6"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      The more results we see, the more convinced we are of
+                      VIGORTRIX's ability to fully support your sexual health.
+                      However, it's important to remember that not every
+                      solution works for everyone, as each body responds in its
+                      own unique way. That's why every bottle of VIGORTRIX comes
+                      with a solid 60-day money-back guarantee. If, for any
+                      reason, you're not completely satisfied with the results,
+                      you can easily return any unused product for a full,
+                      no-questions-asked refund.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-6"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-6"
+                  >
+                    WHERE CAN I BUY Vigortrix AND HOW QUICKLY CAN I GET IT?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-6"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      To ensure you're purchasing the authentic product and to
+                      guarantee the purity of the ingredients, please make your
+                      purchase exclusively through the official website. Your
+                      order will be shipped directly to your home or office via
+                      premium carriers like FedEx or UPS. We strive to dispatch
+                      every order within 24 business hours, and to make things
+                      convenient, you will receive an email with your tracking
+                      number so you can monitor your package. On average, your
+                      package will arrive at your doorstep within 5 to 10 days
+                      for domestic orders.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header" role="tab">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#accordion-2 .item-7"
+                    aria-expanded="false"
+                    aria-controls="accordion-2 .item-7"
+                  >
+                    IS MY PURCHASE SECURE? HOW MANY TIMES WILL YOU CHARGE MY
+                    CARD?
+                  </button>
+                </h2>
+                <div
+                  class="accordion-collapse collapse item-7"
+                  role="tabpanel"
+                  data-bs-parent="#accordion-2"
+                >
+                  <div class="accordion-body">
+                    <p class="mb-0">
+                      To purchase VIGORTRIX, you will only need to make a
+                      one-time payment right on this page. There are no future
+                      payments required to enjoy the benefits of this product.
+                      This website is highly secure, utilizing industry-leading
+                      technology (such as SSL) to ensure your information
+                      remains safe and private.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="bg-white py-30">
+          <div class="container">
+            <div class="row">
+              <div class="col-12 col-lg-10 col-xl-7 text-end mx-auto">
+                <div class="buy-car">
+                  <img class="car" src="./src/car-black.png" loading="lazy" />
+                  <div class="car-text">
+                    <h3
+                      class="fw-normal mb-0 text-start font-third text-black fw-bold"
+                    >
+                      Every 6 Bottles Order Gets FREE Shipping Too!
+                    </h3>
+                    <p class="mb-0 text-start text-black small">
+                      *96% Of Customers Order 6 Bottles (Our Recommended Option)
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="order-now" class="bg-dark secondary-cta pt-40 pattern-bg">
+          <div class="container">
+            <h1
+              class="text-center fw-bold text-white pb-3 mb-0 font-third has-separator-center"
+            >
+              TAKE ADVANTAGE OF THIS LIMITED OFFER TO STOCK UP ON Vigortrix
+              <span class="text-primary">WHILE SUPPLIES LAST!</span>
+            </h1>
+          </div>
+        </section>
+        <section class="negative-top-margin cfa-section">
+          <div class="container cfa-container">
+            <div class="row desktop-only">
+              <div
+                class="col-12 col-md-4 text-center mb-3 order-md-first order-sm-last order-sm-last order-last zoom price-box-wrap"
+              >
+                <div class="bottleArea cta-1-bttl">
+                  <div class="bottleTitle bottle-top-highlight mb-0">
+                    <h3 class="fw-semibold mb-0 color2 pb-0">Try One</h3>
+                    <h5 class="mt-0 h5-alt pt-0">30 Days, 1 Bottle</h5>
+                    <div class="cta-vshape"></div>
+                  </div>
+                  <img
+                    class="img-fluid bottle-img cta-1b"
+                    src="./src/vigortrix1.png"
+                    loading="lazy"
+                  />
+                  <div class="priceTag">
+                    <h1
+                      class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                    >
+                      $89
+                    </h1>
+                    <h6 class="perBottle va-top d-inline-block">
+                      Per <br />Bottle
+                    </h6>
+                  </div>
+                  <div class="bottlePrice">
+                    <div class="cta-mx-reset">
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto text-primary"
+                          ><strong>YOU SAVE $110!</strong></span
+                        >
+                      </div>
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto"
+                          ><strong>60-DAYS GUARANTEE</strong></span
+                        >
+                      </div>
+                    </div>
+                    <a
+                      class="addToCart cta-btn btn"
+                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                    >
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Basic Offer</span>
+                    </a>
+                    <img
+                      class="img-fluid mb-3 crads-img"
+                      src="./src/cards.png"
+                      loading="lazy"
+                    />
+                    <h6 class="fw-bold fs-16">
+                      <span class="shipping">TOTAL:</span
+                      ><span class="oldPrice mx-1 color3">&nbsp;$179&nbsp;</span
+                      ><span class="newPrice mx-1">$89</span><br /><span
+                        class="shipping"
+                        >+$9.99&nbsp;SHIPPING</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-4 text-center mb-3 order-md-1 order-sm-first order-first zoom price-box-wrap position-relative"
+              >
+                <div class="bottleArea featured cta-6-bttl">
+                  <div class="bottleTitle bottle-top-highlight mb-0">
+                    <h3 class="fw-semibold mb-0 color2 pb-0">Best Value</h3>
+                    <h5 class="mt-0 h5-alt pt-0">180 Days, 6 Bottles</h5>
+                    <div class="cta-vshape"></div>
+                  </div>
+                  <img
+                    class="img-fluid bottle-img cta-6b"
+                    src="./src/vigortrix6.png"
+                    loading="lazy"
+                  />
+                  <div class="priceTag">
+                    <h1
+                      class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                    >
+                      $49
+                    </h1>
+                    <h6 class="perBottle va-top d-inline-block">
+                      Per <br />Bottle
+                    </h6>
+                  </div>
+                  <div class="bottlePrice">
+                    <div class="cta-mx-reset">
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto text-primary"
+                          ><strong>YOU SAVE $780!</strong></span
+                        >
+                      </div>
+                      <div class="discount alt">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto">BIGGEST DISCOUNT</span>
+                      </div>
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto">60-DAYS GUARANTEE</span>
+                      </div>
+                    </div>
+                    <a
+                      class="pulse animated infinite addToCart cta-btn btn"
+                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                    >
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Best Offer!</span>
+                    </a>
+                    <img
+                      class="img-fluid mb-3 crads-img"
+                      src="./src/cards.png"
+                      loading="lazy"
+                    />
+                    <h6 class="fw-bold fs-16">
+                      <span class="shipping">TOTAL:</span
+                      ><span class="oldPrice mx-1 color3"
+                        >&nbsp;$1074&nbsp;</span
+                      ><span class="newPrice mx-1">$294</span><br /><span
+                        class="shipping"
+                        >+&nbsp;<span class="text-danger">FREE</span> US
+                        SHIPPING&nbsp;</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-12 col-md-4 text-center mb-3 order-md-last zoom price-box-wrap"
+              >
+                <div class="bottleArea cta-3-bttl">
+                  <div class="bottleTitle bottle-top-highlight mb-0">
+                    <h3 class="fw-semibold mb-0 color2 pb-0">Good Value</h3>
+                    <h5 class="mt-0 h5-alt pt-0">90 Days, 3 Bottles</h5>
+                    <div class="cta-vshape"></div>
+                  </div>
+                  <img
+                    class="img-fluid bottle-img cta-3b"
+                    src="./src/vigortrix3.png"
+                    loading="lazy"
+                  />
+                  <div class="priceTag">
+                    <h1
+                      class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                    >
+                      $69
+                    </h1>
+                    <h6 class="perBottle va-top d-inline-block">
+                      Per <br />Bottle
+                    </h6>
+                  </div>
+                  <div class="bottlePrice">
+                    <div class="cta-mx-reset">
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto text-primary"
+                          ><strong>YOU SAVE $360!</strong></span
+                        >
+                      </div>
+                      <div class="discount">
+                        <svg
+                          width="1em"
+                          height="1em"
+                          class="me-2 fs-24"
+                          style="font-size: 23px"
+                        >
+                          <use href="#tick"></use>
+                        </svg>
+                        <span class="lto">60-DAYS GUARANTEE</span>
+                      </div>
+                    </div>
+                    <a
+                      class="addToCart cta-btn btn"
+                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                    >
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Good Offer</span>
+                    </a>
+                    <img
+                      class="img-fluid mb-3 crads-img"
+                      src="./src/cards.png"
+                      loading="lazy"
+                    />
+                    <h6 class="fw-bold fs-16">
+                      <span class="shipping">TOTAL:</span
+                      ><span class="oldPrice mx-1 color3">&nbsp;$537&nbsp;</span
+                      ><span class="newPrice mx-1">$207</span><br /><span
+                        class="shipping"
+                        >+&nbsp;<span class="text-danger">FREE</span> US
+                        SHIPPING&nbsp;</span
+                      >
+                    </h6>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row mobile-only">
+              <a
+                href="
+            https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8=
+            "
+                class="product-box"
+              >
+                <div
+                  class="bottleArea cta-3-bttl"
+                  style="background-color: #fff4d4; border: 4px solid black"
+                >
+                  <div class="flex vcentered">
+                    <div class="column">
+                      <h5><b>180 Days, 6 Bottles</b></h5>
+                      <img
+                        class="bottle-img"
+                        src="./src/vigortrix6.png"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="priceTag">
+                        <h1
+                          class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                        >
+                          $49
+                        </h1>
+                        <h6 class="perBottle va-top d-inline-block">
+                          Per <br />Bottle
+                        </h6>
+                      </div>
+                      <div class="bottlePrice">
+                        <div class="discount">
+                          <svg
+                            width="1em"
+                            height="1em"
+                            class="me-2 fs-24"
+                            style="color: #e9b400"
+                          >
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>BEST OFFER!</b></span
+                          >
+                        </div>
+                        <div class="discount">
+                          <svg width="1em" height="1em" class="me-2 fs-24">
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>YOU SAVE $780!</b></span
+                          >
+                        </div>
+                        <h6 class="fw-bold fs-16">
+                          <span class="shipping">TOTAL:</span
+                          ><span class="oldPrice mx-1 color3"
+                            >&nbsp;$1074&nbsp;</span
+                          ><span class="newPrice mx-1">$294</span><br /><span
+                            class="shipping"
+                            >+&nbsp;<span class="text-danger">FREE</span
+                            >&nbsp;US&nbsp;SHIPPING</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pulse animated infinite addToCart cta-btn btn">
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                class="product-box"
+              >
+                <div class="bottleArea cta-3-bttl">
+                  <div class="flex vcentered">
+                    <div class="column">
+                      <h5><b>90 Days, 3 Bottles</b></h5>
+                      <img
+                        class="bottle-img"
+                        src="./src/vigortrix3.png"
+                        loading="lazy"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="priceTag">
+                        <h1
+                          class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                        >
+                          $69
+                        </h1>
+                        <h6 class="perBottle va-top d-inline-block">
+                          Per <br />Bottle
+                        </h6>
+                      </div>
+                      <div class="bottlePrice">
+                        <div class="discount">
+                          <span class="lto text-primary"
+                            ><b>BASIC OFFER</b></span
+                          >
+                        </div>
+                        <div class="discount">
+                          <svg width="1em" height="1em" class="me-2 fs-24">
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>YOU SAVE $360!</b></span
+                          >
+                        </div>
+                        <h6 class="fw-bold fs-16">
+                          <span class="shipping">TOTAL:</span
+                          ><span class="oldPrice mx-1 color3"
+                            >&nbsp;$537&nbsp;</span
+                          ><span class="newPrice mx-1">$207</span><br /><span
+                            class="shipping"
+                            >+&nbsp;<span class="text-danger">FREE</span
+                            >&nbsp;US&nbsp;SHIPPING</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pulse animated infinite addToCart cta-btn btn">
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
+                  </div>
+                </div>
+              </a>
+              <a
+                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                class="product-box"
+              >
+                <div class="bottleArea cta-3-bttl">
+                  <div class="flex vcentered">
+                    <div class="column">
+                      <h5><b>30 Days, 1 Bottle</b></h5>
+                      <img
+                        class="bottle-img"
+                        src="./src/vigortrix1.png"
+                        loading="lazy"
+                        style="max-width: 100px"
+                      />
+                    </div>
+                    <div class="column">
+                      <div class="priceTag">
+                        <h1
+                          class="fw-bold display-4 h1-alt d-inline-block price-ttl"
+                        >
+                          $89
+                        </h1>
+                        <h6 class="perBottle va-top d-inline-block">
+                          Per <br />Bottle
+                        </h6>
+                      </div>
+                      <div class="bottlePrice">
+                        <div class="discount">
+                          <svg width="1em" height="1em" class="me-2 fs-24">
+                            <use href="#tick"></use>
+                          </svg>
+                          <span class="lto text-primary"
+                            ><b>YOU SAVE $110!</b></span
+                          >
+                        </div>
+                        <h6 class="fw-bold fs-16">
+                          <span class="shipping">TOTAL:</span
+                          ><span class="oldPrice mx-1 color3"
+                            >&nbsp;$179&nbsp;</span
+                          ><span class="newPrice mx-1">$69</span><br /><span
+                            class="shipping"
+                            >+$9.99&nbsp;SHIPPING</span
+                          >
+                        </h6>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="pulse animated infinite addToCart cta-btn btn">
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="stock-box">
+              <span class="stock">22</span> bottles in stock.
+            </div>
+            <div class="purchases-disclaimer" style="right: -800px">
+              <div class="purchases-box">
+                <div class="purchased-bottle">
+                  <img
+                    id="one-bottle"
+                    src="./src/vigortrix1.png"
+                    style="display: none"
+                  />
+                  <img
+                    id="three-bottles"
+                    src="./src/vigortrix3.png"
+                    style="display: block"
+                  />
+                  <img
+                    id="six-bottles"
+                    src="./src/vigortrix6.png"
+                    style="display: none"
+                  />
+                </div>
+                <div class="purchase-info">
+                  <span id="customer-name">Pedro</span> in
+                  <span id="customer-location">Urban Honolulu CDP</span> just
+                  bought <span id="items-purchased">3 bottles</span>!
+                </div>
+              </div>
+            </div>
+            <section class="pt-40" style="margin-bottom: 4rem">
+              <div class="container text-center">
+                <div class="row">
+                  <div class="col-12 mx-auto">
+                    <div class="d-flex badges-images mx-auto">
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/usa.png"
+                        title="Manufactured in the USA"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/fda.png"
+                        title="FDA Inspected"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/cgmp.png"
+                        title="Current Good Manufacturing Practice"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/gf.png"
+                        title="Gluten FREE"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/bpa.png"
+                        title="BPA FREE"
+                        loading="lazy"
+                      />
+                      <img
+                        class="img-fluid"
+                        data-bs-toggle="tooltip"
+                        data-bss-tooltip=""
+                        src="./src/ngmo.png"
+                        title="Non-GMO"
+                        loading="lazy"
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+            <div class="definitions d-none">
+              <div>
+                <svg version="2.0">
+                  <defs>
+                    <symbol
+                      id="tick"
+                      viewBox="0 0 512 512"
+                      width="100%"
+                      height="100%"
+                    >
+                      <g fill="currentColor">
+                        <path
+                          d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
+                        ></path>
+                      </g>
+                    </symbol>
+                    <symbol
+                      id="cart"
+                      viewBox="0 0 455.297 455.297"
+                      width="100%"
+                      height="100%"
+                    >
+                      <g>
+                        <circle cx="65.993" cy="417.586" r="35"></circle>
+                        <path
+                          d="M30.993,322.586v30h182.879c-5.914-9.267-10.676-19.335-14.094-30H30.993z"
+                        ></path>
+                        <path
+                          d="M323.059,183.727c-54.826,0-99.431,44.604-99.431,99.429s44.604,99.429,99.431,99.429 c54.825,0,99.429-44.604,99.429-99.429S377.884,183.727,323.059,183.727z M384.559,298.157h-46.5v46.5h-30v-46.5h-46.5v-30h46.5 v-46.5h30v46.5h46.5V298.157z"
+                        ></path>
+                        <path
+                          d="M393.673,2.711l-12.294,75H0l25.888,158.454c2.833,17.282,19.479,31.422,36.992,31.422h131.688 c7.715-64.052,62.392-113.859,128.49-113.859c26.887,0,51.884,8.244,72.6,22.333l23.496-143.349h36.142v-30H393.673z"
+                        ></path>
+                        <path
+                          d="M323.059,412.586c-12.147,0-23.907-1.686-35.062-4.829c-0.912,3.118-1.404,6.416-1.404,9.829c0,19.33,15.67,35,35,35 c19.33,0,35-15.67,35-35c0-3.145-0.421-6.19-1.2-9.089C345.054,411.166,334.219,412.586,323.059,412.586z"
+                        ></path>
+                      </g>
+                    </symbol>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="definitions d-none">
+              <svg version="2.0">
+                <defs>
+                  <symbol
+                    id="tick"
+                    viewBox="0 0 512 512"
+                    width="100%"
+                    height="100%"
+                  >
+                    <g fill="currentColor">
+                      <path
+                        d="M0 256C0 114.6 114.6 0 256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256zM371.8 211.8C382.7 200.9 382.7 183.1 371.8 172.2C360.9 161.3 343.1 161.3 332.2 172.2L224 280.4L179.8 236.2C168.9 225.3 151.1 225.3 140.2 236.2C129.3 247.1 129.3 264.9 140.2 275.8L204.2 339.8C215.1 350.7 232.9 350.7 243.8 339.8L371.8 211.8z"
+                      ></path>
+                    </g>
+                  </symbol>
+                  <symbol
+                    id="cart"
+                    viewBox="0 0 455.297 455.297"
+                    width="100%"
+                    height="100%"
+                  >
+                    <g>
+                      <circle cx="65.993" cy="417.586" r="35"></circle>
+                      <path
+                        d="M30.993,322.586v30h182.879c-5.914-9.267-10.676-19.335-14.094-30H30.993z"
+                      ></path>
+                      <path
+                        d="M323.059,183.727c-54.826,0-99.431,44.604-99.431,99.429s44.604,99.429,99.431,99.429 c54.825,0,99.429-44.604,99.429-99.429S377.884,183.727,323.059,183.727z M384.559,298.157h-46.5v46.5h-30v-46.5h-46.5v-30h46.5 v-46.5h30v46.5h46.5V298.157z"
+                      ></path>
+                      <path
+                        d="M393.673,2.711l-12.294,75H0l25.888,158.454c2.833,17.282,19.479,31.422,36.992,31.422h131.688 c7.715-64.052,62.392-113.859,128.49-113.859c26.887,0,51.884,8.244,72.6,22.333l23.496-143.349h36.142v-30H393.673z"
+                      ></path>
+                      <path
+                        d="M323.059,412.586c-12.147,0-23.907-1.686-35.062-4.829c-0.912,3.118-1.404,6.416-1.404,9.829c0,19.33,15.67,35,35,35 c19.33,0,35-15.67,35-35c0-3.145-0.421-6.19-1.2-9.089C345.054,411.166,334.219,412.586,323.059,412.586z"
+                      ></path>
+                    </g>
+                  </symbol>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div style="padding: 2rem 0"></div>
+    <footer class="text-center bg-dark">
+      <div class="container text-white py-4 py-lg-5">
+        <ul class="list-inline small">
+          <li class="list-inline-item">
+            <a class="link-light" href="contact.html">Contact</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="link-light" href="reference.html">References</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="link-light" href="terms.html">Terms</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="link-light" href="privacy.html">Privacy</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="link-light" href="refund.html">Return Policy</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="link-light" href="shipping.html">Shipping</a>
+          </li>
+          <li class="list-inline-item">
+            <a class="link-light" href="Disclaimer.html">Disclaimer</a>
+          </li>
+          <!--<li class="list-inline-item"><a class="link-light" href="/unsubscribe">Report Spam</a></li>-->
+        </ul>
+        <div></div>
+        <p class="text-muted mb-0 small">
+          The information on this website has not been evaluated by the Food and
+          Drug Administration. These products are not intended to diagnose,
+          treat, cure or prevent any disease.
+        </p>
+        <br />
+        <p class="text-muted mb-0 small">
+          © Vigortrix Research 2023 All Rights Reserved. 924 N Magnolia Ave,
+          Suite 202, Unit #5383 Orlando, FL 32803
+        </p>
+        <br />
+        <style>
+        #disclaimer-container {
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 100%;
+          padding: 8px 12px;
+          font-size: 0.85rem;
+          line-height: 1.4;
+          text-align: center;
+          overflow: visible;
+          -webkit-font-smoothing: antialiased;
+
+        }
+
+
+
+        /* aplica no próprio span e em qualquer elemento injetado */
+        #disclaimer,
+        #disclaimer * {
+          box-sizing: border-box !important;
+          max-width: 100% !important;
+          white-space: normal !important;
+          overflow-wrap: break-word !important;
+          word-break: break-word !important;
+          display: inline !important;
+          /* evita blocos que estouram layout */
+          vertical-align: middle !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          line-height: 1.3 !important;
+
+        }
+
+        /* se o conteúdo usar <p> ou <div> faça com que respeitem o fluxo */
+        #disclaimer p,
+        #disclaimer div {
+          display: block !important;
+          width: 100% !important;
+        }
+
+        /* se o script injetar um iframe */
+        #disclaimer iframe {
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          min-width: 0 !important;
+          border: none !important;
+        }
+
+        #disclaimer img,
+        #disclaimer-container img {
+          max-width: 320px !important;
+          /* ou ajuste o tamanho que quiser */
+          height: auto !important;
+          width: 100% !important;
+          display: block !important;
+          margin: 0 auto !important;
+        }
+
+        /* em telas pequenas (celular) */
+        @media (max-width: 480px) {
+
+          #disclaimer img,
+          #disclaimer-container img {
+            max-width: 90px;
+            /* um pouco menor no mobile */
+          }
+        }
+
+        /* versão mobile — reduz um pouco a fonte e padding */
+        @media (max-width: 480px) {
+          #disclaimer-container {
+            font-size: 0.72rem;
+            padding: 6px 8px;
+          }
+        }
+      </style>
+        <div id="disclaimer-container">
+          <span id="disclaimer"></span>
+          <script src="https://display.buygoods.com/v1/disclaimer?id=disclaimer&account_id=10104"></script>
+        </div>
+      </div>
+    </footer>
+    <!--<script>document.querySelectorAll("[data-disable-user-interaction]").forEach((function (e) { e.classList.add("no-user-interaction"), e.addEventListener("contextmenu", (function (e) { e.preventDefault() })) }))</script>-->
+    <script src="./src/bootstrap.min.js.download"></script>
+    <script>
+      // Bottles Bought
+      var stockNumber = 22;
+      const cNames = [
+        "Daniel",
+        "Wendell",
+        "Carl",
+        "Russ",
+        "Jared",
+        "Tyrone",
+        "Brandon",
+        "Martin",
+        "Stewart",
+        "Jeremy",
+        "Miguel",
+        "Jim",
+        "Peter",
+        "Byron",
+        "Glenn",
+        "Gregg",
+        "Erik",
+        "Mitch",
+        "Lance",
+        "Pedro",
+        "John",
+        "Chris",
+        "Jonathan",
+        "Steve",
+      ];
+      const cLocals = [
+        "New York",
+        "Los Angeles",
+        "Chicago",
+        "New Orleans",
+        "Albuquerque",
+        "San Francisco",
+        "Miami",
+        "Mesa",
+        "Yonkers",
+        "Pembroke Pines",
+        "Palm Bay",
+        "Daly City",
+        "St. Petersburg",
+        "Portland",
+        "Thousand Oaks",
+        "Port St. Lucie",
+        "Urban Honolulu CDP",
+        "Baltimore",
+        "Philadelphia",
+        "Houston",
+        "Detroit",
+        "Nashville",
+        "Boston",
+        "Fort Worth",
+        "Memphis",
+        "Milwaukee",
+        "Cleveland",
+        "Jacksonville",
+        "Louisville",
+        "Indianapolis",
+        "Long Beach",
+        "Oakland",
+        "Omaha",
+        "Washington",
+        "Austin",
+        "Denver",
+        "Dallas",
+        "Las Vegas",
+        "Tucson",
+        "Orlando",
+      ];
+      const tBottles = [3, 6, 6];
+
+      function bottlesBuying() {
+        const randName = cNames[Math.floor(Math.random() * cNames.length)];
+        const randLocal = cLocals[Math.floor(Math.random() * cLocals.length)];
+        const randBottle =
+          tBottles[Math.floor(Math.random() * tBottles.length)];
+
+        const oneBottle = document.querySelector("#one-bottle");
+        const threeBottles = document.querySelector("#three-bottles");
+        const sixBottles = document.querySelector("#six-bottles");
+
+        stockNumber -= randBottle;
+
+        if (randBottle == 3) {
+          oneBottle.style.display = "none";
+          threeBottles.style.display = "block";
+          sixBottles.style.display = "none";
+          document.querySelector("#items-purchased").innerHTML =
+            randBottle + " bottles";
+        } else if (randBottle == 6) {
+          oneBottle.style.display = "none";
+          threeBottles.style.display = "none";
+          sixBottles.style.display = "block";
+          document.querySelector("#items-purchased").innerHTML =
+            randBottle + " bottles";
+        } else {
+          oneBottle.style.display = "block";
+          threeBottles.style.display = "none";
+          sixBottles.style.display = "none";
+          document.querySelector("#items-purchased").innerHTML =
+            randBottle + " bottle";
+        }
+
+        document.querySelectorAll(".stock").forEach(function (e) {
+          e.innerHTML = stockNumber;
+        });
+        document.querySelector("#customer-name").innerHTML = randName;
+        document.querySelector("#customer-location").innerHTML = randLocal;
+        document.querySelector(".purchases-disclaimer").style.right = "20px";
+        setTimeout(function () {
+          document.querySelector(".purchases-disclaimer").style.right =
+            "-800px";
+        }, 10000);
+        if (stockNumber < 25) clearInterval(buyTimer);
+      }
+      var buyTimer = setInterval(bottlesBuying, 12000);
+    </script>
+    <!-- Google Tag Manager (noscript) -->
+
+    <!-- End Google Tag Manager (noscript) -->
+
+  </body>
+</html>
