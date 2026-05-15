@@ -7,6 +7,20 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
     />
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-W2K59BZ');</script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+      window.RT_POSTBACK_TOKEN = "bmp78jeadz";
+    </script>
+    <script src="src/rt-dtc.js"></script>
+
     <title>Vigortrix</title>
 
     <link rel="stylesheet" href="./src/bootstrap.min.css" />
@@ -823,6 +837,81 @@
   </head>
 
   <body data-disable-user-interaction="" cz-shortcut-listen="true">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W2K59BZ"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <div class="geo-offer" style="display:none;text-align:center;background:#282828;color:#fff;font-weight:700;text-transform:uppercase;padding:14px 12px;font-size:22px;letter-spacing:.03em;">
+      <span class="geo-flag" style="font-size:40px;vertical-align:middle;"></span>
+      EXCLUSIVE OFFER FOR <span class="geo-cc" style="color:#ffd902;"></span>
+      <span class="geo-flag" style="font-size:40px;vertical-align:middle;"></span>
+    </div>
+    <script>
+      (function () {
+        function emojiFlagOK() {
+          try {
+            var c = document.createElement("canvas");
+            c.width = c.height = 16;
+            var x = c.getContext("2d");
+            x.textBaseline = "top";
+            x.font = "16px Arial";
+            x.fillText("🇺🇸", 0, 0);
+            var d = x.getImageData(0, 0, 16, 16).data;
+            for (var i = 0; i < d.length; i += 4)
+              if (d[i + 3] > 0 && (d[i] !== d[i + 1] || d[i + 1] !== d[i + 2]))
+                return true;
+            return false;
+          } catch (e) {
+            return false;
+          }
+        }
+        function emoji(cc) {
+          return cc.toUpperCase().replace(/./g, function (c) {
+            return String.fromCodePoint(127397 + c.charCodeAt());
+          });
+        }
+        function render(cc) {
+          if (!cc) return;
+          cc = cc.toUpperCase();
+          var html = emojiFlagOK()
+            ? emoji(cc)
+            : '<img src="https://flagcdn.com/48x36/' +
+              cc.toLowerCase() +
+              '.png" alt="' +
+              cc +
+              '" style="display:block;width:42px;height:32px;">';
+          var flags = document.querySelectorAll(".geo-flag");
+          for (var i = 0; i < flags.length; i++) flags[i].innerHTML = html;
+          var name = cc;
+          try {
+            name = new Intl.DisplayNames(["en"], { type: "region" }).of(cc) || cc;
+          } catch (e) {}
+          var ccs = document.querySelectorAll(".geo-cc");
+          for (var j = 0; j < ccs.length; j++) ccs[j].textContent = name;
+          var offers = document.querySelectorAll(".geo-offer");
+          for (var k = 0; k < offers.length; k++) offers[k].style.display = "block";
+        }
+        var cached = sessionStorage.getItem("geo-cc");
+        if (cached) {
+          render(cached);
+          return;
+        }
+        fetch("https://www.cloudflare.com/cdn-cgi/trace")
+          .then(function (r) {
+            return r.text();
+          })
+          .then(function (t) {
+            var m = t.match(/loc=([A-Z]{2})/);
+            if (m) {
+              sessionStorage.setItem("geo-cc", m[1]);
+              render(m[1]);
+            }
+          })
+          .catch(function () {});
+      })();
+    </script>
+
     <main id="order-now-page" class="position-relative">
       <div>
         <div class="position-relative" id="offer">
@@ -918,7 +1007,7 @@
                     </div>
                     <a
                       class="addToCart cta-btn btn"
-                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                      id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
                       <span style="display: block">
                         <svg class="shopping-cart-icon">
@@ -1008,7 +1097,7 @@
                     </div>
                     <a
                       class="pulse animated infinite addToCart cta-btn btn"
-                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                      id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
                       <span style="display: block">
                         <svg class="shopping-cart-icon">
@@ -1089,7 +1178,7 @@
                     </div>
                     <a
                       class="addToCart cta-btn btn"
-                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                      id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
                       <span style="display: block">
                         <svg class="shopping-cart-icon">
@@ -1119,7 +1208,7 @@
             </div>
             <div class="row mobile-only">
               <a
-                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                 class="product-box"
               >
                 <div
@@ -1192,7 +1281,7 @@
                 </div>
               </a>
               <a
-                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                 class="product-box"
               >
                 <div class="bottleArea cta-3-bttl">
@@ -1254,7 +1343,7 @@
                 </div>
               </a>
               <a
-                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                 class="product-box"
               >
                 <div class="bottleArea cta-3-bttl">
@@ -2169,7 +2258,7 @@
                     </div>
                     <a
                       class="addToCart cta-btn btn"
-                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                      id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
                       <span style="display: block">
                         <svg class="shopping-cart-icon">
@@ -2259,7 +2348,7 @@
                     </div>
                     <a
                       class="pulse animated infinite addToCart cta-btn btn"
-                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                      id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
                       <span style="display: block">
                         <svg class="shopping-cart-icon">
@@ -2340,7 +2429,7 @@
                     </div>
                     <a
                       class="addToCart cta-btn btn"
-                      href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                      id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
                       <span style="display: block">
                         <svg class="shopping-cart-icon">
@@ -2445,7 +2534,7 @@
                 </div>
               </a>
               <a
-                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                 class="product-box"
               >
                 <div class="bottleArea cta-3-bttl">
@@ -2507,7 +2596,7 @@
                 </div>
               </a>
               <a
-                href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
+                id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                 class="product-box"
               >
                 <div class="bottleArea cta-3-bttl">
