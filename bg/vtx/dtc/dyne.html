@@ -860,123 +860,10 @@
           width: 26px !important;
           height: 20px !important;
         }
-        /* 6-bottle image bigger on mobile (target by src — mobile card uses cta-3-bttl class) */
-        .product-box .bottle-img[src*="vigortrix6"],
-        .product-box .bottle-img[src*="v6"],
-        img.bottle-img[src*="vigortrix6"],
-        img.bottle-img[src*="v6"] {
-          width: 150% !important;
-          max-width: 150% !important;
-          margin-left: -25% !important;
-        }
-        /* Bullets centered in all cards on mobile */
-        .bottleArea .discount,
-        .product-box .discount,
-        .product-box .bottleArea .discount {
-          display: flex !important;
-          align-items: center !important;
-          justify-content: center !important;
-          text-align: center !important;
-          width: 100% !important;
-        }
-        .bottleArea .cta-mx-reset,
-        .product-box .cta-mx-reset,
-        .product-box .bottlePrice {
-          text-align: center !important;
-          width: 100% !important;
-        }
-        /* Testimonials mobile formatting */
-        .testimonials .testimonial-thumb {
-          max-width: 34% !important;
-          width: 34% !important;
-        }
-        .testimonials .row-bordered .quote,
-        .testimonials .row-bordered .p-quote {
-          margin-top: 12px !important;
-          font-size: 0.85rem !important;
-          line-height: 1.4 !important;
-        }
-        .testimonials .row-bordered .fs-3 {
-          font-size: 0.95rem !important;
-          line-height: 1.1 !important;
-          margin-bottom: 1px !important;
-          font-weight: 800 !important;
-        }
-        .testimonials .row-bordered h5 {
-          font-size: 0.65rem !important;
-          line-height: 1.1 !important;
-          margin-top: 0 !important;
-          font-weight: 800 !important;
-        }
-        .testimonials .row-bordered .fs-5 {
-          font-size: 0.7rem !important;
-        }
-        .testimonials .row-bordered {
-          margin-bottom: 28px !important;
-          padding-bottom: 18px !important;
-        }
-        /* FAQ accordion mobile formatting */
-        #accordion-2 .accordion-header,
-        #accordion-2 .accordion-header *,
-        #accordion-2 button.accordion-button,
-        #accordion-2 button.accordion-button * {
-          font-size: 0.9rem !important;
-          line-height: 1.25 !important;
-        }
-        #accordion-2 button.accordion-button {
-          padding: 0.5rem 0.7rem !important;
-        }
-        .blue-box > .container > h2,
-        .blue-box .container > h2 {
-          font-size: 1rem !important;
-        }
       }
-      /* Hide quote icon on all testimonials */
-      .testimonials .quote-icon,
-      .testimonials .fa-quote-right,
-      .testimonials .fa-quote-left {
-        display: none !important;
+      html, body {
+        background: #ececec !important;
       }
-      /* 6-bottle CTA: dark green pulsating with white text */
-      .cta-6-bttl .cta-btn,
-      .cta-6-bttl .addToCart {
-        background: linear-gradient(180deg, #2e7d32 0%, #1b5e20 100%) !important;
-        color: #fff !important;
-        border: 2px solid #0f3d12 !important;
-        border-radius: 50px !important;
-        font-weight: 800 !important;
-        letter-spacing: 0.05em !important;
-        box-shadow: 0 4px 0 rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.15) !important;
-        animation: vtx-pulse 0.9s ease-in-out infinite alternate !important;
-      }
-      .cta-6-bttl .cta-btn *,
-      .cta-6-bttl .addToCart * {
-        color: #fff !important;
-        fill: #fff !important;
-      }
-      @keyframes vtx-pulse {
-        from { transform: scale(1); }
-        to { transform: scale(1.05); }
-      }
-      /* Name + age/city formatting (all screen sizes) */
-      .testimonials .row-bordered .fs-3 {
-        font-size: 1.1rem !important;
-        line-height: 1.1 !important;
-        margin-bottom: 0 !important;
-        font-weight: 800 !important;
-      }
-      .testimonials .row-bordered h5 {
-        font-size: 0.75rem !important;
-        line-height: 1.1 !important;
-        margin-top: 2px !important;
-        margin-bottom: 18px !important;
-        padding: 0 !important;
-        font-weight: 800 !important;
-      }
-      .testimonials .row-bordered .fs-5 {
-        font-size: 0.85rem !important;
-      }
-      /* FAQ accordion desktop formatting */
       .blue-box .small-title {
         font-size: 0.75rem !important;
       }
@@ -1000,6 +887,101 @@
       #accordion-2 button.accordion-button {
         padding: 0.65rem 0.9rem !important;
       }
+      #order-now h1,
+      #order-now h1 * {
+        font-size: 1.4rem !important;
+        line-height: 1.2 !important;
+      }
+      @media (max-width: 600px) {
+        #order-now h1,
+        #order-now h1 * {
+          font-size: 1rem !important;
+        }
+        /* Testimonials mobile tweaks */
+        .testimonials .testimonial-thumb {
+          max-width: 50% !important;
+          width: 50% !important;
+        }
+        .testimonials .quote-icon {
+          display: none !important;
+        }
+        .testimonials .row-bordered .quote,
+        .testimonials .row-bordered .p-quote {
+          margin-top: 16px !important;
+          font-size: 0.85rem !important;
+          line-height: 1.4 !important;
+        }
+        .testimonials .row-bordered .fs-3 {
+          font-size: 1rem !important;
+          line-height: 1.15 !important;
+          margin-bottom: 2px !important;
+          font-weight: 700 !important;
+        }
+        .testimonials .row-bordered h5 {
+          font-size: 0.72rem !important;
+          line-height: 1.15 !important;
+          margin-top: 0 !important;
+          font-weight: 700 !important;
+        }
+        .testimonials .row-bordered .fs-5 {
+          font-size: 0.78rem !important;
+        }
+        .testimonials .row-bordered {
+          margin-bottom: 28px !important;
+          padding-bottom: 18px !important;
+        }
+        /* Footer nav links - compact + wrap evenly */
+        footer .list-inline {
+          display: flex !important;
+          flex-wrap: wrap !important;
+          justify-content: center !important;
+          gap: 4px 10px !important;
+          padding: 0 !important;
+          margin-bottom: 12px !important;
+        }
+        footer .list-inline .list-inline-item {
+          margin: 0 !important;
+          font-size: 0.7rem !important;
+        }
+        footer .list-inline a {
+          font-size: 0.7rem !important;
+        }
+        /* Disclaimer + copyright text */
+        footer p.text-muted,
+        footer p.text-muted.small {
+          font-size: 0.65rem !important;
+          line-height: 1.35 !important;
+          padding: 0 8px !important;
+        }
+        /* BuyGoods disclaimer widget smaller */
+        #disclaimer-container {
+          padding: 4px 8px !important;
+          font-size: 0.65rem !important;
+        }
+        #disclaimer img,
+        #disclaimer-container img {
+          max-width: 200px !important;
+        }
+        #disclaimer iframe {
+          max-width: 220px !important;
+        }
+      }
+      @media (max-width: 600px) {
+        #accordion-2 .accordion-header,
+        #accordion-2 .accordion-header *,
+        #accordion-2 button.accordion-button,
+        #accordion-2 button.accordion-button * {
+          font-size: 0.9rem !important;
+          line-height: 1.25 !important;
+        }
+        #accordion-2 button.accordion-button {
+          padding: 0.5rem 0.7rem !important;
+        }
+        .blue-box > .container > h2,
+        .blue-box .container > h2 {
+          font-size: 1rem !important;
+        }
+      }
       .blue-box .accordion-body {
         font-size: 0.85rem !important;
         line-height: 1.4 !important;
@@ -1009,6 +991,249 @@
       .blue-box .accordion-body * {
         font-size: 0.85rem !important;
         line-height: 1.4 !important;
+      }
+      .top-heading-box h1 {
+        font-size: 1.75rem !important;
+        line-height: 1.2 !important;
+      }
+      /* 6-bottle card: v6.webp replaces price + bullets + image area */
+      .cta-6-bttl.bottleArea {
+        display: block !important;
+      }
+      .cta-6-bttl .priceTag,
+      .cta-6-bttl .cta-mx-reset,
+      .cta-6-bttl .bottlePrice h6 {
+        display: none !important;
+      }
+      .cta-6-bttl .bottle-img,
+      .cta-6-bttl .cta-6b {
+        max-width: none !important;
+        width: calc(100% + 24px) !important;
+        margin: 20px -12px 0 !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+        filter: none !important;
+        display: block !important;
+      }
+      .cta-6-bttl,
+      .cta-6-bttl img {
+        box-shadow: none !important;
+        filter: none !important;
+      }
+      .cta-6-bttl .crads-img {
+        margin-bottom: 0 !important;
+        width: 95% !important;
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .cta-6-bttl .bottlePrice {
+        padding-bottom: 0 !important;
+        margin-bottom: 0 !important;
+      }
+      .cta-6-bttl.bottleArea {
+        padding-bottom: 8px !important;
+      }
+      /* Green + pulsating CTA on 6-bottle card (desktop + mobile) */
+      .cta-6-bttl .cta-btn,
+      .cta-6-bttl .addToCart {
+        background: linear-gradient(180deg, #4a8a4a 0%, #1f4e1f 100%) !important;
+        color: #fff !important;
+        border: 2px solid #143a14 !important;
+        border-radius: 50px !important;
+        padding: 14px 28px !important;
+        font-weight: 800 !important;
+        letter-spacing: 0.05em !important;
+        box-shadow: 0 4px 0 rgba(0,0,0,0.25), inset 0 1px 0 rgba(255,255,255,0.15) !important;
+        animation: vtx-pulse 0.9s ease-in-out infinite alternate !important;
+      }
+      .cta-6-bttl .cta-btn:hover,
+      .cta-6-bttl .addToCart:hover {
+        filter: brightness(108%);
+      }
+      @keyframes vtx-pulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.05); }
+      }
+      .top-heading-box .average-rating {
+        margin-bottom: 40px !important;
+      }
+      @media (max-width: 600px) {
+        .top-heading-box h1 {
+          font-size: 1.15rem !important;
+        }
+        .top-heading-box .average-rating {
+          margin-bottom: 28px !important;
+        }
+        /* Title full / Image left / Price+bullets right / CTA+cards+total full */
+        .bottleArea {
+          display: grid !important;
+          grid-template-columns: 1fr 1fr !important;
+          align-items: start !important;
+          column-gap: 8px !important;
+          padding: 0 !important;
+          overflow: hidden !important;
+          box-sizing: border-box !important;
+          max-width: 100% !important;
+        }
+        .bottleArea > * {
+          min-width: 0 !important;
+          max-width: 100% !important;
+        }
+        .bottleArea .bottleTitle {
+          grid-column: 1 / -1 !important;
+          text-align: center !important;
+        }
+        .bottleArea .bottle-img {
+          grid-column: 1 !important;
+          grid-row: 2 / span 2 !important;
+          align-self: center !important;
+          justify-self: center !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: 0 0 0 12px !important;
+        }
+        .bottleArea .priceTag {
+          grid-column: 2 !important;
+          text-align: center !important;
+          margin: 0 !important;
+          align-self: end !important;
+        }
+        .bottleArea .cta-mx-reset {
+          align-self: start !important;
+          margin-top: 6px !important;
+        }
+        .bottleArea .bottleTitle {
+          margin-bottom: 0 !important;
+          padding-bottom: 0 !important;
+        }
+        .bottleArea .priceTag .price-ttl {
+          font-size: 3rem !important;
+        }
+        .bottleArea .bottleTitle.bottle-top-highlight {
+          padding: 6px 8px !important;
+          box-sizing: border-box !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          margin: 0 !important;
+        }
+        .bottleArea .bottleTitle h3 {
+          font-size: 2.4rem !important;
+          line-height: 1.1 !important;
+        }
+        .bottleArea .bottleTitle h5,
+        .bottleArea .bottleTitle .h5-alt {
+          font-size: 1.5rem !important;
+          line-height: 1.1 !important;
+        }
+        .bottleArea .discount {
+          font-size: 10px !important;
+          line-height: 1.1 !important;
+          margin-bottom: 2px !important;
+        }
+        .bottleArea .discount .lto,
+        .bottleArea .discount .lto b,
+        .bottleArea .discount .lto strong,
+        .bottleArea .discount span,
+        .bottleArea .discount b,
+        .bottleArea .discount strong {
+          font-size: 10px !important;
+          line-height: 1.1 !important;
+          letter-spacing: 0 !important;
+        }
+        .bottleArea .discount svg {
+          width: 12px !important;
+          height: 12px !important;
+          font-size: 12px !important;
+          flex-shrink: 0 !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .bottleArea .discount,
+        .bottleArea .discount * {
+          font-size: 9px !important;
+        }
+        .bottleArea .priceTag .price-ttl {
+          font-size: 2.4rem !important;
+        }
+        .bottleArea .bottleTitle h3 {
+          font-size: 1.6rem !important;
+        }
+        .bottleArea .bottleTitle h5 {
+          font-size: 1rem !important;
+        }
+        /* Tighter header bar text */
+        .bottleArea .bottleTitle h3 {
+          font-size: 1.1rem !important;
+          line-height: 1.1 !important;
+          padding: 0 !important;
+          margin: 0 !important;
+        }
+        .bottleArea .bottleTitle h5,
+        .bottleArea .bottleTitle .h5-alt {
+          font-size: 0.85rem !important;
+          line-height: 1.1 !important;
+          padding: 0 !important;
+          margin: 2px 0 0 !important;
+        }
+        .bottleArea .bottleTitle.bottle-top-highlight {
+          padding: 8px 6px !important;
+        }
+        .bottleArea .cta-vshape {
+          display: none !important;
+        }
+        /* Smaller per-bottle label */
+        .bottleArea .perBottle {
+          font-size: 0.7rem !important;
+        }
+        /* Compact Order Now button */
+        .bottleArea .cta-btn,
+        .bottleArea .addToCart {
+          width: auto !important;
+          max-width: 80% !important;
+          margin: 0 auto !important;
+          padding: 10px 14px !important;
+          font-size: 0.95rem !important;
+          margin-top: 8px !important;
+          margin-bottom: 6px !important;
+        }
+        .bottleArea .cta-btn span[style*="0.9rem"] {
+          font-size: 0.75rem !important;
+        }
+        /* Smaller payment cards strip and total */
+        .bottleArea .crads-img {
+          max-width: 140px !important;
+          margin: 4px auto !important;
+        }
+        .bottleArea .bottlePrice > h6 {
+          font-size: 0.85rem !important;
+          margin-top: 4px !important;
+        }
+        .bottleArea .bottlePrice {
+          display: contents !important;
+        }
+        .bottleArea .cta-mx-reset {
+          grid-column: 2 !important;
+        }
+        .bottleArea .bottlePrice > a,
+        .bottleArea .bottlePrice > .cta-btn,
+        .bottleArea .crads-img,
+        .bottleArea .bottlePrice > h6 {
+          grid-column: 1 / -1 !important;
+        }
+        /* 6-bottle card: v6.webp replaces price + bullets + image area */
+        .cta-6-bttl .priceTag,
+        .cta-6-bttl .cta-mx-reset {
+          display: none !important;
+        }
+        .cta-6-bttl .bottle-img,
+        .cta-6-bttl .cta-6b {
+          grid-column: 1 / -1 !important;
+          grid-row: 2 !important;
+          max-width: 100% !important;
+          width: 100% !important;
+          margin: 0 auto !important;
+        }
       }
     </style>
   </head>
@@ -1186,7 +1411,13 @@
                       class="addToCart cta-btn btn"
                       id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
-                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Basic Offer</span>
                     </a>
                     <img
                       class="img-fluid mb-3 crads-img"
@@ -1215,7 +1446,7 @@
                   </div>
                   <img
                     class="img-fluid bottle-img cta-6b"
-                    src="./src/vigortrix6.png"
+                    src="./src/vx6.png"
                     loading="lazy"
                   />
                   <div class="priceTag">
@@ -1270,11 +1501,20 @@
                       class="pulse animated infinite addToCart cta-btn btn"
                       id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
-                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:14px;color:#fff;">
+                        ORDER NOW
+                        <svg class="shopping-cart-icon" style="color:#fff;fill:#fff;">
+                          <use href="#cart"></use>
+                        </svg>
+                      </span>
                     </a>
+                    <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 6px;font-weight:700;font-size:1.05rem;color:#000;">
+                      <i class="fa-solid fa-lock"></i>
+                      Secure Checkout
+                    </div>
                     <img
                       class="img-fluid mb-3 crads-img"
-                      src="./src/cards.png"
+                      src="./src/cardx.png"
                       loading="lazy"
                     />
                     <h6 class="fw-bold fs-16">
@@ -1345,7 +1585,13 @@
                       class="addToCart cta-btn btn"
                       id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
-                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Good Offer</span>
                     </a>
                     <img
                       class="img-fluid mb-3 crads-img"
@@ -1379,7 +1625,7 @@
                       <h5><b>180 Days, 6 Bottles</b></h5>
                       <img
                         class="bottle-img"
-                        src="./src/vigortrix6.png"
+                        src="./src/vx6.png"
                         loading="lazy"
                       />
                     </div>
@@ -1430,7 +1676,12 @@
                     </div>
                   </div>
                   <div class="pulse animated infinite addToCart cta-btn btn">
-                    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
                   </div>
                 </div>
               </a>
@@ -1487,7 +1738,12 @@
                     </div>
                   </div>
                   <div class="pulse animated infinite addToCart cta-btn btn">
-                    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
                   </div>
                 </div>
               </a>
@@ -1539,7 +1795,12 @@
                     </div>
                   </div>
                   <div class="pulse animated infinite addToCart cta-btn btn">
-                    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
                   </div>
                 </div>
               </a>
@@ -1562,7 +1823,7 @@
                   />
                   <img
                     id="six-bottles"
-                    src="./src/vigortrix6.png"
+                    src="./src/vx6.png"
                     style="display: none"
                   />
                 </div>
@@ -2404,7 +2665,13 @@
                       class="addToCart cta-btn btn"
                       id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig1&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
-                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Basic Offer</span>
                     </a>
                     <img
                       class="img-fluid mb-3 crads-img"
@@ -2433,7 +2700,7 @@
                   </div>
                   <img
                     class="img-fluid bottle-img cta-6b"
-                    src="./src/vigortrix6.png"
+                    src="./src/vx6.png"
                     loading="lazy"
                   />
                   <div class="priceTag">
@@ -2488,11 +2755,20 @@
                       class="pulse animated infinite addToCart cta-btn btn"
                       id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig6&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
-                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:14px;color:#fff;">
+                        ORDER NOW
+                        <svg class="shopping-cart-icon" style="color:#fff;fill:#fff;">
+                          <use href="#cart"></use>
+                        </svg>
+                      </span>
                     </a>
+                    <div style="display:flex;align-items:center;justify-content:center;gap:8px;margin:12px 0 6px;font-weight:700;font-size:1.05rem;color:#000;">
+                      <i class="fa-solid fa-lock"></i>
+                      Secure Checkout
+                    </div>
                     <img
                       class="img-fluid mb-3 crads-img"
-                      src="./src/cards.png"
+                      src="./src/cardx.png"
                       loading="lazy"
                     />
                     <h6 class="fw-bold fs-16">
@@ -2563,7 +2839,13 @@
                       class="addToCart cta-btn btn"
                       id="AddToCart" href="https://buygoods.com/secure/checkout.html?account_id=10104&product_codename=vig3&redirect=aHR0cHM6Ly92aWdvcnRyaXguY29tL3Vwc2VsbC8="
                     >
-                      <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                      <span style="display: block">
+                        <svg class="shopping-cart-icon">
+                          <use href="#cart"></use>
+                        </svg>
+                        Order Now
+                      </span>
+                      <span style="font-size: 0.9rem">Good Offer</span>
                     </a>
                     <img
                       class="img-fluid mb-3 crads-img"
@@ -2599,7 +2881,7 @@
                       <h5><b>180 Days, 6 Bottles</b></h5>
                       <img
                         class="bottle-img"
-                        src="./src/vigortrix6.png"
+                        src="./src/vx6.png"
                         loading="lazy"
                       />
                     </div>
@@ -2650,7 +2932,12 @@
                     </div>
                   </div>
                   <div class="pulse animated infinite addToCart cta-btn btn">
-                    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
                   </div>
                 </div>
               </a>
@@ -2707,7 +2994,12 @@
                     </div>
                   </div>
                   <div class="pulse animated infinite addToCart cta-btn btn">
-                    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
                   </div>
                 </div>
               </a>
@@ -2759,7 +3051,12 @@
                     </div>
                   </div>
                   <div class="pulse animated infinite addToCart cta-btn btn">
-                    <span style="display:inline-flex;align-items:center;justify-content:center;gap:10px;">Order Now <svg class="shopping-cart-icon"><use href="#cart"></use></svg></span>
+                    <span style="display: block">
+                      <svg class="shopping-cart-icon">
+                        <use href="#cart"></use>
+                      </svg>
+                      Order Now
+                    </span>
                   </div>
                 </div>
               </a>
@@ -2782,7 +3079,7 @@
                   />
                   <img
                     id="six-bottles"
-                    src="./src/vigortrix6.png"
+                    src="./src/vx6.png"
                     style="display: none"
                   />
                 </div>
