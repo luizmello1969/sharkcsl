@@ -347,6 +347,29 @@
         height: 14px !important;
       }
 
+      /* Hide the original SVG tick (matches BOTH desktop .bottleArea and mobile .product-box) and replace with a tiny unicode tick */
+      .bottleArea .discount svg,
+      .bottleArea .discount svg.fs-24,
+      .bottleArea .discount svg.me-2,
+      .bottleArea .discount svg[style],
+      .product-box .discount svg,
+      .product-box .discount svg.fs-24,
+      .product-box .discount svg.me-2,
+      .product-box .discount svg[style] {
+        display: none !important;
+      }
+      .bottleArea .discount::before,
+      .product-box .discount::before {
+        content: "\2713";
+        color: #2e7d32;
+        font-weight: 900;
+        font-size: 11px !important;
+        line-height: 1 !important;
+        margin-right: 5px !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+      }
+
       .product-box .discount .lto,
       .product-box .discount .lto b,
       .product-box .discount .lto strong,
@@ -980,22 +1003,7 @@
           line-height: 1 !important;
           letter-spacing: 0 !important;
         }
-        .product-box .discount svg,
-        .product-box .discount svg.fs-24,
-        .product-box .bottleArea .discount svg,
-        .product-box .bottleArea .discount svg.me-2,
-        .product-box .bottleArea .discount svg.fs-24,
-        .product-box .discount svg[style] {
-          font-size: 8px !important;
-          width: 8px !important;
-          height: 8px !important;
-          min-width: 8px !important;
-          min-height: 8px !important;
-          max-width: 8px !important;
-          max-height: 8px !important;
-          flex-shrink: 0 !important;
-          margin: 0 2px 0 0 !important;
-        }
+        /* (moved outside media query below to cover desktop card too) */
         .bottleArea .cta-mx-reset,
         .product-box .cta-mx-reset,
         .product-box .bottlePrice {
