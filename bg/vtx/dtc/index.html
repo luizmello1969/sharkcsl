@@ -169,9 +169,50 @@
         font-size: 1.2rem;
       }
 
+      html, body {
+        background: #ececec !important;
+      }
+      /* Compact footer + BuyGoods disclaimer */
+      footer .list-inline a,
+      footer .list-inline .list-inline-item {
+        font-size: 0.75rem !important;
+      }
+      footer p.text-muted,
+      footer p.text-muted.small,
+      footer .small {
+        font-size: 0.7rem !important;
+        line-height: 1.4 !important;
+      }
+      #disclaimer-container {
+        font-size: 0.7rem !important;
+        padding: 4px 8px !important;
+      }
+      #disclaimer img,
+      #disclaimer-container img {
+        max-width: 220px !important;
+        width: 100% !important;
+        height: auto !important;
+      }
+      #disclaimer iframe {
+        max-width: 240px !important;
+      }
       .average-rating {
         text-align: center;
-        margin: -45px 0 45px;
+        margin: -45px 0 110px;
+        font-size: 0.85rem;
+      }
+      .average-rating b {
+        font-size: 0.95rem;
+      }
+
+      .top-heading-box h1 {
+        font-size: 1.5rem !important;
+        line-height: 1.2 !important;
+      }
+      @media (max-width: 600px) {
+        .top-heading-box h1 {
+          font-size: 1.05rem !important;
+        }
       }
 
       .average-rating img {
@@ -865,9 +906,10 @@
         .product-box .bottle-img[src*="v6"],
         img.bottle-img[src*="vigortrix6"],
         img.bottle-img[src*="v6"] {
-          width: 150% !important;
-          max-width: 150% !important;
-          margin-left: -25% !important;
+          width: 200% !important;
+          max-width: 200% !important;
+          margin-left: -50% !important;
+          margin-bottom: -10px !important;
         }
         /* Bullets centered in all cards on mobile */
         .bottleArea .discount,
