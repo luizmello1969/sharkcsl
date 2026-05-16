@@ -306,7 +306,16 @@
       }
 
       .product-box .bottleArea .bottle-img {
-        padding: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+        display: block !important;
+      }
+      .product-box .bottleArea .flex.vcentered .column {
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+      }
+      .product-box .bottleArea h5 {
+        margin-bottom: 4px !important;
       }
 
       .product-box .perBottle {
@@ -318,18 +327,34 @@
         font-size: 50px;
       }
 
+      .product-box .priceTag {
+        margin-top: 4px !important;
+        padding-top: 0 !important;
+      }
       .product-box .discount {
         padding: 0 !important;
         text-align: center;
+        font-size: 0.7rem !important;
+        line-height: 1.05 !important;
+        margin: 0 !important;
+        margin-bottom: 2px !important;
       }
 
       .product-box .discount svg {
-        font-size: 20px;
-        margin: 0 !important;
+        font-size: 14px !important;
+        margin: 0 4px 0 0 !important;
+        width: 14px !important;
+        height: 14px !important;
       }
 
-      .product-box .discount .lto {
-        letter-spacing: 0.5px;
+      .product-box .discount .lto,
+      .product-box .discount .lto b,
+      .product-box .discount .lto strong,
+      .product-box .discount span,
+      .product-box .discount b {
+        letter-spacing: 0.3px;
+        font-size: 0.7rem !important;
+        line-height: 1.05 !important;
       }
 
       .product-box .bottlePrice h6 {
@@ -906,10 +931,24 @@
         .product-box .bottle-img[src*="v6"],
         img.bottle-img[src*="vigortrix6"],
         img.bottle-img[src*="v6"] {
-          width: 200% !important;
-          max-width: 200% !important;
-          margin-left: -50% !important;
-          margin-bottom: -10px !important;
+          width: 100% !important;
+          max-width: 100% !important;
+          height: auto !important;
+          transform: scale(1.0) !important;
+          transform-origin: center center !important;
+          margin: 0 !important;
+          padding: 0 !important;
+          display: block !important;
+        }
+        /* Tighten the column/area wrapping the 6-bottle image so there's no extra gap */
+        .product-box .bottleArea:has(img[src*="vigortrix6"]) {
+          padding: 0.25rem 0 !important;
+          overflow: hidden !important;
+        }
+        .product-box .bottleArea:has(img[src*="vigortrix6"]) .flex.vcentered .column,
+        .product-box .bottleArea:has(img[src*="vigortrix6"]) .column {
+          padding: 0 !important;
+          margin: 0 !important;
         }
         /* Bullets centered in all cards on mobile */
         .bottleArea .discount,
@@ -1997,86 +2036,6 @@
             </div>
           </div>
         </section>
-        <!--<section id="ingredients" class="bg-dark pattern-bg text-white elements_bg py-100 fw-bold text-primary">
-               <div class="container z-2 position-relative">
-                <h1 class="text-center text-white font-third fw-bold">Inside Every <span class="text-primary">Vigortrix</span>&nbsp;Capsule You’ll Find:</h1>
-                <h3 class="fw-normal text-center pb-3 mb-4 font-third fw-bold has-separator-center"><span class="text-primary">8 CAREFULLY-SELECTED INGREDIENTS</span>&nbsp;That Support Your Sex Life Goals</h3>
-                <div class="row d-xl-flex justify-content-xl-center text-center g-lg-5">
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/hawthorn.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Hawthorn Berry</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">&nbsp;Promotes Circulation</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/gb.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Tribulus</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">Heightens Libido</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/mira.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Chrysin</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">Oxidative Stress Shield</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/catuaba.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Epimedium</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">&nbsp;Facilitates Blood Flow</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/i-ginseng-root.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Saw Palmetto</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">Testosterone <br>Production Aid</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/nicain.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Tongkat Ali</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">Improves <br>Sexual Performance</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/Epimedium.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Winged Treebine</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">Enhances <br>Natural Stamina</p>
-                  </div>
-                  <div class="col-6 col-sm-3 col-md-3 col-lg-3 col-xl-3 pb-3">
-                    <div>
-                      <img class="img-fluid ingredients-thumb" src="assets/images/dtc/capsicum.jpg" loading="lazy">
-                    </div>
-                    <div class="text-center ingredients-name">
-                      <h5 class="mb-0 font-third fw-bold text-primary">Magnesium</h5>
-                    </div>
-                    <p class="lh-p mb-0 text-white">Supports <br>Testosterone Levels</p>
-                  </div>
-                </div>
-               </div>
-               </section>-->
         <section class="blue-box mx-auto py-100 pattern-bg-light">
           <div class="container">
             <p class="text-center fw-bold small-title text-black">
