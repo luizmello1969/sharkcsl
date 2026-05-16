@@ -934,23 +934,29 @@
           width: 100% !important;
           max-width: 100% !important;
           height: auto !important;
-          transform: scale(1.0) !important;
-          transform-origin: center center !important;
-          margin: 0 !important;
+          transform: scale(0.9) !important;
+          transform-origin: center top !important;
+          margin: 0 0 -60px 0 !important;
           padding: 0 !important;
           display: block !important;
         }
         /* Tighten the column/area wrapping the 6-bottle image so there's no extra gap */
         .product-box .bottleArea:has(img[src*="vigortrix6"]) {
-          padding: 0.25rem 0 !important;
+          padding: 0 !important;
+          margin: 0 !important;
           overflow: hidden !important;
+        }
+        .product-box .bottleArea:has(img[src*="vigortrix6"]) + *,
+        .product-box .bottleArea:has(img[src*="vigortrix6"]) ~ .bottlePrice {
+          margin-top: 0 !important;
+          padding-top: 0 !important;
         }
         .product-box .bottleArea:has(img[src*="vigortrix6"]) .flex.vcentered .column,
         .product-box .bottleArea:has(img[src*="vigortrix6"]) .column {
           padding: 0 !important;
           margin: 0 !important;
         }
-        /* Bullets centered in all cards on mobile */
+        /* Bullets centered in all cards on mobile + tighter, smaller */
         .bottleArea .discount,
         .product-box .discount,
         .product-box .bottleArea .discount {
@@ -959,6 +965,36 @@
           justify-content: center !important;
           text-align: center !important;
           width: 100% !important;
+          font-size: 0.6rem !important;
+          line-height: 1 !important;
+          margin: 0 !important;
+          margin-bottom: 1px !important;
+          padding: 0 !important;
+        }
+        .product-box .discount .lto,
+        .product-box .discount .lto b,
+        .product-box .discount .lto strong,
+        .product-box .discount span,
+        .product-box .discount b {
+          font-size: 0.6rem !important;
+          line-height: 1 !important;
+          letter-spacing: 0 !important;
+        }
+        .product-box .discount svg,
+        .product-box .discount svg.fs-24,
+        .product-box .bottleArea .discount svg,
+        .product-box .bottleArea .discount svg.me-2,
+        .product-box .bottleArea .discount svg.fs-24,
+        .product-box .discount svg[style] {
+          font-size: 8px !important;
+          width: 8px !important;
+          height: 8px !important;
+          min-width: 8px !important;
+          min-height: 8px !important;
+          max-width: 8px !important;
+          max-height: 8px !important;
+          flex-shrink: 0 !important;
+          margin: 0 2px 0 0 !important;
         }
         .bottleArea .cta-mx-reset,
         .product-box .cta-mx-reset,
