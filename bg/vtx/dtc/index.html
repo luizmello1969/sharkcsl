@@ -1016,11 +1016,17 @@
         /* Title full / Image left / Price+bullets right / CTA+cards+total full */
         .bottleArea {
           display: grid !important;
-          grid-template-columns: 50% 50% !important;
+          grid-template-columns: 1fr 1fr !important;
           align-items: start !important;
           column-gap: 8px !important;
           padding: 0 !important;
           overflow: hidden !important;
+          box-sizing: border-box !important;
+          max-width: 100% !important;
+        }
+        .bottleArea > * {
+          min-width: 0 !important;
+          max-width: 100% !important;
         }
         .bottleArea .bottleTitle {
           grid-column: 1 / -1 !important;
@@ -1069,13 +1075,40 @@
           line-height: 1.1 !important;
         }
         .bottleArea .discount {
-          font-size: 11px !important;
+          font-size: 10px !important;
           line-height: 1.1 !important;
           margin-bottom: 2px !important;
         }
-        .bottleArea .discount .lto {
-          font-size: 11px !important;
+        .bottleArea .discount .lto,
+        .bottleArea .discount .lto b,
+        .bottleArea .discount .lto strong,
+        .bottleArea .discount span,
+        .bottleArea .discount b,
+        .bottleArea .discount strong {
+          font-size: 10px !important;
           line-height: 1.1 !important;
+          letter-spacing: 0 !important;
+        }
+        .bottleArea .discount svg {
+          width: 12px !important;
+          height: 12px !important;
+          font-size: 12px !important;
+          flex-shrink: 0 !important;
+        }
+      }
+      @media (max-width: 380px) {
+        .bottleArea .discount,
+        .bottleArea .discount * {
+          font-size: 9px !important;
+        }
+        .bottleArea .priceTag .price-ttl {
+          font-size: 2.4rem !important;
+        }
+        .bottleArea .bottleTitle h3 {
+          font-size: 1.6rem !important;
+        }
+        .bottleArea .bottleTitle h5 {
+          font-size: 1rem !important;
         }
         /* Tighter header bar text */
         .bottleArea .bottleTitle h3 {
