@@ -1,7 +1,7 @@
 /**
  * RT DTC Tracking Script
  * Fires two events:
- *   - PageView_DTC : on page load (after Meta Pixel sets _fbp)
+ *   - PageView_DTC : on page load
  *   - AddToCart    : when an element with id="AddToCart" is clicked
  */
 
@@ -119,24 +119,15 @@
     }
 
     /**
-     * Wait for Meta Pixel to set _fbp cookie before firing PageView_DTC.
-     * Polls every 500ms for up to 10s. If _fbp never appears, PageView_DTC is skipped.
-     * (_fbc only exists for Facebook traffic — _fbp is the universal signal.)
+     * Fire PageView_DTC immediately on init.
+     * These pages have no Meta Pixel, so there's nothing to wait for. _fbp/_fbc
+     * are still captured at send time if a cookie is already present.
      */
-    function waitForFbpThenFirePageView(clickId, attempt) {
+    function firePageView(clickId) {
         if (events.pageView) return;
-        var fbp = getCookie('_fbp');
-        if (fbp) {
-            events.pageView = true;
-            sendPostback('PageView_DTC', clickId);
-            console.log('[RT DTC] PageView_DTC triggered (after _fbp set, attempt ' + attempt + ')');
-            return;
-        }
-        if (attempt >= 20) {
-            console.log('[RT DTC] _fbp not set after 10s — PageView_DTC skipped');
-            return;
-        }
-        setTimeout(function() { waitForFbpThenFirePageView(clickId, attempt + 1); }, 500);
+        events.pageView = true;
+        sendPostback('PageView_DTC', clickId);
+        console.log('[RT DTC] PageView_DTC triggered');
     }
 
     /**
@@ -149,9 +140,9 @@
 
         if (clickId) {
             console.log('[RT DTC] ClickId found:', clickId);
-            // PageView_DTC fires once Meta Pixel has set _fbp (so deduplication works).
-            // Wait up to ~10s; if _fbp never appears, skip PageView_DTC.
-            waitForFbpThenFirePageView(clickId, 0);
+            // No Meta Pixel on these pages, so fire PageView_DTC immediately.
+            // _fbp/_fbc are still included at send time if a cookie is present.
+            firePageView(clickId);
             setupAddToCartHandler(clickId);
         } else if (retryCount < 10) {
             console.log('[RT DTC] No ClickId yet, retry #' + (retryCount + 1) + ' in 1s');
