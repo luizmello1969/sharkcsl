@@ -48,6 +48,41 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+// ----- Reforço click-time do subid5 -----------------------------------------
+// No clique do botão de compra, força subid5 = clickid real na URL de checkout,
+// logo antes de navegar. Roda em fase de captura, depois de todos os scripts de
+// load (BuyGoods, GA), então sobrescreve qualquer {clickid} ou subid5 vazio sem
+// disputa de corrida. Não toca em aff_id/account_id/product_codename/redirect.
+
+// clickid: usa o valor válido da URL (subid5) ou cai para o cookie rtkclickid-store.
+function resolveClickId() {
+  let urlSub5 = getQueryParams().get("subid5");
+  if (urlSub5 && urlSub5.indexOf("{") === -1) return urlSub5;
+  let cid = getCookie("rtkclickid-store");
+  return cid && cid !== "undefined" ? cid : "";
+}
+
+document.addEventListener(
+  "click",
+  function (e) {
+    let link =
+      e.target && e.target.closest
+        ? e.target.closest('a[href*="buygoods.com/secure/checkout.html"]')
+        : null;
+    if (!link) return;
+    let cid = resolveClickId();
+    if (!cid) return;
+    try {
+      let u = new URL(link.href);
+      if (u.searchParams.get("subid5") !== cid) {
+        u.searchParams.set("subid5", cid);
+        link.href = u.toString();
+      }
+    } catch (err) {}
+  },
+  { capture: true }
+);
+
 document.querySelectorAll(".accordion .item .header").forEach((header) => {
   header.addEventListener("click", function () {
     const item = this.parentNode;
