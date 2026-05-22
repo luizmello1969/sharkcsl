@@ -113,22 +113,6 @@
       }
     </script>
 
-    <script type="text/javascript">
-      var i = document.createElement("iframe");
-      var oid = new URLSearchParams(window.location.search);
-      i.async = true;
-      i.style = "display:none";
-      i.setAttribute(
-        "src",
-        "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=11054&t=dcd9c654bd01f15c5856146bc19ea2d4&conversion=1&s=" +
-          ReadCookie("sessid2") +
-          "&o=" +
-          oid.get("order_id_global") +
-          "&ut=" +
-          oid.get("token")
-      );
-      document.body.appendChild(i);
-    </script>
   </head>
   <body>
     <!-- Google Tag Manager (noscript) -->
