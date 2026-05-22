@@ -20,10 +20,27 @@ function combineParams(originalHref, currentParams) {
   return finalParamsString ? `${baseUrl}?${finalParamsString}` : baseUrl;
 }
 
+// Lê um cookie pelo nome (usado para recuperar o clickid do RedTrack)
+function getCookie(name) {
+  var v = ("; " + document.cookie).split("; " + name + "=");
+  return v.length === 2 ? v.pop().split(";").shift() : "";
+}
+
 // Adiciona os parâmetros da URL aos links de checkout
 document.addEventListener("DOMContentLoaded", function () {
   let buttons = document.querySelectorAll(".area-kits a");
   let currentParams = getQueryParams();
+
+  // subid5 = clickid do RedTrack — parâmetro crítico para casar a venda com o
+  // clique. Se a URL não trouxer (navegação interna, macro {clickid} não
+  // substituída, etc.), recupera do cookie rtkclickid-store, que persiste
+  // entre páginas. Assim subid5 sempre chega ao BuyGoods pela própria URL de
+  // checkout, além do caminho via pixel/caller_url.
+  let urlSub5 = currentParams.get("subid5");
+  if (!urlSub5 || urlSub5.indexOf("{") !== -1) {
+    let cid = getCookie("rtkclickid-store");
+    if (cid && cid !== "undefined") currentParams.set("subid5", cid);
+  }
 
   buttons.forEach(function (button) {
     let originalHref = button.getAttribute("href");
