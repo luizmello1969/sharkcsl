@@ -1,0 +1,896 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../../favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../favicon-16x16.png">
+  <link rel="shortcut icon" href="../../favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="../../apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="../../android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="../../android-chrome-512x512.png">
+  <meta name="theme-color" content="#FF6B1A" />
+
+  <title>Horsewood™ — Reclaim Your Performance. Naturally.</title>
+  <meta name="description" content="The natural male performance stack engineered for men who refuse to slow down. 7 powerful herbs, one daily capsule, zero shortcuts." />
+
+  <meta property="og:title" content="Horsewood™ — The Natural Male Performance Stack" />
+  <meta property="og:description" content="Engineered for men who refuse to slow down. Rise to the occasion — naturally." />
+  <meta property="og:type" content="website" />
+
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <script>
+    var mysrc = "https://tracking.buygoods.com/track/?a=12662&firstcookie=0"
+      + "&tracking_redirect=&referrer=" + encodeURIComponent(document.referrer)
+      + "&sessid2=" + ReadCookie('sessid2')
+      + "&product=hrsw2_fun_b3,hrsw3_fun_b3,hrsw6_fun_b3"
+      + "&vid1=&vid2=&vid3=&caller_url=" + encodeURIComponent(window.location.href);
+    if (typeof add_to_cart !== 'undefined') { mysrc = mysrc + '&add_to_cart=' + add_to_cart; }
+    var newScript = document.createElement('script');
+    newScript.type = 'text/javascript';
+    newScript.defer = true;
+    newScript.src = mysrc;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(newScript, s);
+
+    function ReadCookie(name) {
+      name += '=';
+      var parts = document.cookie.split(/;\s*/);
+      for (var i = 0; i < parts.length; i++) {
+        var part = parts[i];
+        if (part.indexOf(name) == 0) return part.substring(name.length);
+      }
+      return '';
+    }
+  </script>
+
+  <script type="text/javascript">
+    setTimeout(function () {
+      var i = document.createElement("iframe");
+      i.async = true;
+      i.style = "display:none";
+      i.setAttribute("src", "https://buygoods.com/affiliates/go/conversion/iframe/bg?a=12662&t=3dc2e49f876df64bd1a74f0d7f54ce0c&s=" + ReadCookie('sessid2'));
+      document.body.appendChild(i);
+    }, 1000);
+  </script>
+</head>
+<body>
+
+  <div class="announcement-bar">
+    <a href="#order-section" class="scroll-to-section">
+      <span>CLAIM YOUR OFFER</span>
+      <span class="discount-bubble">50% OFF</span>
+      <span>+ FREE USA SHIPPING ON 6 BOTTLES</span>
+    </a>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+
+      <button class="menu-toggle" data-menu-toggle aria-label="Open menu">
+        <svg width="28" height="28" fill="none" viewBox="0 0 28 28">
+          <path stroke="currentColor" stroke-width="2" d="M3 7h22M3 14h22M3 21h22" />
+        </svg>
+      </button>
+
+      <a href="/" class="header-logo" aria-label="Horsewood Home">
+        <span>Horsewood</span>
+        <span class="logo-dot" aria-hidden="true"></span>
+      </a>
+
+      <nav class="header-nav">
+        <a href="#" class="scroll-to-section">Home</a>
+        <a href="#science" class="scroll-to-section">Ingredients</a>
+        <a href="#testimonials" class="scroll-to-section">Reviews</a>
+        <a href="#faq" class="scroll-to-section">FAQ</a>
+        <a href="https://horsewood.us/contact/">Contact Us</a>
+      </nav>
+
+      <a href="#order-section" class="header-cta scroll-to-section">
+        BUY NOW
+      </a>
+    </div>
+  </header>
+
+  <aside class="mobile-drawer" data-mobile-drawer>
+    <button class="drawer-close" data-drawer-close aria-label="Close menu">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M6 6l12 12M6 18L18 6" stroke="currentColor" stroke-width="2" />
+      </svg>
+    </button>
+    <nav class="drawer-nav">
+      <a href="#order-section" class="featured scroll-to-section">BUY NOW</a>
+      <a href="#" class="scroll-to-section">Home</a>
+      <a href="#science" class="scroll-to-section">Ingredients</a>
+      <a href="#testimonials" class="scroll-to-section">Reviews</a>
+      <a href="#faq" class="scroll-to-section">FAQ</a>
+      <a href="https://horsewood.us/contact/">Contact Us</a>
+    </nav>
+  </aside>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-reviews">
+          <span class="stars" aria-hidden="true">
+            <svg width="90" height="14" viewBox="0 0 104 22" fill="currentColor">
+              <path d="M11.24.71l2.3 7.1h7.46l-6.03 4.38 2.3 7.1-6.03-4.4-6.03 4.4 2.3-7.1L1.48 7.8h7.46zM31.77.71l2.3 7.1h7.46l-6.03 4.38 2.3 7.1-6.03-4.4-6.03 4.4 2.3-7.1-6.03-4.38h7.46zM52.3.71l2.3 7.1h7.46l-6.03 4.38 2.3 7.1-6.03-4.4-6.03 4.4 2.3-7.1-6.03-4.38h7.46zM72.84.71l2.3 7.1h7.46l-6.03 4.38 2.3 7.1-6.03-4.4-6.03 4.4 2.3-7.1-6.03-4.38h7.46zM93.36.71l2.3 7.1h7.46l-6.03 4.38 2.3 7.1-6.03-4.4-6.03 4.4 2.3-7.1-6.03-4.38h7.46z" />
+            </svg>
+          </span>
+          <span>4,217 verified reviews</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="brand">Horsewood</span>
+          Rise to <span class="accent">every</span> occasion.
+        </h1>
+
+        <p class="hero-subtitle">
+          HORSEWOOD's <strong>7 botanical ingredients</strong> support healthy male vitality, daily stamina, and the natural energy pathways that fade with age and stress. Built for men who refuse to slow down.
+        </p>
+
+        <div class="hero-cta-row">
+          <a href="#order-section" class="btn-primary scroll-to-section">
+            <span>Claim My HORSEWOOD Now →</span>
+            <svg width="20" height="14" viewBox="0 0 22 14" fill="none">
+              <path d="M0 6.83h19.69m0 0L13.56.7m6.13 6.12-6.13 6.13" stroke="currentColor" stroke-width="2.5" />
+            </svg>
+          </a>
+          <a href="#science" class="btn-ghost scroll-to-section">See the Science</a>
+        </div>
+
+        <div class="hero-trust">
+          <svg width="16" height="20" viewBox="0 0 20 24" fill="currentColor">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M4.93 1.8 0 3.6v8.9l.21 1.5.32 1 .77 1.6.95 1.6 1.04 1.4 1.4 1.4 1.86 1.3 2.07 1 1.4.4 1.4-.4 2.07-1 1.86-1.3 1.4-1.4 1.04-1.4.95-1.6.77-1.6.32-1 .21-1.5V3.6L10 0 4.93 1.8Zm7 10.7-3.6 3.6-1.94-1.95L4.4 12.25l.58-.58 1.36 1.36 1.93-1.93 3.02-3.02 1.17 1.17-3.6 3.6Z" />
+          </svg>
+          <span>60-day money-back guarantee. Feel it or it's free.</span>
+        </div>
+      </div>
+
+      <div class="hero-product">
+        <img src="images/jar-horsewood-2.png" alt="Horsewood Male Enhancement bottle" class="hero-product-img" />
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="claim-strip">
+    <div class="container">
+      <div class="claim-strip-items">
+        <span>✓ 100% NATURAL FORMULA</span>
+        <span>✓ NON-GMO · GLUTEN-FREE</span>
+        <span>✓ MADE IN AN FDA-REGISTERED FACILITY</span>
+        <span>✓ 60-DAY MONEY-BACK GUARANTEE</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section" id="order-section">
+    <div class="container-wide">
+      <div class="section-header">
+        <h2>Claim Your HORSEWOOD Package Below — <span class="text-orange">While Stock Lasts</span></h2>
+        <p class="section-subhead">Because of manufacturing constraints and overwhelming demand, we can only guarantee today's pricing on confirmed orders.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-card-label">STARTER</div>
+          <h3 class="pricing-qty">2 BOTTLES</h3>
+          <p class="pricing-supply">60-Day Supply</p>
+          <div class="pricing-img-wrap">
+            <img src="images/jar-horsewood-2.png" alt="Horsewood 2 bottles" class="pricing-img" loading="lazy" />
+          </div>
+          <div class="pricing-price">
+            <span class="price-dollar">$</span><span class="price-big">79</span><span class="price-per">per<br>bottle</span>
+          </div>
+          <ul class="pricing-checks">
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 2 Bottles (60-day supply)</li>
+            <li class="check-disabled"><span class="x-icon">✕</span> Free Shipping</li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 60-Day Guarantee</li>
+          </ul>
+          <p class="pricing-savings">You save $158</p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12662&product_codename=hrsw2_fun_b3&redirect=aHR0cHM6Ly9ob3JzZXdvb2QudXMvZnVubmVsYjMvdXAxLTAx" class="btn-primary btn-block buy-link">
+            <span>Order 2 Bottles → $158</span>
+          </a>
+          <div class="payment-icons" aria-hidden="true"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span></div>
+          <div class="pricing-bottom">
+            <p class="pricing-bottom-retail"><span class="strikethrough">$316</span></p>
+            <p class="pricing-bottom-total">Today: $158</p>
+            <p class="pricing-bottom-shipping">+ Shipping</p>
+          </div>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-card-label">MOST POPULAR · BEST VALUE</div>
+          <h3 class="pricing-qty">6 BOTTLES</h3>
+          <p class="pricing-supply">180-Day Supply</p>
+          <div class="pricing-img-wrap">
+            <img src="images/jar-horsewood-6.png" alt="Horsewood 6 bottles" class="pricing-img" loading="lazy" />
+          </div>
+          <div class="pricing-price">
+            <span class="price-dollar">$</span><span class="price-big">49</span><span class="price-per">per<br>bottle</span>
+          </div>
+          <ul class="pricing-checks">
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 6 Bottles (180-day supply)</li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> FREE US Shipping</li>
+            <li class="check-bonus"><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> <strong>3 FREE Digital Bonuses</strong></li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 60-Day Guarantee</li>
+          </ul>
+          <p class="pricing-savings">You save $600</p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12662&product_codename=hrsw6_fun_b3&redirect=aHR0cHM6Ly9ob3JzZXdvb2QudXMvZnVubmVsYjMvdXAxLTA2" class="btn-primary btn-block buy-link">
+            <span>Order 6 Bottles → $294</span>
+          </a>
+          <div class="payment-icons" aria-hidden="true"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span></div>
+          <div class="pricing-bottom">
+            <p class="pricing-bottom-retail"><span class="strikethrough">$894</span></p>
+            <p class="pricing-bottom-total">Today: $294 total</p>
+            <p class="pricing-bottom-shipping free">FREE USA Shipping</p>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-label">POPULAR CHOICE</div>
+          <h3 class="pricing-qty">3 BOTTLES</h3>
+          <p class="pricing-supply">90-Day Supply</p>
+          <div class="pricing-img-wrap">
+            <img src="images/jar-horsewood-3.png" alt="Horsewood 3 bottles" class="pricing-img" loading="lazy" />
+          </div>
+          <div class="pricing-price">
+            <span class="price-dollar">$</span><span class="price-big">59</span><span class="price-per">per<br>bottle</span>
+          </div>
+          <ul class="pricing-checks">
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 3 Bottles (90-day supply)</li>
+            <li class="check-disabled"><span class="x-icon">✕</span> Free Shipping</li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 60-Day Guarantee</li>
+          </ul>
+          <p class="pricing-savings">You save $270</p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12662&product_codename=hrsw3_fun_b3&redirect=aHR0cHM6Ly9ob3JzZXdvb2QudXMvZnVubmVsYjMvdXAxLTAz" class="btn-primary btn-block buy-link">
+            <span>Order 3 Bottles → $177</span>
+          </a>
+          <div class="payment-icons" aria-hidden="true"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span></div>
+          <div class="pricing-bottom">
+            <p class="pricing-bottom-retail"><span class="strikethrough">$447</span></p>
+            <p class="pricing-bottom-total">Today: $177 total</p>
+            <p class="pricing-bottom-shipping">+ Shipping</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="bonus-section" id="bonuses">
+    <div class="bonus-bg-glow" aria-hidden="true"></div>
+    <div class="container-wide">
+
+      <div class="bonus-header">
+        <span class="bonus-eyebrow">EXCLUSIVE WITH THE 6-BOTTLE PACK</span>
+        <h2 class="bonus-title">
+          Order <span class="text-orange">6 Bottles</span> And Receive<br>
+          <span class="text-orange">3 FREE</span> Digital Bonuses
+        </h2>
+        <p class="bonus-subhead">Instant access. Yours to keep. A complete protocol to amplify everything Horsewood does inside your body.</p>
+      </div>
+
+      <div class="bonus-grid">
+
+        <article class="bonus-card">
+          <div class="bonus-tag">BONUS #1</div>
+          <div class="bonus-img-wrap">
+            <img src="images/ebooks/bonus-1.png" alt="Eat Like Your Brain Runs The Show — bonus ebook" class="bonus-img" loading="lazy" />
+          </div>
+          <h3 class="bonus-card-title">The 7-Day Vitality Reset</h3>
+          <p class="bonus-card-desc">A simple 7-day daily ritual designed to support natural energy, healthy testosterone-related lifestyle habits, and the small routines that separate men who feel strong at 50+ from men who feel tired.</p>
+          <div class="bonus-meta">
+            <span class="bonus-meta-pill">Instant Digital Access</span>
+          </div>
+        </article>
+
+        <article class="bonus-card">
+          <div class="bonus-tag">BONUS #2</div>
+          <div class="bonus-img-wrap">
+            <img src="images/ebooks/bonus-2.png" alt="The 21-Day Reset — bonus ebook" class="bonus-img" loading="lazy" />
+          </div>
+          <h3 class="bonus-card-title">The Stallion Kitchen</h3>
+          <p class="bonus-card-desc">50+ everyday meals featuring foods traditionally associated with male wellness, healthy circulation, and steady daily energy — plus the 6 "silent drain" foods hiding in the average American pantry.</p>
+          <div class="bonus-meta">
+            <span class="bonus-meta-pill">Instant Digital Access</span>
+          </div>
+        </article>
+
+        <article class="bonus-card">
+          <div class="bonus-tag">BONUS #3</div>
+          <div class="bonus-img-wrap">
+            <img src="images/ebooks/bonus-3.png" alt="The Brain-First Approach — bonus ebook" class="bonus-img" loading="lazy" />
+          </div>
+          <h3 class="bonus-card-title">The Confidence Code</h3>
+          <p class="bonus-card-desc">The mindset, breathwork, and 5-minute daily habits used by men who carry themselves with quiet confidence at any age. Includes the morning posture drill and the 2-minute stress reset.</p>
+          <div class="bonus-meta">
+            <span class="bonus-meta-pill">Instant Digital Access</span>
+          </div>
+        </article>
+
+      </div>
+
+      <p class="bonus-disclaimer">* Bonuses are digital downloads delivered to your email within minutes of purchase. They represent supplementary educational resources.</p>
+
+    </div>
+  </section>
+
+  <section class="ingredients-section" id="science">
+    <div class="container-wide">
+      <div class="section-header">
+        <h2>7 herbs. <span class="text-orange">One ruthless formula.</span></h2>
+        <p class="section-subhead">Clinically-studied extracts · Backed by tradition · Dosed to work</p>
+      </div>
+
+      <div class="ingredients-grid">
+        
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">1000 mg</span>
+          <h3 class="ingredient-name">Tongkat Ali</h3>
+          <p class="ingredient-desc">The Southeast Asian root studied for its support of natural testosterone, libido, and physical drive in men.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">80 mg</span>
+          <h3 class="ingredient-name">Horny Goat Weed</h3>
+          <p class="ingredient-desc">An ancient Chinese herb (Epimedium) traditionally used to support healthy blood flow, stamina, and male performance.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">20 mg</span>
+          <h3 class="ingredient-name">Saw Palmetto</h3>
+          <p class="ingredient-desc">A berry extract studied for prostate support and helping maintain healthy hormone balance in adult men.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">20 mg</span>
+          <h3 class="ingredient-name">Wild Yam</h3>
+          <p class="ingredient-desc">A traditional root with a long history of use in supporting energy, vitality, and male hormonal balance.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">20 mg</span>
+          <h3 class="ingredient-name">Sarsaparilla</h3>
+          <p class="ingredient-desc">A vine root used traditionally to support natural energy, virility, and overall male wellness.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">20 mg</span>
+          <h3 class="ingredient-name">Nettle Leaf</h3>
+          <p class="ingredient-desc">Rich in plant compounds studied for their potential to support free testosterone and prostate health.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">20 mg</span>
+          <h3 class="ingredient-name">Boron Chelate</h3>
+          <p class="ingredient-desc">A trace mineral researched for its role in supporting free testosterone and regulating estrogen levels in men.</p>
+        </article>
+
+        <article class="ingredient-card">
+          <span class="ingredient-dosage">SYNERGY</span>
+          <h3 class="ingredient-name">The Stack Effect</h3>
+          <p class="ingredient-desc">Each herb amplifies the others. Together they target the four pillars of male performance: drive, blood flow, stamina, and recovery.</p>
+        </article>
+      </div>
+
+      <div class="quality-logos">
+        <div class="quality-logo">
+          <div class="quality-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 12l2 2 4-4M21 12c0 4.97-4.03 9-9 9s-9-4.03-9-9 4.03-9 9-9 9 4.03 9 9z"/></svg>
+          </div>
+          <span>cGMP Facility</span>
+        </div>
+        <div class="quality-logo">
+          <div class="quality-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M2 12h20"/></svg>
+          </div>
+          <span>Non-GMO</span>
+        </div>
+        <div class="quality-logo">
+          <div class="quality-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l2 2 6-6"/></svg>
+          </div>
+          <span>Third-Party Tested</span>
+        </div>
+        <div class="quality-logo">
+          <div class="quality-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+          </div>
+          <span>Made in USA</span>
+        </div>
+        <div class="quality-logo">
+          <div class="quality-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <span>Stimulant-Free</span>
+        </div>
+        <div class="quality-logo">
+          <div class="quality-logo-icon">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <span>Non-Habit Forming</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="epidemic-section">
+    <div class="epidemic-inner">
+      <div>
+        <h2 class="epidemic-title">
+          <strong>The silent crisis</strong>
+          most men ignore
+        </h2>
+        <div class="epidemic-text">
+          <p>Testosterone in modern men has been <strong>dropping roughly 1% every year since 1980</strong>. The result isn't just a number on a lab report — it's a slow, daily erosion of the things that make a man feel like a man.</p>
+          <p>Weaker erections. Lower drive. Foggy focus at the worst possible moment. Recovery that takes twice as long as it used to. The kind of slowdown men quietly accept as "getting older" — when it's actually <span class="highlight">a hormonal and circulatory problem</span> that has names, mechanisms, and natural counters.</p>
+          <p><strong>Horsewood was built for this exact problem.</strong> Seven research-informed herbs in one daily capsule, designed to support the body's natural ability to perform — at any age.</p>
+        </div>
+
+        <div class="epidemic-stat">
+          <div class="epidemic-stat-number">52%</div>
+          <div class="epidemic-stat-label">of men over 40 report some<br>level of performance decline.<br><span style="color: var(--color-primary);">You don't have to be one of them.</span></div>
+        </div>
+      </div>
+
+      <div class="epidemic-image">
+        <img src="images/jar-horsewood-3.png" alt="Horsewood 3 bottles" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <section class="solution-section">
+    <div class="solution-header">
+      <p class="solution-eyebrow">The Solution</p>
+      <h2 class="solution-title">
+        <span class="brand">Horsewood</span>
+        Built for men who refuse to slow down
+      </h2>
+      <p class="solution-intro">When the body gets the right inputs — the right herbs, in the right doses, taken consistently — male performance becomes something you stop having to think about.</p>
+    </div>
+
+    <div class="benefits-grid">
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+        </div>
+        <h3 class="benefit-title">Rise on Demand</h3>
+        <p class="benefit-desc">Support for healthy blood flow & male response</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        </div>
+        <h3 class="benefit-title">Ignite Drive</h3>
+        <p class="benefit-desc">Natural support for libido & desire</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+        </div>
+        <h3 class="benefit-title">Build Stamina</h3>
+        <p class="benefit-desc">Last longer · go harder · finish strong</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6.5 6.5h11v11h-11zM12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+        </div>
+        <h3 class="benefit-title">Sharpen Focus</h3>
+        <p class="benefit-desc">Mental clarity that follows physical confidence</p>
+      </div>
+
+      <div class="benefit-card">
+        <div class="benefit-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 0 1 9-9 9.75 9.75 0 0 1 6.74 2.74L21 8M21 3v5h-5M21 12a9 9 0 0 1-9 9 9.75 9.75 0 0 1-6.74-2.74L3 16M3 21v-5h5"/></svg>
+        </div>
+        <h3 class="benefit-title">Recover Faster</h3>
+        <p class="benefit-desc">Bounce back · day after day · night after night</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="how-section" id="how-it-works">
+    <div class="how-header">
+      <h2 class="how-title">How <span class="text-orange">Horsewood</span> works</h2>
+      <p class="how-intro">Consistency wins. Most men feel the first shifts within days — and the full effect compounds over the first 90.</p>
+    </div>
+
+    <div class="timeline-desktop">
+
+      <div class="timeline-step">
+        <div class="timeline-step-header">
+          <div class="timeline-step-day">
+            <span class="small">Day</span>
+            <span>7</span>
+          </div>
+          <div class="timeline-step-label">Awaken</div>
+        </div>
+        <ul>
+          <li>Tongkat Ali starts supporting natural T pathways</li>
+          <li>Horny Goat Weed activates circulation</li>
+          <li>Morning energy and drive begin to return</li>
+          <li>You start feeling like yourself again</li>
+        </ul>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-step-header">
+          <div class="timeline-step-day">
+            <span class="small">Day</span>
+            <span>30</span>
+          </div>
+          <div class="timeline-step-label">Unleash</div>
+        </div>
+        <ul>
+          <li>Boron helps free up bound testosterone</li>
+          <li>Nettle & Saw Palmetto support hormone balance</li>
+          <li>Performance becomes noticeably stronger</li>
+          <li>Confidence shows up before you do</li>
+        </ul>
+      </div>
+
+      <div class="timeline-step">
+        <div class="timeline-step-header">
+          <div class="timeline-step-day">
+            <span class="small">Day</span>
+            <span>90</span>
+          </div>
+          <div class="timeline-step-label">Dominate</div>
+        </div>
+        <ul>
+          <li>All 7 herbs working in full synergy</li>
+          <li>Drive, stamina, and recovery dialed in</li>
+          <li>This isn't a temporary boost — it's the new normal</li>
+          <li>Welcome to the man you were built to be</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="guarantee-section" id="guarantee">
+    <div class="guarantee-inner">
+      <div class="guarantee-badge">
+        <span class="big">60</span>
+        <span class="small">DAY</span>
+        <span class="tiny">GUARANTEE</span>
+      </div>
+      <div>
+        <h2 class="guarantee-title">Feel it. Or it's <span class="text-orange">free.</span></h2>
+        <p class="guarantee-desc">Try HORSEWOOD for a full 60 days. If you don't feel stronger, more energized, and more like yourself again — or if you simply change your mind for any reason at all — send back any remaining bottles (even empty ones) and we'll refund every penny. No questions, no hoops, no awkward phone calls. That's how confident we are that HORSEWOOD will work for you. You risk nothing.</p>
+        <a href="#order-section" class="btn-primary scroll-to-section">
+          <span>Claim Yours Now</span>
+          <svg width="18" height="12" viewBox="0 0 22 14" fill="none"><path d="M0 6.83h19.69m0 0L13.56.7m6.13 6.12-6.13 6.13" stroke="currentColor" stroke-width="2.5"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="claim-strip">
+    <div class="container">
+      <div class="claim-strip-items">
+        <span>✓ 7 BOTANICAL INGREDIENTS</span>
+        <span>✓ ZERO STIMULANTS · ZERO HABIT-FORMING COMPOUNDS</span>
+        <span>✓ THIRD-PARTY TESTED FOR PURITY</span>
+        <span>✓ TRUSTED BY THOUSANDS OF AMERICAN MEN</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="pricing-section" id="order-section-2">
+    <div class="container-wide">
+      <div class="section-header">
+        <h2>Ready To Feel Like Yourself Again? Choose Your <span class="text-orange">HORSEWOOD Package</span></h2>
+        <p class="section-subhead">Prices and stock guaranteed only for today's confirmed orders. Select your package below to lock in today's savings.</p>
+      </div>
+
+      <div class="pricing-grid">
+
+        <div class="pricing-card">
+          <div class="pricing-card-label">STARTER</div>
+          <h3 class="pricing-qty">2 BOTTLES</h3>
+          <p class="pricing-supply">60-Day Supply</p>
+          <div class="pricing-img-wrap">
+            <img src="images/jar-horsewood-2.png" alt="Horsewood 2 bottles" class="pricing-img" loading="lazy" />
+          </div>
+          <div class="pricing-price">
+            <span class="price-dollar">$</span><span class="price-big">79</span><span class="price-per">per<br>bottle</span>
+          </div>
+          <ul class="pricing-checks">
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 2 Bottles (60-day supply)</li>
+            <li class="check-disabled"><span class="x-icon">✕</span> Free Shipping</li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 60-Day Guarantee</li>
+          </ul>
+          <p class="pricing-savings">You save $158</p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12662&product_codename=hrsw2_fun_b3&redirect=aHR0cHM6Ly9ob3JzZXdvb2QudXMvZnVubmVsYjMvdXAxLTAx" class="btn-primary btn-block buy-link">
+            <span>Order 2 Bottles → $158</span>
+          </a>
+          <div class="payment-icons" aria-hidden="true"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span></div>
+          <div class="pricing-bottom">
+            <p class="pricing-bottom-retail"><span class="strikethrough">$316</span></p>
+            <p class="pricing-bottom-total">Today: $158</p>
+            <p class="pricing-bottom-shipping">+ Shipping</p>
+          </div>
+        </div>
+
+        <div class="pricing-card featured">
+          <div class="pricing-card-label">MOST POPULAR · BEST VALUE</div>
+          <h3 class="pricing-qty">6 BOTTLES</h3>
+          <p class="pricing-supply">180-Day Supply</p>
+          <div class="pricing-img-wrap">
+            <img src="images/jar-horsewood-6.png" alt="Horsewood 6 bottles" class="pricing-img" loading="lazy" />
+          </div>
+          <div class="pricing-price">
+            <span class="price-dollar">$</span><span class="price-big">49</span><span class="price-per">per<br>bottle</span>
+          </div>
+          <ul class="pricing-checks">
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 6 Bottles (180-day supply)</li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> FREE US Shipping</li>
+            <li class="check-bonus"><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> <strong>3 FREE Digital Bonuses</strong></li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 60-Day Guarantee</li>
+          </ul>
+          <p class="pricing-savings">You save $600</p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12662&product_codename=hrsw6_fun_b3&redirect=aHR0cHM6Ly9ob3JzZXdvb2QudXMvZnVubmVsYjMvdXAxLTA2" class="btn-primary btn-block buy-link">
+            <span>Order 6 Bottles → $294</span>
+          </a>
+          <div class="payment-icons" aria-hidden="true"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span></div>
+          <div class="pricing-bottom">
+            <p class="pricing-bottom-retail"><span class="strikethrough">$894</span></p>
+            <p class="pricing-bottom-total">Today: $294 total</p>
+            <p class="pricing-bottom-shipping free">FREE USA Shipping</p>
+          </div>
+        </div>
+
+        <div class="pricing-card">
+          <div class="pricing-card-label">POPULAR CHOICE</div>
+          <h3 class="pricing-qty">3 BOTTLES</h3>
+          <p class="pricing-supply">90-Day Supply</p>
+          <div class="pricing-img-wrap">
+            <img src="images/jar-horsewood-3.png" alt="Horsewood 3 bottles" class="pricing-img" loading="lazy" />
+          </div>
+          <div class="pricing-price">
+            <span class="price-dollar">$</span><span class="price-big">59</span><span class="price-per">per<br>bottle</span>
+          </div>
+          <ul class="pricing-checks">
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 3 Bottles (90-day supply)</li>
+            <li class="check-disabled"><span class="x-icon">✕</span> Free Shipping</li>
+            <li><svg class="check-icon" viewBox="0 0 512 512"><path d="M504 256c0 137-111 248-248 248S8 393 8 256 119 8 256 8s248 111 248 248zM227 387l184-184c6-6 6-16 0-23l-23-22c-6-6-16-6-22 0L216 308l-70-70c-6-6-16-6-23 0l-22 22c-6 7-6 17 0 23l104 104c6 6 16 6 22 0z"/></svg> 60-Day Guarantee</li>
+          </ul>
+          <p class="pricing-savings">You save $270</p>
+          <a href="https://buygoods.com/secure/checkout.html?account_id=12662&product_codename=hrsw3_fun_b3&redirect=aHR0cHM6Ly9ob3JzZXdvb2QudXMvZnVubmVsYjMvdXAxLTAz" class="btn-primary btn-block buy-link">
+            <span>Order 3 Bottles → $177</span>
+          </a>
+          <div class="payment-icons" aria-hidden="true"><span>VISA</span><span>MC</span><span>AMEX</span><span>DISC</span></div>
+          <div class="pricing-bottom">
+            <p class="pricing-bottom-retail"><span class="strikethrough">$447</span></p>
+            <p class="pricing-bottom-total">Today: $177 total</p>
+            <p class="pricing-bottom-shipping">+ Shipping</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="label-section">
+    <div class="container">
+      <img src="images/horsewood-label-full.jpg" alt="Horsewood Supplement Facts label" />
+    </div>
+  </section>
+
+  <section class="faq-section" id="faq">
+    <div class="faq-header">
+      <h2 class="faq-title">Questions, answered.</h2>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>What exactly is Horsewood?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Horsewood is a daily natural male performance supplement formulated for adult men. Each capsule contains <strong>7 research-informed herbs</strong> — including Tongkat Ali (1000mg equivalent), Horny Goat Weed, Saw Palmetto, Boron, Nettle, Wild Yam, and Sarsaparilla — selected to support healthy testosterone, blood flow, drive, and male vitality.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>Who is Horsewood for?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Horsewood is built for adult men (18+) who want to support male performance, drive, and vitality the natural way. It's especially popular with men 35+ who've noticed the slow decline in energy, drive, and confidence that comes with age — and aren't willing to accept it.</p>
+            <p>If you're under 18, pregnant, nursing, on medication, or managing a medical condition, talk to your doctor before starting any new supplement.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>How fast will I feel a difference?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Every body responds on its own timeline. Most men report subtle shifts in energy and morning drive within <strong>7–14 days</strong> of consistent use. More noticeable improvements in performance, stamina, and confidence typically show up around <strong>30–60 days</strong>.</p>
+            <p>The full effect compounds over 90+ days — which is exactly why most men choose the 6-bottle pack. Consistency is what makes this work.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>Is Horsewood safe?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Horsewood is made in a cGMP-certified facility in the USA, third-party tested for purity, and formulated entirely from natural herbal extracts and minerals — no stimulants, no synthetic hormones, no prescription compounds.</p>
+            <p>That said, supplements affect everyone differently. If you're on medication (especially blood pressure, blood thinners, or hormone therapies), pregnant or nursing, or managing a medical condition, <strong>consult your doctor</strong> before starting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>How do I take it?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Take <strong>1 capsule daily with an 8 oz glass of water</strong>, preferably in the morning with food. That's it. No timing tricks, no loading phases, no cycling needed.</p>
+            <p>Consistency beats perfection. Take it at the same time every day and let the formula do its work.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>Will it work for erectile difficulties?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Horsewood is a dietary supplement — not a prescription drug — and we're careful not to make medical claims. What we can say: the herbs inside Horsewood (especially <strong>Tongkat Ali, Horny Goat Weed, and Boron</strong>) have been studied for their support of healthy blood flow, testosterone, and male performance.</p>
+            <p>If you're experiencing significant erectile difficulties, please talk to a doctor first — there may be underlying issues worth checking. Horsewood is designed to support your body's natural function, not replace medical care.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>How many bottles should I order?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>The full effect compounds over the first 90–180 days as your body settles into the new rhythm. That's why <strong>most customers (around 87%) choose the 6-bottle pack</strong> — it gives your body a full 180-day runway, locks in the lowest per-bottle price, and includes free USA shipping.</p>
+            <p>If you want to try it first, the single bottle is a fine entry point. Just know stock can run out and the discount won't always be here.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>Is this a subscription?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p><strong>No.</strong> Horsewood is a one-time purchase. No auto-renewals, no surprise charges, no subscription you have to remember to cancel. What you pay today is what you pay — full stop.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>What's the guarantee?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Every order is backed by our <strong>60-day money-back guarantee</strong>. If you don't feel a real difference in drive, performance, or energy — for any reason or no reason at all — contact our support team within 60 days and we'll refund every penny. Keep the bottles, send them back empty, doesn't matter. No questions, no hassle.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="faq-item" data-faq-item>
+        <button class="faq-question" data-faq-question>
+          <span>Can I buy Horsewood on Amazon or in stores?</span>
+          <span class="faq-toggle">+</span>
+        </button>
+        <div class="faq-answer">
+          <div class="faq-answer-inner">
+            <p>Horsewood is <strong>only sold through this official page</strong>. To protect formula quality and customer safety, we don't sell on Amazon, eBay, or any third-party marketplace. Anything you find elsewhere is either counterfeit or expired. Buy here — it's the only way to guarantee you're getting the real product with the real guarantee.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">HORSEWOOD</div>
+      <p class="footer-address">HORSEWOOD | 11870 62nd St N | Largo, FL 33773<br>
+        <a href="/cdn-cgi/l/email-protection#82f1f7f2f2edf0f6c2eae7e3eef6eafbe1edecf1f7efe7f0acf7f1"><span class="__cf_email__" data-cfemail="d0a3a5a0a0bfa2a490b8b5b1bca4b8a9b3bfbea3a5bdb5a2fea5a3">[email&#160;protected]</span></a> &nbsp;·&nbsp;
+        <a href="tel:+18772570825">+1 (877) 257-0825</a>
+      </p>
+
+      <div class="footer-links">
+        <a href="https://horsewood.us/terms/">Terms of Service</a>
+        <a href="https://horsewood.us/privacy/">Privacy Policy</a>
+        <a href="https://horsewood.us/support/">Refund Policy</a>
+        <a href="https://horsewood.us/support/">Return</a>
+        <a href="https://horsewood.us/support/">Shipping Policy</a>
+        <a href="https://horsewood.us/contact/">Contact Support</a>
+      </div>
+
+      <p class="footer-disclaimer">
+        <strong>Statements on this website have not been evaluated by the Food and Drug Administration.</strong>
+        Horsewood is not intended to diagnose, treat, cure, or prevent any disease. Results vary. If you are pregnant, nursing, taking medication, or have a medical condition, consult your physician before using this product. Not intended for use by anyone under the age of 18.
+      </p>
+
+      <p class="footer-copy">© 2026 HORSEWOOD. All rights reserved.</p>
+
+      <span id="disclaimer"></span>
+      <script data-cfasync="false" src="email-decode.min.js"></script><script src="disclaimer.js"></script>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+
+  
+  <script>
+    (function () {
+      function readCookie(name) {
+        var parts = document.cookie.split(/;\s*/);
+        for (var i = 0; i < parts.length; i++) {
+          if (parts[i].indexOf(name + "=") === 0) {
+            return parts[i].substring(name.length + 1);
+          }
+        }
+        return "";
+      }
+
+      document.addEventListener("click", function (e) {
+        var btn = e.target.closest("a.buy-link");
+        if (!btn) return;
+
+        e.preventDefault();
+
+        var url = btn.getAttribute("href");
+        var sessid = readCookie("sessid2");
+        var paramsUrl = window.location.search.replace(/^\?/, "");
+
+        var extras = [];
+        if (sessid) extras.push("s=" + encodeURIComponent(sessid));
+        if (paramsUrl) extras.push(paramsUrl);
+
+        if (extras.length) {
+          url += (url.indexOf("?") > -1 ? "&" : "?") + extras.join("&");
+        }
+
+        window.location.href = url;
+      });
+    })();
+  </script>
+</body>
+</html>

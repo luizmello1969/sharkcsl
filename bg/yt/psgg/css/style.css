@@ -1,0 +1,36 @@
+.animate {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        scale: 100%;
+    }
+    50% {
+        scale: 120%;
+    }
+
+}
+
+@keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+    display: inline-flex;
+    animation: marquee 15s linear infinite;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #0a2edd;
+}
+
+button {
+    cursor: pointer;
+}
+
+.esconder {
+    display: none;
+}
