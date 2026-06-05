@@ -14,7 +14,7 @@
 
     <script src="https://rt.livinghealthylife.org/unilpclick.js?attribution=lastpaid&cookiedomain=&cookieduration=90&defaultcampaignid=69d72deef6cd5f2708734b02&regviewonce=false"></script>
 
-    <title>Vigor_L1_DTC</title>
+    <title>Vigor_Test</title>
 
     <meta
       name="title"
@@ -299,6 +299,53 @@
     </footer>
 
     <script src="assets/js/mainrt.js"></script>
+
+    <!-- Append RedTrack clickid to the CTA link -->
+    <script>
+      (function () {
+        function getCookie(name) {
+          var value = "; " + document.cookie;
+          var parts = value.split("; " + name + "=");
+          if (parts.length === 2) return parts.pop().split(";").shift();
+          return null;
+        }
+        function findClickId() {
+          var cookieId = getCookie("rtkclickid-store");
+          if (cookieId && cookieId !== "undefined") return cookieId;
+          var sp = new URL(window.location.href).searchParams;
+          var names = ["rtkcid", "clickid"];
+          for (var i = 0; i < names.length; i++) {
+            if (sp.has(names[i])) {
+              var v = sp.get(names[i]);
+              if (v && v !== "undefined") return v;
+            }
+          }
+          try {
+            var s = sessionStorage.getItem("rtkclickid");
+            if (s && s !== "undefined") return s;
+          } catch (e) {}
+          return null;
+        }
+        function applyClickId(retry) {
+          retry = retry || 0;
+          var link = document.getElementById("ViewContent");
+          if (!link) return;
+          var clickId = findClickId();
+          if (clickId) {
+            var url = new URL(link.href);
+            url.searchParams.set("clickid", clickId);
+            link.href = url.toString();
+          } else if (retry < 10) {
+            setTimeout(function () { applyClickId(retry + 1); }, 1000);
+          }
+        }
+        if (document.readyState === "loading") {
+          document.addEventListener("DOMContentLoaded", function () { applyClickId(0); });
+        } else {
+          applyClickId(0);
+        }
+      })();
+    </script>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
