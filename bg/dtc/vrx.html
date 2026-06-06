@@ -553,11 +553,38 @@
         height: 170px !important;
         object-fit: contain !important;
         display: block !important;
-        margin: 0 auto !important;
+        margin: 24px auto !important;
       }
       @media (max-width: 600px) {
         .area-kits .container ul a .main .area-img img {
           height: 135px !important;
+          margin: 18px auto !important;
+        }
+      }
+
+      /* Slightly smaller bottle-count titles and price (vrx.html only) */
+      .area-kits .container ul a .main strong {
+        font-size: 34px !important;
+      }
+      .area-kits .container ul a .price strong {
+        font-size: 56px !important;
+      }
+      @media (max-width: 900px) {
+        .area-kits .container ul a .main strong {
+          font-size: 21px !important;
+        }
+        .area-kits .container ul a .price strong {
+          font-size: 44px !important;
+        }
+      }
+
+      /* Smaller "Total =" line (vrx.html only) */
+      .area-kits .container ul a .footer .valores * {
+        font-size: 21px !important;
+      }
+      @media (max-width: 900px) {
+        .area-kits .container ul a .footer .valores * {
+          font-size: 12px !important;
         }
       }
 
