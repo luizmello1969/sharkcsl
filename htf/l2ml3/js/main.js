@@ -43,7 +43,7 @@
 
   /* ---------------- gate de revelação ---------------- */
   function setupGate() {
-    var SECONDS_TO_DISPLAY = 2295; // delay do pitch: 38:15
+    var SECONDS_TO_DISPLAY = 2368; // delay do pitch: 39:28
     var STORAGE_KEY = 'honeypower_revealed_' + SECONDS_TO_DISPLAY;
     var revealed = false;
 
