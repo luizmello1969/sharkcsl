@@ -459,8 +459,8 @@ button { border: 0; background: transparent; cursor: pointer; font-family: inher
 }
 @media (max-width: 480px) {
   .attention-bar { font-size: 13px; padding: 10px; }
-  .main-headline { font-size: 22px; line-height: 1.25; }
-  .headline-section { padding: 12px 15px 6px; }
+  .main-headline { font-size: 18px; line-height: 1.2; }
+  .headline-section { padding: 8px 12px 4px; }
   .timer-headline { font-size: 18px; }
   .timer-countdown { font-size: 36px; }
   .pricing-grid {
