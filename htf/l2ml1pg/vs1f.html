@@ -417,6 +417,37 @@
   <link rel="preload" href="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/smartplayer.js" as="script">
   <link rel="preload" href="https://cdn.converteai.net/b4b1559f-fdd4-4f27-b40c-2bc564c92338/6aabd972715e24d41f325d7b/main.m3u8" as="fetch" crossorigin>
   <script src="js/main.js" defer></script>
+
+  <!-- Propagate ALL current URL parameters to the checkout links -->
+  <script>
+    (function () {
+      function propagateParams() {
+        var pageParams = new URL(window.location.href).searchParams;
+        var links = document.querySelectorAll('a[href*="pay.pagamerican.app"]');
+        links.forEach(function (link) {
+          var url = new URL(link.href);
+          pageParams.forEach(function (value, key) {
+            url.searchParams.set(key, value);
+          });
+          link.href = url.toString();
+        });
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", propagateParams);
+      } else {
+        propagateParams();
+      }
+      // Re-apply at click time in case params arrive late
+      document.addEventListener(
+        "click",
+        function (e) {
+          var link = e.target && e.target.closest ? e.target.closest('a[href*="pay.pagamerican.app"]') : null;
+          if (link) propagateParams();
+        },
+        { capture: true }
+      );
+    })();
+  </script>
 </body>
 
 </html>
