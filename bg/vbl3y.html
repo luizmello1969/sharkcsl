@@ -338,7 +338,7 @@
           persist: true,
         });
 
-        // Hide the headline 5s after the video starts playing (once)
+        // Hide the headline once ~5s of the video has played (once)
         var headlineHidden = false;
         function hideHeadline() {
           if (headlineHidden) return;
@@ -346,17 +346,12 @@
           var hl = document.getElementById("vslHeadline");
           if (hl) hl.style.display = "none";
         }
-        // Primary: hide once ~5s of video has actually played
-        player.addEventListener("timeupdate", function (e) {
-          var t = (e && e.detail && e.detail.currentTime) || player.currentTime || 0;
-          if (t >= 5) hideHeadline();
-        });
-        // Fallback: 5s wall-clock after the first play event
-        ["play", "player:play", "playing"].forEach(function (ev) {
-          player.addEventListener(ev, function () {
-            setTimeout(hideHeadline, 5000);
+        // vturb native time callback (same timing the CTA reveal uses)
+        if (typeof player.onTime === "function") {
+          player.onTime(function (t) {
+            if ((t || 0) >= 5) hideHeadline();
           });
-        });
+        }
 
         // Scroll to top of video when delayed content is revealed
         const target = document.querySelector("[data-delay]");
